@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- RainTech cloud mark: 3 overlapping arcs -->
+  <!-- Large gray arc -->
+  <path d="M6 22 C6 13, 16 6, 24 13" fill="none" stroke="#97999B" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Medium green arc -->
+  <path d="M10 22 C10 15, 17 9, 22 14" fill="none" stroke="#79C600" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Small green arc on right -->
+  <path d="M20 22 C20 17, 25 14, 29 18" fill="none" stroke="#79C600" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

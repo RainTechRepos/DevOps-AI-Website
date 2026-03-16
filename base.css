@@ -1,0 +1,276 @@
+/* ========================================
+   base.css — Reset + Design Tokens
+   DevOps AI by RainTech
+   ======================================== */
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* --- Design Tokens --- */
+:root {
+  /* Brand Colors */
+  --green-primary: #79C600;
+  --green-bright: #8BDB02;
+  --blue-cetacean: #001647;
+  --blue-royal: #05108E;
+  --blue-sky: #20BAE7;
+  --white-ghost: #F7F7FF;
+  --violet-bright: #C616EA;
+  --gray: #97999B;
+  --black: #000000;
+  --cyan: #17E4ED;
+  --blue-mid: #2272E0;
+
+  /* Semantic Colors (Dark Mode Default) */
+  --bg-primary: #001647;
+  --bg-secondary: #001030;
+  --bg-tertiary: #001a52;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-surface: #00204f;
+  --text-primary: #F7F7FF;
+  --text-secondary: rgba(247, 247, 255, 0.72);
+  --text-tertiary: rgba(247, 247, 255, 0.48);
+  --text-muted: rgba(247, 247, 255, 0.32);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --accent: #8BDB02;
+  --accent-hover: #79C600;
+  --accent-glow: rgba(139, 219, 2, 0.15);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #8BDB02 0%, #17E4ED 100%);
+  --gradient-blue: linear-gradient(135deg, #05108E 0%, #001647 100%);
+  --gradient-cyan: linear-gradient(135deg, #17E4ED 0%, #2272E0 100%);
+  --gradient-royal: linear-gradient(135deg, #05108E 0%, #2272E0 100%);
+  --gradient-violet: linear-gradient(135deg, #C616EA 0%, #5D24FC 100%);
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Fluid Type Scale */
+  --text-xs: clamp(0.694rem, 0.66rem + 0.17vw, 0.8rem);
+  --text-sm: clamp(0.833rem, 0.78rem + 0.27vw, 1rem);
+  --text-base: clamp(1rem, 0.93rem + 0.36vw, 1.2rem);
+  --text-lg: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-xl: clamp(1.44rem, 1.3rem + 0.7vw, 1.875rem);
+  --text-2xl: clamp(1.728rem, 1.53rem + 0.99vw, 2.344rem);
+  --text-3xl: clamp(2.074rem, 1.79rem + 1.42vw, 2.93rem);
+  --text-4xl: clamp(2.488rem, 2.08rem + 2.04vw, 3.66rem);
+  --text-hero: clamp(2.986rem, 2.4rem + 2.93vw, 4.58rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --max-width: 1280px;
+  --max-width-narrow: 960px;
+  --max-width-wide: 1440px;
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --section-padding: clamp(4rem, 8vw, 8rem);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(139, 219, 2, 0.15);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Z-index */
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --bg-primary: #F7F7FF;
+  --bg-secondary: #EEEEF5;
+  --bg-tertiary: #E5E5EF;
+  --bg-card: rgba(0, 22, 71, 0.04);
+  --bg-card-hover: rgba(0, 22, 71, 0.08);
+  --bg-surface: #FFFFFF;
+  --text-primary: #001647;
+  --text-secondary: rgba(0, 22, 71, 0.72);
+  --text-tertiary: rgba(0, 22, 71, 0.48);
+  --text-muted: rgba(0, 22, 71, 0.32);
+  --border-default: rgba(0, 22, 71, 0.1);
+  --border-strong: rgba(0, 22, 71, 0.2);
+  --accent: #79C600;
+  --accent-hover: #6AB200;
+  --accent-glow: rgba(121, 198, 0, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 40px rgba(121, 198, 0, 0.1);
+}
+
+/* Base Typography */
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); font-weight: var(--font-weight-bold); }
+
+p {
+  color: var(--text-secondary);
+  max-width: 70ch;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--accent);
+  color: var(--blue-cetacean);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  transition: top var(--duration-fast);
+}
+
+.skip-to-content:focus {
+  top: var(--space-4);
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(139, 219, 2, 0.3);
+  color: var(--text-primary);
+}
+
+/* Utility: Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+/* Utility: Section */
+.section {
+  padding-block: var(--section-padding);
+}
+
+/* Scroll animation base */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
