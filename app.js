@@ -191,3 +191,111 @@
     });
   });
 })();
+
+  // ---- Mega-Menu Hover/Click ----
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      const menu = item.querySelector('.mega-menu');
+      if (!link || !menu) return;
+
+      // Desktop: hover
+      let hoverTimeout;
+      item.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+          clearTimeout(hoverTimeout);
+          navItems.forEach(n => n.classList.remove('is-open'));
+          item.classList.add('is-open');
+        }
+      });
+
+      item.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 1024) {
+          hoverTimeout = setTimeout(() => {
+            item.classList.remove('is-open');
+          }, 150);
+        }
+      });
+
+      // Mobile: click toggle
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024 && menu) {
+          e.preventDefault();
+          const isOpen = item.classList.contains('is-open');
+          navItems.forEach(n => n.classList.remove('is-open'));
+          if (!isOpen) item.classList.add('is-open');
+        }
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-item')) {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('is-open'));
+      }
+    });
+
+    // ---- FAQ Accordion ----
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('is-open');
+
+        // Close all others in same section
+        item.parentElement.querySelectorAll('.faq-item').forEach(i => {
+          if (i !== item) {
+            i.classList.remove('is-open');
+            const a = i.querySelector('.faq-answer');
+            if (a) a.style.maxHeight = '0';
+          }
+        });
+
+        if (isOpen) {
+          item.classList.remove('is-open');
+          answer.style.maxHeight = '0';
+        } else {
+          item.classList.add('is-open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // ---- ROI Calculator ----
+    const roiForm = document.querySelector('.roi-calculator');
+    if (roiForm) {
+      const inputs = roiForm.querySelectorAll('input[type="number"]');
+      inputs.forEach(input => {
+        input.addEventListener('input', calculateROI);
+      });
+      calculateROI();
+    }
+  });
+
+  function calculateROI() {
+    const techs = parseFloat(document.getElementById('roi-technicians')?.value) || 10;
+    const tickets = parseFloat(document.getElementById('roi-tickets')?.value) || 1500;
+    const rate = parseFloat(document.getElementById('roi-rate')?.value) || 85;
+    const clients = parseFloat(document.getElementById('roi-clients')?.value) || 50;
+
+    // Based on market data: 30-40% ticket reduction, $180K-$275K per 50-person MSP
+    const ticketReduction = 0.35; // 35% average
+    const ticketsReduced = Math.round(tickets * ticketReduction);
+    const avgResolutionMinutes = 25;
+    const hoursSaved = Math.round((ticketsReduced * avgResolutionMinutes) / 60);
+    const monthlySavings = Math.round(hoursSaved * rate);
+    const annualSavings = monthlySavings * 12;
+    const efficiencyGain = Math.round(ticketReduction * 100);
+
+    const elTickets = document.getElementById('roi-result-tickets');
+    const elHours = document.getElementById('roi-result-hours');
+    const elSavings = document.getElementById('roi-result-savings');
+    const elAnnual = document.getElementById('roi-result-annual');
+
+    if (elTickets) elTickets.textContent = ticketsReduced.toLocaleString();
+    if (elHours) elHours.textContent = hoursSaved.toLocaleString() + ' hrs';
+    if (elSavings) elSavings.textContent = '$' + monthlySavings.toLocaleString();
+    if (elAnnual) elAnnual.textContent = '$' + annualSavings.toLocaleString();
+  }
