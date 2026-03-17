@@ -299,3 +299,53 @@
     if (elSavings) elSavings.textContent = '$' + monthlySavings.toLocaleString();
     if (elAnnual) elAnnual.textContent = '$' + annualSavings.toLocaleString();
   }
+
+// ---- Cookie Consent (GDPR/CCPA Compliant) ----
+(function() {
+  'use strict';
+
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  function setCookie(name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  function showBanner() {
+    var banner = document.querySelector('.cookie-banner');
+    if (banner) banner.classList.add('is-visible');
+  }
+
+  function hideBanner() {
+    var banner = document.querySelector('.cookie-banner');
+    if (banner) banner.classList.remove('is-visible');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var existingConsent = getCookie('devopsai_consent');
+    if (!existingConsent) {
+      setTimeout(showBanner, 1500);
+    }
+
+    var acceptBtn = document.querySelector('.cookie-btn--accept');
+    var rejectBtn = document.querySelector('.cookie-btn--reject');
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        setCookie('devopsai_consent', 'accepted', 365);
+        hideBanner();
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        setCookie('devopsai_consent', 'rejected', 365);
+        hideBanner();
+      });
+    }
+  });
+})();

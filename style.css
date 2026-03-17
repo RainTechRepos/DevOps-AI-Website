@@ -2348,3 +2348,344 @@ a.zone-card:hover {
 }
 
 
+
+/* ========================================
+   NEW COMPONENTS — Website Restructure
+   ======================================== */
+
+/* ---- HITL Gate Level Badges ---- */
+.hitl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.hitl-badge--l0 { background: rgba(139,219,2,0.15); color: #79C600; }
+.hitl-badge--l1 { background: rgba(32,186,231,0.15); color: #20BAE7; }
+.hitl-badge--l2 { background: rgba(217,119,6,0.15); color: #D97706; }
+.hitl-badge--l3 { background: rgba(220,38,38,0.15); color: #DC2626; }
+
+[data-theme="light"] .hitl-badge--l0 { background: rgba(121,198,0,0.12); color: #4d7a00; }
+[data-theme="light"] .hitl-badge--l1 { background: rgba(32,186,231,0.12); color: #0a7a9e; }
+[data-theme="light"] .hitl-badge--l2 { background: rgba(217,119,6,0.12); color: #92510a; }
+[data-theme="light"] .hitl-badge--l3 { background: rgba(220,38,38,0.12); color: #991b1b; }
+
+/* ---- HITL Legend ---- */
+.hitl-legend {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+.hitl-legend h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+.hitl-legend > p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+}
+.hitl-legend__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.hitl-legend__item {
+  padding: var(--space-3);
+}
+.hitl-legend__item p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+/* ---- Cookie Consent Banner ---- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-default);
+  padding: var(--space-4) var(--space-6);
+  display: none;
+  backdrop-filter: blur(20px);
+}
+.cookie-banner.is-visible {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.cookie-banner__text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+.cookie-banner__text a { color: var(--accent); text-decoration: underline; }
+.cookie-banner__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+.cookie-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border-default);
+  transition: all 0.2s;
+}
+.cookie-btn--accept {
+  background: var(--accent);
+  color: #001647;
+  border-color: var(--accent);
+}
+.cookie-btn--accept:hover { opacity: 0.9; }
+.cookie-btn--reject {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.cookie-btn--reject:hover { background: var(--bg-card-hover); }
+
+/* ---- Zone Page Header ---- */
+.zone-page-header {
+  position: relative;
+  padding: var(--space-32) 0 var(--space-12);
+  overflow: hidden;
+}
+.zone-page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.06;
+  background: radial-gradient(ellipse at 30% 50%, var(--zone-accent, var(--accent)), transparent 70%);
+}
+.zone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--zone-accent, var(--accent));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+.zone-page-header h1 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+.zone-description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ---- Process Area Cards ---- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+.process-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: background var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+.process-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+.process-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.process-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.process-card__body {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.process-card__steps { margin-top: var(--space-4); }
+.process-card__step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border-default);
+}
+.process-card__step-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 720px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .process-card__header { flex-direction: column; gap: var(--space-2); }
+}
+
+/* ---- Role Page Hero ---- */
+.role-hero {
+  padding: var(--space-32) 0 var(--space-12);
+  position: relative;
+}
+.role-title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.role-tagline {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+  max-width: 640px;
+  line-height: 1.6;
+}
+.role-zones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.role-zone-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.role-zone-tag:hover {
+  background: var(--bg-card-hover);
+}
+
+/* ---- Journey Sections (Role Pages) ---- */
+.journey-section { padding: var(--space-12) 0; }
+.journey-section + .journey-section { border-top: 1px solid var(--border-default); }
+.journey-phase { margin-bottom: var(--space-8); }
+.journey-phase__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+.journey-phase__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+.journey-phase h3 a {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.journey-phase h3 a:hover { opacity: 0.8; }
+
+/* ---- Cross-Link Components ---- */
+.crosslink-section { padding: var(--space-8) 0; }
+.crosslink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+.crosslink-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+}
+.crosslink-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+.crosslink-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Breadcrumb Navigation ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+.breadcrumb-sep {
+  color: var(--text-muted, rgba(255,255,255,0.3));
+  font-size: 11px;
+}
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Process card as link (zone pages) ── */
+a.process-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.process-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
