@@ -2843,3 +2843,345 @@ a.process-card:hover {
     background: var(--primary-green, #79C600);
   }
 }
+
+/* ===================================================
+   WORKFLOW GALLERY (replaces connector tags section)
+   =================================================== */
+
+.wf-gallery {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.wf-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.wf-category__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  flex-wrap: wrap;
+}
+
+.wf-category__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.wf-category__tag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+  padding: 3px 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--radius-full);
+}
+
+.wf-category__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+}
+
+.wf-screenshot {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  transition: border-color var(--duration-normal);
+}
+
+.wf-screenshot:hover {
+  border-color: var(--border-strong);
+}
+
+.wf-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wf-screenshot figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-default);
+  line-height: 1.4;
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE — Platform Zone Entries
+   =================================================== */
+
+@media (max-width: 768px) {
+  .zone-entry__header {
+    padding: var(--space-4) var(--space-5) 0;
+  }
+
+  .zone-entry__body {
+    padding: var(--space-4) var(--space-5) var(--space-5);
+  }
+
+  .zone-entry__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-pa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-screenshots {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-category__grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+
+  .wf-category__header {
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===================================================
+   PLATFORM PAGE — Zone Tile Enhancements
+   =================================================== */
+
+.zone-card .zt-meta {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.zt-pa-count {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.zone-icon__emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ===================================================
+   ROLE PAGES — Zone Card Grid with Expandable
+   =================================================== */
+
+.role-zone-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+  gap: var(--space-5);
+}
+
+.role-zone-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.role-zone-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--zone-accent, var(--accent));
+  opacity: 0.6;
+  transition: opacity var(--duration-normal);
+}
+
+.role-zone-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.role-zone-card:hover::before {
+  opacity: 1;
+}
+
+/* Hidden cards (expandable) */
+.role-zone-card.rzc--hidden {
+  display: none;
+}
+.role-zone-grid.is-expanded .role-zone-card.rzc--hidden {
+  display: block;
+}
+
+/* Card header */
+.rzc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--zone-accent, var(--text-primary));
+  margin-bottom: var(--space-2);
+  transition: color var(--duration-fast);
+}
+
+.rzc-header:hover {
+  color: var(--zone-accent, var(--accent));
+}
+
+.rzc-header:hover .rzc-arrow {
+  transform: translateX(3px);
+}
+
+.rzc-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.rzc-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  flex: 1;
+}
+
+.rzc-arrow {
+  opacity: 0.5;
+  transition: all var(--duration-fast);
+}
+
+.rzc-tagline {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+/* Process area list */
+.rzc-pa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rzc-pa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast);
+}
+
+.rzc-pa:hover {
+  background: var(--bg-secondary);
+}
+
+.rzc-pa__name {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* View all link */
+.rzc-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: var(--space-3);
+  padding: var(--space-2) 0;
+  transition: opacity var(--duration-fast);
+}
+
+.rzc-view-all:hover {
+  opacity: 0.8;
+}
+
+.rzc-view-all svg {
+  transition: transform var(--duration-fast);
+}
+
+.rzc-view-all:hover svg {
+  transform: translateX(3px);
+}
+
+/* Expand button */
+.rzc-expand-wrap {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-2);
+}
+
+.role-zone-grid.is-expanded .rzc-expand-wrap {
+  padding-top: var(--space-4);
+}
+
+.rzc-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-family: inherit;
+}
+
+.rzc-expand-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.rzc-expand-chevron {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.role-zone-grid.is-expanded .rzc-expand-chevron {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .role-zone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rzc-pa {
+    padding: var(--space-2);
+  }
+
+  .rzc-pa__name {
+    font-size: 13px;
+  }
+}

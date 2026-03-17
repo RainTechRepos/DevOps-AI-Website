@@ -121,19 +121,19 @@
   transition: background 0.15s ease;
 }
 .pa-lightbox-link:hover { background: #8BDB02; }
-/* Make steps clickable */
-.process-card__step.has-preview {
-  cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;
-  border-radius: 6px; padding: 8px 12px; margin: -8px -12px;
+/* Make rzc-pa items clickable */
+li.rzc-pa.has-preview {
+  cursor: pointer; transition: background 0.15s ease;
+  border-radius: 6px;
 }
-.process-card__step.has-preview:hover {
-  background: rgba(121, 198, 0, 0.06);
+li.rzc-pa.has-preview:hover {
+  background: rgba(121, 198, 0, 0.08);
 }
-.process-card__step.has-preview .process-card__step-name::after {
-  content: "🔍"; font-size: 11px; margin-left: 6px; opacity: 0.4;
+li.rzc-pa.has-preview .rzc-pa__name::after {
+  content: "\1F50D"; font-size: 10px; margin-left: 6px; opacity: 0.35;
   transition: opacity 0.15s ease;
 }
-.process-card__step.has-preview:hover .process-card__step-name::after {
+li.rzc-pa.has-preview:hover .rzc-pa__name::after {
   opacity: 1;
 }
 </style>
@@ -301,90 +301,125 @@
       <div class="section-header fade-up">
         <span class="section-label">Your Zones</span>
         <h2>Primary Operational Zones</h2>
-        <p>These are the zones where you spend most of your time as HR Director.</p>
+        <p>These are the zones where you spend most of your time. Each process area links to its full deep-dive.</p>
       </div>
-      
-    <div class="journey-phase fade-up">
-      <h3><a href="../zones/people.html" style="color: #8B5CF6">👥 People</a></h3>
-      <p class="journey-phase__desc">People management with onboarding automation, access lifecycle, and workforce analytics</p>
-      <div class="process-card" style="--zone-accent: #8B5CF6">
-        <div class="process-card__steps">
-              <div class="process-card__step has-preview" data-pa-name="Employee Onboarding Automation" data-pa-img="../assets/screenshots/employee-onboarding.png" data-pa-url="../zones/people/process-areas/employee-onboarding-automation.html">
-                <span class="process-card__step-name">Employee Onboarding Automation</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Access Lifecycle Management" data-pa-img="../assets/screenshots/access-lifecycle.png" data-pa-url="../zones/people/process-areas/access-lifecycle-management.html">
-                <span class="process-card__step-name">Access Lifecycle Management</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Offboarding & Access Revocation" data-pa-img="../assets/screenshots/offboarding-revocation.png" data-pa-url="../zones/people/process-areas/offboarding-access-revocation.html">
-                <span class="process-card__step-name">Offboarding & Access Revocation</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Workforce Analytics" data-pa-img="../assets/screenshots/workforce-analytics.png" data-pa-url="../zones/people/process-areas/workforce-analytics.html">
-                <span class="process-card__step-name">Workforce Analytics</span>
-                <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
-              </div>
-        </div>
-        <div style="margin-top: var(--space-4)">
-          <a href="../zones/people.html" class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">View All People Process Areas →</a>
-        </div>
+      <div class="role-zone-grid">
+      <div class="role-zone-card fade-up" style="--zone-accent: #B45309">
+            <a href="../zones/people.html" class="rzc-header">
+              <span class="rzc-icon">👥</span>
+              <span class="rzc-name">People</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">Employee lifecycle, recruitment pipeline, performance management, and payroll integration</p>
+            <ul class="rzc-pa-list">
+                <li class="rzc-pa">
+                  <span class="rzc-pa__name">Employee Lifecycle Management</span>
+                  <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2</span>
+                </li>
+                <li class="rzc-pa">
+                  <span class="rzc-pa__name">Recruitment Pipeline</span>
+                  <span class="hitl-badge hitl-badge--l1" title="Notify">L1</span>
+                </li>
+                <li class="rzc-pa">
+                  <span class="rzc-pa__name">Performance Management</span>
+                  <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2</span>
+                </li>
+                <li class="rzc-pa">
+                  <span class="rzc-pa__name">Payroll Integration</span>
+                  <span class="hitl-badge hitl-badge--l1" title="Notify">L1</span>
+                </li>
+            </ul>
+            <a href="../zones/people.html" class="rzc-view-all">View all 8 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="role-zone-card fade-up" style="--zone-accent: #1F2937">
+            <a href="../zones/organization.html" class="rzc-header">
+              <span class="rzc-icon">🏢</span>
+              <span class="rzc-name">Organization</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">Department hierarchy, multi-tenant admin, and white-label branding</p>
+            <ul class="rzc-pa-list">
+                <li class="rzc-pa has-preview" data-pa-name="Department Hierarchy Management" data-pa-img="../assets/screenshots/dept-hierarchy.png" data-pa-url="../zones/organization/process-areas/department-hierarchy-management.html">
+                  <span class="rzc-pa__name">Department Hierarchy Management</span>
+                  <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2</span>
+                </li>
+                <li class="rzc-pa has-preview" data-pa-name="Cost Center Management" data-pa-img="../assets/screenshots/cost-center-mgmt.png" data-pa-url="../zones/organization/process-areas/cost-center-management.html">
+                  <span class="rzc-pa__name">Cost Center Management</span>
+                  <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2</span>
+                </li>
+                <li class="rzc-pa has-preview" data-pa-name="Organizational Policy Framework" data-pa-img="../assets/screenshots/org-policy.png" data-pa-url="../zones/organization/process-areas/organizational-policy-framework.html">
+                  <span class="rzc-pa__name">Organizational Policy Framework</span>
+                  <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2</span>
+                </li>
+            </ul>
+            <a href="../zones/organization.html" class="rzc-view-all">View all 6 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="role-zone-card fade-up" style="--zone-accent: #0D9488">
+            <a href="../zones/learning.html" class="rzc-header">
+              <span class="rzc-icon">🎓</span>
+              <span class="rzc-name">Learning</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">LMS engine, AI tutoring, certification tracking, and skill gap analysis</p>
+            <ul class="rzc-pa-list">
+                <li class="rzc-pa has-preview" data-pa-name="LMS Engine" data-pa-img="../assets/screenshots/lms-engine.png" data-pa-url="../zones/learning/process-areas/lms-engine.html">
+                  <span class="rzc-pa__name">LMS Engine</span>
+                  <span class="hitl-badge hitl-badge--l1" title="Notify">L1</span>
+                </li>
+                <li class="rzc-pa has-preview" data-pa-name="Compliance Training" data-pa-img="../assets/screenshots/compliance-training.png" data-pa-url="../zones/learning/process-areas/compliance-training.html">
+                  <span class="rzc-pa__name">Compliance Training</span>
+                  <span class="hitl-badge hitl-badge--l1" title="Notify">L1</span>
+                </li>
+                <li class="rzc-pa has-preview" data-pa-name="Onboarding Journeys" data-pa-img="../assets/screenshots/onboarding-journeys.png" data-pa-url="../zones/learning/process-areas/onboarding-journeys.html">
+                  <span class="rzc-pa__name">Onboarding Journeys</span>
+                  <span class="hitl-badge hitl-badge--l1" title="Notify">L1</span>
+                </li>
+            </ul>
+            <a href="../zones/learning.html" class="rzc-view-all">View all 8 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="role-zone-card fade-up rzc--hidden" style="--zone-accent: #059669">
+            <a href="../zones/accounting.html" class="rzc-header">
+              <span class="rzc-icon">📊</span>
+              <span class="rzc-name">Accounting</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">Automated invoice ingestion, three-way reconciliation, and revenue recognition</p>
+            <ul class="rzc-pa-list">
+
+            </ul>
+            <a href="../zones/accounting.html" class="rzc-view-all">View all 8 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="role-zone-card fade-up rzc--hidden" style="--zone-accent: #991B1B">
+            <a href="../zones/legal.html" class="rzc-header">
+              <span class="rzc-icon">⚖️</span>
+              <span class="rzc-name">Legal</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">Contract lifecycle, NDA management, regulatory tracking, and IP management</p>
+            <ul class="rzc-pa-list">
+
+            </ul>
+            <a href="../zones/legal.html" class="rzc-view-all">View all 6 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="role-zone-card fade-up rzc--hidden" style="--zone-accent: #D97706">
+            <a href="../zones/grc-compliance.html" class="rzc-header">
+              <span class="rzc-icon">⚖️</span>
+              <span class="rzc-name">GRC & Compliance</span>
+              <svg class="rzc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="rzc-tagline">OSCAL-native evidence, CMMC SSP builder, gap analysis, and continuous compliance monitoring</p>
+            <ul class="rzc-pa-list">
+
+            </ul>
+            <a href="../zones/grc-compliance.html" class="rzc-view-all">View all 8 process areas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+      <div class="rzc-expand-wrap fade-up">
+        <button class="rzc-expand-btn" data-expanded="false" onclick="this.dataset.expanded = this.dataset.expanded === 'false' ? 'true' : 'false'; this.closest('.role-zone-grid').classList.toggle('is-expanded'); this.querySelector('.rzc-expand-label').textContent = this.dataset.expanded === 'true' ? 'Show fewer zones' : 'Show 3 more zone' + (3 > 1 ? 's' : '');">
+          <span class="rzc-expand-label">Show 3 more zones</span>
+          <svg class="rzc-expand-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
-    </div>
-    <div class="journey-phase fade-up">
-      <h3><a href="../zones/organization.html" style="color: #1F2937">🏢 Organization</a></h3>
-      <p class="journey-phase__desc">Organizational structure management, department hierarchy, and multi-tenant administration</p>
-      <div class="process-card" style="--zone-accent: #1F2937">
-        <div class="process-card__steps">
-              <div class="process-card__step has-preview" data-pa-name="Department Hierarchy Management" data-pa-img="../assets/screenshots/dept-hierarchy.png" data-pa-url="../zones/organization/process-areas/department-hierarchy-management.html">
-                <span class="process-card__step-name">Department Hierarchy Management</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Multi-Tenant Administration" data-pa-img="../assets/screenshots/multi-tenant-admin.png" data-pa-url="../zones/organization/process-areas/multi-tenant-administration.html">
-                <span class="process-card__step-name">Multi-Tenant Administration</span>
-                <span class="hitl-badge hitl-badge--l3" title="Human Only">L3 — Human Only</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Cost Center Management" data-pa-img="../assets/screenshots/cost-center-mgmt.png" data-pa-url="../zones/organization/process-areas/cost-center-management.html">
-                <span class="process-card__step-name">Cost Center Management</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Location & Site Management" data-pa-img="../assets/screenshots/location-mgmt.png" data-pa-url="../zones/organization/process-areas/location-site-management.html">
-                <span class="process-card__step-name">Location & Site Management</span>
-                <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
-              </div>
-        </div>
-        <div style="margin-top: var(--space-4)">
-          <a href="../zones/organization.html" class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">View All Organization Process Areas →</a>
-        </div>
       </div>
-    </div>
-    <div class="journey-phase fade-up">
-      <h3><a href="../zones/learning.html" style="color: #0D9488">🎓 Learning</a></h3>
-      <p class="journey-phase__desc">Continuous learning platform with AI tutoring, certification tracking, and knowledge management</p>
-      <div class="process-card" style="--zone-accent: #0D9488">
-        <div class="process-card__steps">
-              <div class="process-card__step has-preview" data-pa-name="LMS Engine" data-pa-img="../assets/screenshots/lms-engine.png" data-pa-url="../zones/learning/process-areas/lms-engine.html">
-                <span class="process-card__step-name">LMS Engine</span>
-                <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="AI Tutoring" data-pa-img="../assets/screenshots/ai-tutoring.png" data-pa-url="../zones/learning/process-areas/ai-tutoring.html">
-                <span class="process-card__step-name">AI Tutoring</span>
-                <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Certification Tracking" data-pa-img="../assets/screenshots/cert-tracking.png" data-pa-url="../zones/learning/process-areas/certification-tracking.html">
-                <span class="process-card__step-name">Certification Tracking</span>
-                <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
-              </div>
-              <div class="process-card__step has-preview" data-pa-name="Knowledge Store" data-pa-img="../assets/screenshots/knowledge-store.png" data-pa-url="../zones/learning/process-areas/knowledge-store.html">
-                <span class="process-card__step-name">Knowledge Store</span>
-                <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
-              </div>
-        </div>
-        <div style="margin-top: var(--space-4)">
-          <a href="../zones/learning.html" class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">View All Learning Process Areas →</a>
-        </div>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -487,7 +522,7 @@
       <img id="paLightboxImg" src="" alt="" loading="lazy">
     </div>
     <div class="pa-lightbox-footer">
-      <a class="pa-lightbox-link" id="paLightboxLink" href="#">Explore this Process Area →</a>
+      <a class="pa-lightbox-link" id="paLightboxLink" href="#">Explore this Process Area &rarr;</a>
     </div>
   </div>
 </div>
@@ -528,9 +563,8 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Attach to all preview steps
-  document.querySelectorAll('.process-card__step.has-preview').forEach(function(step) {
-    step.addEventListener('click', function() {
+  document.querySelectorAll('li.rzc-pa.has-preview').forEach(function(li) {
+    li.addEventListener('click', function() {
       openLightbox(
         this.getAttribute('data-pa-name'),
         this.getAttribute('data-pa-img'),
