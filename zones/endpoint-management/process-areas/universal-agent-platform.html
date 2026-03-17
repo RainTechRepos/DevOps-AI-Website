@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Agent Platform — Endpoint Management | DevOps AI by RainTech</title>
+<meta name="description" content="Unified agent management layer that normalizes telemetry and control across multiple RMM agents (NinjaRMM, Datto RMM, ConnectWise Automate) — providing a single pane of glass for multi-vendor endpoint fleets.">
+<link rel="canonical" href="https://devops.ai.rain.tech/zones/endpoint-management/process-areas/universal-agent-platform.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Universal Agent Platform — Endpoint Management — DevOps AI">
+<meta property="og:description" content="Unified agent management layer that normalizes telemetry and control across multiple RMM agents (NinjaRMM, Datto RMM, ConnectWise Automate) — providing a single pane of glass for multi-vendor endpoint fleets.">
+<meta property="og:url" content="https://devops.ai.rain.tech/zones/endpoint-management/process-areas/universal-agent-platform.html">
+<meta property="og:site_name" content="DevOps AI by RainTech">
+
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../base.css">
+<link rel="stylesheet" href="../../../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "RainTech",
+      "url": "https://devops.ai.rain.tech",
+      "logo": "../../../assets/logo-powered-by.png"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Universal Agent Platform \u2014 Endpoint Management \u2014 DevOps AI",
+      "url": "https://devops.ai.rain.tech/zones/endpoint-management/process-areas/universal-agent-platform.html",
+      "description": "Unified agent management layer that normalizes telemetry and control across multiple RMM agents (NinjaRMM, Datto RMM, ConnectWise Automate) \u2014 providing a single pane of glass for multi-vendor endpoint fleets.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://devops.ai.rain.tech/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Platform",
+            "item": "https://devops.ai.rain.tech/platform.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Endpoint Management",
+            "item": "https://devops.ai.rain.tech/zones/endpoint-management.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Universal Agent Platform"
+          }
+        ]
+      },
+      "creator": {
+        "@type": "SoftwareApplication",
+        "name": "Perplexity Computer",
+        "url": "https://www.perplexity.ai/computer"
+      }
+    }
+  ]
+}
+</script>
+  <link rel="stylesheet" href="../../../personalization.css">
+  <link rel="stylesheet" href="../../../enhancements.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+<div class="nav-overlay" aria-hidden="true"></div>
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="../../../index.html" class="header-logo" aria-label="DevOps AI Home">
+      <img src="../../../assets/logo-powered-by.png" alt="DevOps AI — Powered by RainTech" width="200" height="40">
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="../../../platform.html" class="nav-link">Platform <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="mega-menu mega-menu--wide">
+          <div class="mega-menu-grid">
+            <div>
+              <div class="mega-menu-section">
+                <div class="mega-menu-label">Overview</div>
+                <a href="../../../platform.html" class="mega-menu-link"><span class="link-text"><strong>Platform Overview</strong><span>17-zone AI-orchestrated control plane</span></span></a>
+                <a href="../../../why-devops-ai.html" class="mega-menu-link"><span class="link-text"><strong>Why DevOps AI</strong><span>Compare to traditional MSP tools</span></span></a>
+                <a href="../../../architecture.html" class="mega-menu-link"><span class="link-text"><strong>Architecture</strong><span>Zero-trust, Azure-native design</span></span></a>
+              </div>
+              <div class="mega-menu-section">
+                <div class="mega-menu-label">Operations</div>
+                <div class="mega-zone-grid">
+                  <a href="../../../zones/service-desk.html" class="mega-zone-link"><span class="mzl-icon">🎫</span> Service Desk</a>
+                    <a href="../../../zones/projects.html" class="mega-zone-link"><span class="mzl-icon">📋</span> Projects</a>
+                    <a href="../../../zones/network-ops.html" class="mega-zone-link"><span class="mzl-icon">🌐</span> Network Ops</a>
+                    <a href="../../../zones/endpoint-management.html" class="mega-zone-link"><span class="mzl-icon">💻</span> Endpoints</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mega-menu-section">
+                <div class="mega-menu-label">Security &amp; Compliance</div>
+                <div class="mega-zone-grid">
+                  <a href="../../../zones/security-operations.html" class="mega-zone-link"><span class="mzl-icon">🛡️</span> Security Ops</a>
+                    <a href="../../../zones/grc-compliance.html" class="mega-zone-link"><span class="mzl-icon">⚖️</span> GRC</a>
+                </div>
+              </div>
+              <div class="mega-menu-section">
+                <div class="mega-menu-label">Business</div>
+                <div class="mega-zone-grid">
+                  <a href="../../../zones/accounting.html" class="mega-zone-link"><span class="mzl-icon">📊</span> Accounting</a>
+                    <a href="../../../zones/relationships.html" class="mega-zone-link"><span class="mzl-icon">🤝</span> Relationships</a>
+                    <a href="../../../zones/vc-suite.html" class="mega-zone-link"><span class="mzl-icon">🧭</span> vC-Suite</a>
+                    <a href="../../../zones/analytics.html" class="mega-zone-link"><span class="mzl-icon">📈</span> Analytics</a>
+                </div>
+              </div>
+              <div class="mega-menu-section">
+                <div class="mega-menu-label">Platform</div>
+                <div class="mega-zone-grid">
+                  <a href="../../../zones/devops.html" class="mega-zone-link"><span class="mzl-icon">⚙️</span> DevOps</a>
+                    <a href="../../../zones/learning.html" class="mega-zone-link"><span class="mzl-icon">🎓</span> Learning</a>
+                    <a href="../../../zones/organization.html" class="mega-zone-link"><span class="mzl-icon">🏢</span> Organization</a>
+                    <a href="../../../zones/people.html" class="mega-zone-link"><span class="mzl-icon">👥</span> People</a>
+                    <a href="../../../zones/legal.html" class="mega-zone-link"><span class="mzl-icon">⚖️</span> Legal</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="../../../solutions.html" class="nav-link">Solutions <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="mega-menu">
+          <a href="../../../solutions.html#healthcare" class="mega-menu-link"><span class="link-text"><strong>Healthcare &amp; HIPAA</strong><span>HIPAA-ready managed services</span></span></a>
+          <a href="../../../solutions.html#defense" class="mega-menu-link"><span class="link-text"><strong>Defense &amp; CMMC</strong><span>CMMC Level 2 compliance</span></span></a>
+          <a href="../../../solutions.html#financial" class="mega-menu-link"><span class="link-text"><strong>Financial Services</strong><span>SOC 2 &amp; regulatory compliance</span></span></a>
+          <a href="../../../solutions.html#compliance" class="mega-menu-link"><span class="link-text"><strong>General Compliance</strong><span>GDPR, ISO 27001, and more</span></span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="../../../roles/index.html" class="nav-link">For Your Role <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="mega-menu mega-menu--wide mega-menu--roles">
+          <div class="mega-menu-grid">
+            <div>
+              <a href="../../../roles/msp-owner.html" class="mega-menu-link"><span class="link-text"><strong>MSP Owner / CEO</strong><span>Scale without adding headcount — unified executive dashboard...</span></span></a><a href="../../../roles/vcio.html" class="mega-menu-link"><span class="link-text"><strong>vCIO</strong><span>QBR prep drops from 4-8 hours to 20-30 minutes with AI-orche...</span></span></a><a href="../../../roles/vciso.html" class="mega-menu-link"><span class="link-text"><strong>vCISO <span style="font-size:10px;color:var(--accent);font-weight:700">NEW</span></strong><span>AI-powered security program leadership — risk management, co...</span></span></a><a href="../../../roles/security-analyst.html" class="mega-menu-link"><span class="link-text"><strong>Security Analyst</strong><span>Unified SOC command center — 70-90% of Tier-1 alerts auto-tr...</span></span></a><a href="../../../roles/service-desk-manager.html" class="mega-menu-link"><span class="link-text"><strong>Service Desk Manager</strong><span>Predictive SLA management prevents breaches — cross-client p...</span></span></a><a href="../../../roles/compliance-officer.html" class="mega-menu-link"><span class="link-text"><strong>Compliance Officer</strong><span>Collect evidence once, satisfy SOC 2 + CMMC + HIPAA + ISO 27...</span></span></a><a href="../../../roles/project-manager.html" class="mega-menu-link"><span class="link-text"><strong>Project Manager</strong><span>AI risk scoring for every RFC — migration command center wit...</span></span></a>
+            </div>
+            <div>
+              <a href="../../../roles/network-engineer.html" class="mega-menu-link"><span class="link-text"><strong>Network Engineer</strong><span>Live topology, SLO-based monitoring, ring-based patching, an...</span></span></a><a href="../../../roles/account-manager.html" class="mega-menu-link"><span class="link-text"><strong>Account Manager</strong><span>Unified client record with pipeline, billing, health scoring...</span></span></a><a href="../../../roles/finance-coordinator.html" class="mega-menu-link"><span class="link-text"><strong>Finance Coordinator</strong><span>Three-way reconciliation automated — 85% faster billing, cap...</span></span></a><a href="../../../roles/it-director.html" class="mega-menu-link"><span class="link-text"><strong>IT Director</strong><span>Client portal with real-time visibility — tickets, complianc...</span></span></a><a href="../../../roles/hr-director.html" class="mega-menu-link"><span class="link-text"><strong>HR Director <span style="font-size:10px;color:var(--accent);font-weight:700">NEW</span></strong><span>Automated onboarding and offboarding with access lifecycle m...</span></span></a><a href="../../../roles/recruiter.html" class="mega-menu-link"><span class="link-text"><strong>Recruiter <span style="font-size:10px;color:var(--accent);font-weight:700">NEW</span></strong><span>Streamlined candidate-to-employee pipeline with automated pr...</span></span></a><a href="../../../roles/vcco.html" class="mega-menu-link"><span class="link-text"><strong>vCCO <span style="font-size:10px;color:var(--accent);font-weight:700">NEW</span></strong><span>Virtual Chief Compliance Officer — regulatory landscape moni...</span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../../../security.html" class="nav-link">Security</a>
+      <a href="../../../marketplace.html" class="nav-link">Marketplace</a>
+      <div class="nav-item">
+        <a href="../../../about.html" class="nav-link">About <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="mega-menu">
+          <a href="../../../about.html" class="mega-menu-link"><span class="link-text"><strong>About RainTech</strong><span>Our mission and values</span></span></a>
+          <a href="../../../contact.html" class="mega-menu-link"><span class="link-text"><strong>Contact</strong><span>Get in touch with our team</span></span></a>
+          <a href="../../../roi.html" class="mega-menu-link"><span class="link-text"><strong>ROI Calculator</strong><span>Calculate your potential savings</span></span></a>
+        </div>
+      </div>
+      <a href="../../../marketplace.html" class="nav-cta">Get Started
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10m-4-4 4 4-4 4"/></svg>
+      </a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle light/dark mode" type="button">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" type="button">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- PA Hero -->
+  <section class="zone-page-header" style="--zone-accent: #7C3AED;" aria-label="Universal Agent Platform overview">
+    <div class="container">
+      <nav class="breadcrumb fade-up" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="../../../zones/endpoint-management.html">💻 Endpoint Management</a>
+        <span class="breadcrumb-sep">/</span>
+        <span aria-current="page">Universal Agent Platform</span>
+      </nav>
+      <div class="zone-badge fade-up">
+        <span>💻</span>
+        <span>Zone 06 — Process Area</span>
+      </div>
+      <h1 class="fade-up">Universal Agent Platform</h1>
+      <div class="fade-up" style="margin-top: var(--space-3);">
+        <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+      </div>
+      <p class="zone-description fade-up">Unified agent management layer that normalizes telemetry and control across multiple RMM agents (NinjaRMM, Datto RMM, ConnectWise Automate) — providing a single pane of glass for multi-vendor endpoint fleets.</p>
+    </div>
+  </section>
+
+  
+      <section class="section" aria-label="Overview">
+        <div class="container container--narrow">
+          <div class="fade-up" style="color: var(--text-secondary); line-height: 1.8;">
+            <p>Unified agent management layer that normalizes telemetry and control across multiple RMM agents (NinjaRMM, Datto RMM, ConnectWise Automate) — providing a single pane of glass for multi-vendor endpoint fleets.</p>
+            <p>Within the Endpoint Management zone, Universal Agent Platform represents a critical operational capability that DevOps AI 
+            delivers through its unified platform. This process area operates at HITL Gate Level L1 (Notify), 
+            meaning AI executes and notifies the assigned human for review — ensuring visibility while maintaining automation speed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="How it works" style="background: var(--bg-secondary);">
+        <div class="container container--narrow">
+          <div class="section-header fade-up">
+            <span class="section-label">How It Works</span>
+            <h2>Universal Agent Platform in Practice</h2>
+          </div>
+          <figure class="screenshot-showcase fade-up">
+            <img src="../../../assets/screenshots/endpoint-universal-agent.png" alt="Universal agent platform — multi-vendor RMM normalization and single-pane fleet management" loading="lazy" width="1600" height="900">
+            <figcaption>Universal agent platform — multi-vendor RMM normalization and single-pane fleet management</figcaption>
+          </figure>
+          <div class="fade-up" style="color: var(--text-secondary); line-height: 1.8;">
+            <p>DevOps AI implements Universal Agent Platform as a fully integrated workflow within the Endpoint Management zone. 
+            When deployed from the Azure Marketplace, this process area is automatically provisioned with 
+            role-appropriate dashboards, notification rules, and automation policies tailored to your MSP's 
+            operational requirements.</p>
+            
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Workflow Architecture</h3>
+            <p>The Universal Agent Platform workflow follows DevOps AI's standard event-driven architecture. Events are 
+            ingested through the platform's connector framework — pulling data from PSA tools (ConnectWise, 
+            Datto Autotask, HaloPSA), RMM platforms (NinjaRMM, Datto RMM), and Microsoft 365 tenants — then 
+            processed through the AI inference pipeline before reaching the L1 gate for automated execution.</p>
+
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Multi-Tenant Isolation</h3>
+            <p>Every operation within Universal Agent Platform respects DevOps AI's zero-trust multi-tenant architecture. 
+            Client data is isolated at the Azure tenant level, encrypted at rest with customer-managed keys, 
+            and processed within geo-fenced compute boundaries. No cross-client data leakage is possible — 
+            even AI models are trained on anonymized, aggregated patterns rather than raw client data.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="HITL details">
+        <div class="container container--narrow">
+          <div class="section-header fade-up">
+            <span class="section-label">Human-in-the-Loop</span>
+            <h2>Gate Level L1: Notify</h2>
+          </div>
+          <div class="fade-up" style="color: var(--text-secondary); line-height: 1.8;">
+            <p>Universal Agent Platform is classified at HITL Gate Level L1, which defines exactly when AI acts 
+            autonomously and when human judgment is required. This classification was determined through 
+            risk analysis of the process area's blast radius, reversibility, and compliance implications.</p>
+            
+            <div class="hitl-legend" style="margin: var(--space-6) 0;">
+              <div class="hitl-legend__grid">
+                <div class="hitl-legend__item" style="opacity: 0.5;">
+                  <span class="hitl-badge hitl-badge--l0">L0 — Fully Automated</span>
+                  <p>AI executes autonomously with full logging. No human approval needed.</p>
+                </div>
+                <div class="hitl-legend__item" style="border-left: 3px solid var(--accent);">
+                  <span class="hitl-badge hitl-badge--l1">L1 — Notify</span>
+                  <p>AI executes and notifies the assigned human for review.</p>
+                </div>
+                <div class="hitl-legend__item" style="opacity: 0.5;">
+                  <span class="hitl-badge hitl-badge--l2">L2 — Approve to Proceed</span>
+                  <p>AI prepares and recommends; human must approve before execution.</p>
+                </div>
+                <div class="hitl-legend__item" style="opacity: 0.5;">
+                  <span class="hitl-badge hitl-badge--l3">L3 — Human Only</span>
+                  <p>Humans perform the action with AI decision support only.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Why L1?</h3>
+            <p>Agent telemetry normalization and health monitoring are fully automated. Technicians are notified when agent health degrades or communication gaps are detected across the managed fleet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Integration" style="background: var(--bg-secondary);">
+        <div class="container container--narrow">
+          <div class="section-header fade-up">
+            <span class="section-label">Integration</span>
+            <h2>Platform Integration</h2>
+          </div>
+          <div class="fade-up" style="color: var(--text-secondary); line-height: 1.8;">
+            <p>Universal Agent Platform does not exist in isolation — it integrates with other process areas across the 
+            Endpoint Management zone and the broader DevOps AI platform through the event mesh architecture. 
+            Actions in this process area can trigger workflows in related zones, and events from other 
+            zones can feed into Universal Agent Platform operations.</p>
+
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Connector Framework</h3>
+            <p>DevOps AI's connector framework provides bi-directional integration with the tools MSPs 
+            already use. For Universal Agent Platform, this typically includes PSA platforms (ConnectWise Manage, 
+            Datto Autotask, HaloPSA), Microsoft Graph API (Azure AD, Intune, Defender), and specialized 
+            third-party tools relevant to Endpoint Management operations. All connectors are managed through the 
+            platform's Marketplace zone — install once, available everywhere.</p>
+
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Analytics & Reporting</h3>
+            <p>Every operation within Universal Agent Platform generates structured telemetry that feeds into the Analytics 
+            zone. Dashboards provide real-time visibility into process area health, throughput, error rates, 
+            and HITL override frequency. Over time, the AI models learn from human overrides to improve 
+            future recommendations — creating a continuous improvement loop that makes Universal Agent Platform more 
+            accurate with every interaction.</p>
+
+            <h3 style="color: var(--text-primary); margin: var(--space-6) 0 var(--space-3);">Audit Trail</h3>
+            <p>Complete audit provenance is maintained for every action within Universal Agent Platform. This includes 
+            the triggering event, AI analysis results, HITL gate decisions (including who approved and when), 
+            execution outcomes, and any rollback actions. Audit data is immutable, tamper-evident, and 
+            exportable in OSCAL format for compliance evidence collection.</p>
+          </div>
+        </div>
+      </section>
+
+  <!-- Sibling PAs -->
+  <section class="section crosslink-section" aria-label="Other process areas in Endpoint Management">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">💻 Endpoint Management</span>
+        <h2>All Process Areas in Endpoint Management</h2>
+        <p>Explore other process areas within the Endpoint Management zone.</p>
+      </div>
+      <div class="crosslink-grid fade-up" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+            <a href="../../../zones/endpoint-management/process-areas/automated-patching.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+              <span style="font-size: 13px;">Automated Patching</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/device-lifecycle-management.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
+              <span style="font-size: 13px;">Device Lifecycle Management</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/dns-filtering.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+              <span style="font-size: 13px;">DNS Filtering</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/endpoint-telemetry-analytics.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
+              <span style="font-size: 13px;">Endpoint Telemetry & Analytics</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/fleet-intelligence.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
+              <span style="font-size: 13px;">Fleet Intelligence</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/infrastructure-monitoring.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
+              <span style="font-size: 13px;">Infrastructure Monitoring</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/intune-management-compliance.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+              <span style="font-size: 13px;">Intune Management & Compliance</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/remote-access-support.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
+              <span style="font-size: 13px;">Remote Access & Support</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/universal-agent-platform.html" class="crosslink-card" style="background: var(--accent); color: #001647; font-weight: 600;">
+              <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+              <span style="font-size: 13px;">Universal Agent Platform</span>
+            </a>
+            <a href="../../../zones/endpoint-management/process-areas/vulnerability-management.html" class="crosslink-card">
+              <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
+              <span style="font-size: 13px;">Vulnerability Management</span>
+            </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Roles -->
+  <section class="section crosslink-section" aria-label="Related roles" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">For Your Role</span>
+        <h2>Who Uses Universal Agent Platform?</h2>
+      </div>
+      <div class="crosslink-grid fade-up">
+          <a href="../../../roles/it-director.html" class="crosslink-card">
+            <span class="crosslink-card__icon">🖥️</span>
+            <span>IT Director</span>
+          </a>
+          <a href="../../../roles/network-engineer.html" class="crosslink-card">
+            <span class="crosslink-card__icon">🌐</span>
+            <span>Network Engineer</span>
+          </a>
+          <a href="../../../roles/msp-owner.html" class="crosslink-card">
+            <span class="crosslink-card__icon">🏢</span>
+            <span>MSP Owner / CEO</span>
+          </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Zones -->
+  <section class="section crosslink-section" aria-label="Related zones">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Connected Zones</span>
+        <h2>Works With</h2>
+      </div>
+      <div class="crosslink-grid fade-up">
+          <a href="../../../zones/network-ops.html" class="crosslink-card">
+            <span class="crosslink-card__icon">🌐</span>
+            <span>Network Operations</span>
+          </a>
+          <a href="../../../zones/security-operations.html" class="crosslink-card">
+            <span class="crosslink-card__icon">🛡️</span>
+            <span>Security Operations</span>
+          </a>
+          <a href="../../../zones/devops.html" class="crosslink-card">
+            <span class="crosslink-card__icon">⚙️</span>
+            <span>DevOps</span>
+          </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-banner fade-up">
+        <h2>See Universal Agent Platform in Action</h2>
+        <p>Deploy DevOps AI from the Azure Marketplace and explore Endpoint Management capabilities — including Universal Agent Platform — in your own environment.</p>
+        <a href="../../../marketplace.html" class="btn btn-dark btn-lg">Get Started on Azure Marketplace</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../../../assets/logo-powered-by.png" alt="DevOps AI — Powered by RainTech" width="180" height="36">
+        <p>3 S Tejon St., Suite 400<br>Colorado Springs, CO 80903</p>
+        <p style="margin-top: var(--space-2);">844.TEL.RAIN</p>
+        <div class="footer-tagline"><span class="ppl-logo" aria-label="People, Period.">People <span class="ppl-strikethrough">First</span>, <span class="ppl-period">PERIOD.</span></span></div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="../../../platform.html">Platform Overview</a>
+        <a href="../../../zones/service-desk.html">Service Desk</a>
+        <a href="../../../zones/security-operations.html">Security Operations</a>
+        <a href="../../../zones/grc-compliance.html">GRC &amp; Compliance</a>
+        <a href="../../../architecture.html">Architecture</a>
+        <a href="../../../why-devops-ai.html">Why DevOps AI</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../../../solutions.html#healthcare">Healthcare &amp; HIPAA</a>
+        <a href="../../../solutions.html#defense">Defense &amp; CMMC</a>
+        <a href="../../../solutions.html#financial">Financial Services</a>
+        <a href="../../../roi.html">ROI Calculator</a>
+      </div>
+      <div class="footer-col">
+        <h4>For Your Role</h4>
+        <a href="../../../roles/index.html">All Roles</a>
+        <a href="../../../roles/msp-owner.html">MSP Owner / CEO</a>
+        <a href="../../../roles/vcio.html">vCIO</a>
+        <a href="../../../roles/security-analyst.html">Security Analyst</a>
+        <a href="../../../roles/compliance-officer.html">Compliance Officer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../../../about.html">About RainTech</a>
+        <a href="../../../contact.html">Contact</a>
+        <a href="../../../marketplace.html">Azure Marketplace</a>
+        <a href="../../../security.html">Trust &amp; Security</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 RainTech. All rights reserved.</span>
+      <span>Cloud. Security. Support. Results.</span>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+<script src="../../../app.js"></script>
+<script src="../../../personalization.js"></script>
+<script src="../../../enhancements.js"></script>
+</body>
+</html>
