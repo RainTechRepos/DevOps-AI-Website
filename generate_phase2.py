@@ -24,7 +24,7 @@ PPLX_HEAD = gen.PPLX_HEAD
 HITL_LABELS = gen.HITL_LABELS
 
 SITE_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_URL = "https://raintechrepos.github.io/DevOps-AI-Website"
+BASE_URL = "https://devops.ai.rain.tech"
 
 
 def path_prefix(page_path):

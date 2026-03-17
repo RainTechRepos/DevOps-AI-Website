@@ -592,7 +592,7 @@ def generate_cookie_banner():
 
 def generate_json_ld(page_type, page_data, page_path):
     """Generate JSON-LD structured data for a page."""
-    pfx = "https://raintechrepos.github.io/DevOps-AI-Website/"
+    pfx = "https://devops.ai.rain.tech/"
     url = pfx + page_path
     
     ld = {
@@ -712,8 +712,8 @@ def generate_zone_page(zone_key):
         "title": f"{z['label']} — DevOps AI Zone {z['number']}",
         "description": z["tagline"],
         "breadcrumbs": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raintechrepos.github.io/DevOps-AI-Website/"},
-            {"@type": "ListItem", "position": 2, "name": "Platform", "item": "https://raintechrepos.github.io/DevOps-AI-Website/platform.html"},
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.ai.rain.tech/"},
+            {"@type": "ListItem", "position": 2, "name": "Platform", "item": "https://devops.ai.rain.tech/platform.html"},
             {"@type": "ListItem", "position": 3, "name": z["label"]}
         ]
     }, page_path)
@@ -727,12 +727,12 @@ def generate_zone_page(zone_key):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{z['label']} — DevOps AI Zone {z['number']} | Powered by RainTech</title>
 <meta name="description" content="{z['tagline']}">
-<link rel="canonical" href="https://raintechrepos.github.io/DevOps-AI-Website/{page_path}">
+<link rel="canonical" href="https://devops.ai.rain.tech/{page_path}">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="{z['label']} — DevOps AI Zone {z['number']}">
 <meta property="og:description" content="{z['tagline']}">
-<meta property="og:url" content="https://raintechrepos.github.io/DevOps-AI-Website/{page_path}">
+<meta property="og:url" content="https://devops.ai.rain.tech/{page_path}">
 <meta property="og:site_name" content="DevOps AI by RainTech">
 
 <link rel="icon" type="image/svg+xml" href="{pfx}favicon.svg">
@@ -939,12 +939,12 @@ def generate_role_page(role_key):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{r['title']} — DevOps AI | Powered by RainTech</title>
 <meta name="description" content="{r['tagline']}">
-<link rel="canonical" href="https://raintechrepos.github.io/DevOps-AI-Website/{page_path}">
+<link rel="canonical" href="https://devops.ai.rain.tech/{page_path}">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="{r['title']} — DevOps AI">
 <meta property="og:description" content="{r['tagline']}">
-<meta property="og:url" content="https://raintechrepos.github.io/DevOps-AI-Website/{page_path}">
+<meta property="og:url" content="https://devops.ai.rain.tech/{page_path}">
 <meta property="og:site_name" content="DevOps AI by RainTech">
 
 <link rel="icon" type="image/svg+xml" href="{pfx}favicon.svg">
@@ -1048,12 +1048,12 @@ def generate_roles_index():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Your Role — DevOps AI | Powered by RainTech</title>
 <meta name="description" content="Discover how DevOps AI transforms daily operations for every role in the MSP ecosystem — from MSP Owner to Security Analyst to Compliance Officer.">
-<link rel="canonical" href="https://raintechrepos.github.io/DevOps-AI-Website/roles/">
+<link rel="canonical" href="https://devops.ai.rain.tech/roles/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="For Your Role — DevOps AI">
 <meta property="og:description" content="Discover how DevOps AI transforms daily operations for every role in the MSP ecosystem.">
-<meta property="og:url" content="https://raintechrepos.github.io/DevOps-AI-Website/roles/">
+<meta property="og:url" content="https://devops.ai.rain.tech/roles/">
 <meta property="og:site_name" content="DevOps AI by RainTech">
 
 <link rel="icon" type="image/svg+xml" href="{pfx}favicon.svg">
