@@ -2841,5 +2841,378 @@ a.process-card:hover {
   }
   .ppl-strikethrough::after {
     background: var(--primary-green, #79C600);
+
+/* ===================================================
+   PLATFORM PAGE — Zone Journey Entry Points
+   =================================================== */
+
+.zone-entry-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.zone-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: border-color var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+.zone-entry:hover {
+  border-color: var(--zone-accent, var(--border-strong));
+  box-shadow: 0 0 0 1px var(--zone-accent, var(--border-strong));
+}
+
+.zone-entry__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-8) 0;
+}
+
+.zone-entry__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.zone-entry__icon {
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--zone-accent, var(--accent)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--zone-accent, var(--accent)) 25%, transparent);
+}
+
+.zone-entry__number {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.zone-entry__titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.zone-entry__name {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.zone-entry__tagline {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+  max-width: 60ch;
+}
+
+.zone-entry__body {
+  padding: var(--space-5) var(--space-8) var(--space-6);
+}
+
+.zone-entry__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+  max-width: 80ch;
+}
+
+/* Process Area mini-grid inside zone entry */
+.zone-entry__section {
+  margin-bottom: var(--space-5);
+}
+
+.zone-entry__section-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.zone-pa-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--zone-accent, var(--accent));
+  background: color-mix(in srgb, var(--zone-accent, var(--accent)) 12%, transparent);
+  border-radius: var(--radius-full);
+}
+
+.zone-pa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-3);
+}
+
+.zone-pa-card {
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-fast);
+}
+
+.zone-pa-card:hover {
+  border-color: var(--border-strong);
+}
+
+.zone-pa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.zone-pa-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.zone-pa-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  margin: 0;
+  max-width: none;
+}
+
+.zone-pa-more {
+  grid-column: 1 / -1;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  font-style: italic;
+  padding: var(--space-2) 0;
+}
+
+/* Screenshots inside zone entry */
+.zone-screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.zone-ss-fig {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+}
+
+.zone-ss-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Meta: roles and connected zones */
+.zone-entry__meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-default);
+}
+
+.zone-meta-label {
+  display: block;
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-2);
+}
+
+.zone-roles,
+.zone-connected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.zone-role-chip,
+.zone-conn-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  transition: border-color var(--duration-fast), color var(--duration-fast);
+  text-decoration: none;
+}
+
+.zone-role-chip:hover,
+.zone-conn-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Zone CTA button */
+.zone-entry__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue-cetacean);
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast), transform var(--duration-fast);
+  text-decoration: none;
+}
+
+.zone-entry__cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.zone-entry__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===================================================
+   WORKFLOW GALLERY (replaces connector tags section)
+   =================================================== */
+
+.wf-gallery {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.wf-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.wf-category__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+  flex-wrap: wrap;
+}
+
+.wf-category__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.wf-category__tag {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+  padding: 3px 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--radius-full);
+}
+
+.wf-category__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+}
+
+.wf-screenshot {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  transition: border-color var(--duration-normal);
+}
+
+.wf-screenshot:hover {
+  border-color: var(--border-strong);
+}
+
+.wf-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wf-screenshot figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-default);
+  line-height: 1.4;
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE — Platform Zone Entries
+   =================================================== */
+
+@media (max-width: 768px) {
+  .zone-entry__header {
+    padding: var(--space-4) var(--space-5) 0;
+  }
+
+  .zone-entry__body {
+    padding: var(--space-4) var(--space-5) var(--space-5);
+  }
+
+  .zone-entry__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-pa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-screenshots {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-category__grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+
+  .wf-category__header {
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
