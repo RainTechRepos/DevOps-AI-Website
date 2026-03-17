@@ -70,6 +70,73 @@
   ]
 }
 </script>
+<style>
+/* Lightbox overlay */
+.pa-lightbox-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 22, 71, 0.85);
+  z-index: 10000; display: none; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  opacity: 0; transition: opacity 0.25s ease;
+}
+.pa-lightbox-overlay.active { display: flex; opacity: 1; }
+.pa-lightbox-content {
+  background: white; border-radius: 12px; max-width: 1100px; width: 94%;
+  max-height: 90vh; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+  transform: scale(0.95); transition: transform 0.25s ease;
+}
+.pa-lightbox-overlay.active .pa-lightbox-content { transform: scale(1); }
+.pa-lightbox-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; border-bottom: 1px solid #E0E0E0;
+}
+.pa-lightbox-title {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+  font-size: 18px; color: #001647;
+}
+.pa-lightbox-close {
+  width: 36px; height: 36px; border-radius: 8px; border: none;
+  background: #F3F4F6; cursor: pointer; font-size: 20px; color: #97999B;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s ease;
+}
+.pa-lightbox-close:hover { background: #E0E0E0; color: #001647; }
+.pa-lightbox-img-wrap {
+  padding: 16px 24px; overflow-y: auto; max-height: calc(90vh - 140px);
+}
+.pa-lightbox-img-wrap img {
+  width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid #E0E0E0;
+}
+.pa-lightbox-footer {
+  padding: 12px 24px 16px; border-top: 1px solid #E0E0E0;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.pa-lightbox-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #79C600; color: white; padding: 10px 20px;
+  border-radius: 8px; text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; font-size: 14px;
+  transition: background 0.15s ease;
+}
+.pa-lightbox-link:hover { background: #8BDB02; }
+/* Make steps clickable */
+.process-card__step.has-preview {
+  cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;
+  border-radius: 6px; padding: 8px 12px; margin: -8px -12px;
+}
+.process-card__step.has-preview:hover {
+  background: rgba(121, 198, 0, 0.06);
+}
+.process-card__step.has-preview .process-card__step-name::after {
+  content: "🔍"; font-size: 11px; margin-left: 6px; opacity: 0.4;
+  transition: opacity 0.15s ease;
+}
+.process-card__step.has-preview:hover .process-card__step-name::after {
+  opacity: 1;
+}
+</style>
 </head>
 <body>
 
@@ -242,19 +309,19 @@
       <p class="journey-phase__desc">Continuous compliance automation with multi-framework evidence collection and audit readiness</p>
       <div class="process-card" style="--zone-accent: #D97706">
         <div class="process-card__steps">
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="Framework Lifecycle Management" data-pa-img="../assets/screenshots/framework-lifecycle.png" data-pa-url="../zones/grc-compliance/process-areas/framework-lifecycle-management.html">
                 <span class="process-card__step-name">Framework Lifecycle Management</span>
                 <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="OSCAL-Native Evidence" data-pa-img="../assets/screenshots/oscal-evidence.png" data-pa-url="../zones/grc-compliance/process-areas/oscal-native-evidence.html">
                 <span class="process-card__step-name">OSCAL-Native Evidence</span>
                 <span class="hitl-badge hitl-badge--l0" title="Fully Automated">L0 — Fully Automated</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="Gap Analysis Engine" data-pa-img="../assets/screenshots/gap-analysis.png" data-pa-url="../zones/grc-compliance/process-areas/gap-analysis-engine.html">
                 <span class="process-card__step-name">Gap Analysis Engine</span>
                 <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="CMMC SSP Builder" data-pa-img="../assets/screenshots/cmmc-ssp-builder.png" data-pa-url="../zones/grc-compliance/process-areas/cmmc-ssp-builder.html">
                 <span class="process-card__step-name">CMMC SSP Builder</span>
                 <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
               </div>
@@ -269,19 +336,19 @@
       <p class="journey-phase__desc">Unified SOC command center with AI-augmented threat detection, incident response, and zero-trust enforcement</p>
       <div class="process-card" style="--zone-accent: #DC2626">
         <div class="process-card__steps">
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="Incident Response Orchestration" data-pa-img="../assets/screenshots/hitl-incident-response.png" data-pa-url="../zones/security-operations/process-areas/incident-response-orchestration.html">
                 <span class="process-card__step-name">Incident Response Orchestration</span>
                 <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="Detection Engineering" data-pa-img="../assets/screenshots/security-detection-engineering.png" data-pa-url="../zones/security-operations/process-areas/detection-engineering.html">
                 <span class="process-card__step-name">Detection Engineering</span>
                 <span class="hitl-badge hitl-badge--l2" title="Approve to Proceed">L2 — Approve to Proceed</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="EDR/XDR Integration" data-pa-img="../assets/screenshots/security-edr-dashboard.png" data-pa-url="../zones/security-operations/process-areas/edr-xdr-integration.html">
                 <span class="process-card__step-name">EDR/XDR Integration</span>
                 <span class="hitl-badge hitl-badge--l1" title="Notify">L1 — Notify</span>
               </div>
-              <div class="process-card__step">
+              <div class="process-card__step has-preview" data-pa-name="Zero-Knowledge Vault (ZK Vault)" data-pa-img="../assets/screenshots/zk-vault.png" data-pa-url="../zones/security-operations/process-areas/zero-knowledge-vault-zk-vault.html">
                 <span class="process-card__step-name">Zero-Knowledge Vault (ZK Vault)</span>
                 <span class="hitl-badge hitl-badge--l3" title="Human Only">L3 — Human Only</span>
               </div>
@@ -382,5 +449,70 @@
 </div>
 
 <script src="../app.js"></script>
+
+<div class="pa-lightbox-overlay" id="paLightbox">
+  <div class="pa-lightbox-content">
+    <div class="pa-lightbox-header">
+      <span class="pa-lightbox-title" id="paLightboxTitle"></span>
+      <button class="pa-lightbox-close" id="paLightboxClose">&times;</button>
+    </div>
+    <div class="pa-lightbox-img-wrap">
+      <img id="paLightboxImg" src="" alt="" loading="lazy">
+    </div>
+    <div class="pa-lightbox-footer">
+      <a class="pa-lightbox-link" id="paLightboxLink" href="#">Explore this Process Area →</a>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var overlay = document.getElementById('paLightbox');
+  var img = document.getElementById('paLightboxImg');
+  var title = document.getElementById('paLightboxTitle');
+  var link = document.getElementById('paLightboxLink');
+  var closeBtn = document.getElementById('paLightboxClose');
+
+  function openLightbox(paName, imgSrc, pageUrl) {
+    title.textContent = paName;
+    img.src = imgSrc;
+    img.alt = paName + ' screenshot';
+    link.href = pageUrl;
+    overlay.style.display = 'flex';
+    requestAnimationFrame(function() {
+      overlay.classList.add('active');
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    setTimeout(function() {
+      overlay.style.display = 'none';
+      img.src = '';
+    }, 250);
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Attach to all preview steps
+  document.querySelectorAll('.process-card__step.has-preview').forEach(function(step) {
+    step.addEventListener('click', function() {
+      openLightbox(
+        this.getAttribute('data-pa-name'),
+        this.getAttribute('data-pa-img'),
+        this.getAttribute('data-pa-url')
+      );
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
