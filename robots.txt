@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://devops.ai.rain.tech/sitemap.xml
+Sitemap: https://raintechrepos.github.io/DevOps-AI-Website/sitemap.xml

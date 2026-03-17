@@ -18,19 +18,14 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why DevOps AI — Replace 8–12 Separate MSP Tools | RainTech</title>
-<meta name="description" content="See how DevOps AI replaces 8–12 separate MSP tools with one AI-orchestrated platform. Compare traditional MSP tool sprawl to unified intelligent operations.">
-<link rel="canonical" href="https://devops.ai.rain.tech/why-devops-ai.html">
+<title>Architecture — DevOps AI | Zero-Trust, Azure-Native Design</title>
+<meta name="description" content="DevOps AI architecture: zero-trust Azure-native deployment, multi-model AI orchestration, 15 operational zones, and complete data sovereignty within client Azure tenants.">
+<link rel="canonical" href="https://raintechrepos.github.io/DevOps-AI-Website/architecture.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Why DevOps AI — Replace 8–12 Separate MSP Tools">
-<meta property="og:description" content="Compare traditional MSP tool sprawl to DevOps AI's unified intelligent operations platform.">
-<meta property="og:url" content="https://devops.ai.rain.tech/why-devops-ai.html">
+<meta property="og:title" content="Architecture — DevOps AI">
+<meta property="og:description" content="Zero-trust, Azure-native architecture with multi-model AI orchestration and complete data sovereignty.">
 <meta property="og:site_name" content="DevOps AI by RainTech">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why DevOps AI — Replace 8–12 Separate MSP Tools">
-<meta name="twitter:description" content="Compare traditional MSP tool sprawl to DevOps AI's unified intelligent operations platform.">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,18 +33,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="style.css">
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-  {"@type":"WebPage","name":"Why DevOps AI","url":"https://devops.ai.rain.tech/why-devops-ai.html",
-  "description":"See how DevOps AI replaces 8-12 separate MSP tools with one AI-orchestrated platform.",
-  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://devops.ai.rain.tech/"},
-    {"@type":"ListItem","position":2,"name":"Why DevOps AI"}
-  ]},
-  "creator":{"@type":"SoftwareApplication","name":"Perplexity Computer","url":"https://www.perplexity.ai/computer"}}
-]}
-</script>
 </head>
 <body>
 
@@ -160,192 +143,119 @@
   </div>
 </header>
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
-  <div class="container">
-    <ol class="breadcrumb-list">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="current">Why DevOps AI</span>
-    </ol>
-  </div>
-</nav>
-
 <main id="main-content">
 
-  <section class="zone-hero">
+  <section class="zone-page-header" style="--zone-accent: #20BAE7;" aria-label="Architecture overview">
     <div class="container">
-      <div class="zone-accent-bar fade-up" style="background: var(--gradient-hero);"></div>
-      <h1 class="fade-up">Why DevOps AI?</h1>
-      <p class="zone-hero-sub fade-up">Traditional MSPs juggle 8–12 disconnected tools. DevOps AI replaces tool sprawl with one AI-orchestrated platform — where data flows between zones and intelligence compounds over time.</p>
+      <div class="zone-badge fade-up"><span>🏗️</span> <span>Architecture</span></div>
+      <h1 class="fade-up">Zero-Trust, Azure-Native Architecture</h1>
+      <p class="zone-description fade-up">DevOps AI deploys entirely within the client's Azure tenant — no data ever leaves the VNet. Multi-model AI orchestration, private endpoints, and defense-in-depth at every layer.</p>
     </div>
   </section>
 
-  <section class="section" aria-label="The problem">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-label">The Problem</span>
-        <h2>The MSP Tool Sprawl Crisis</h2>
-        <p>Today's MSPs operate across a fragmented stack of disconnected point solutions. Each tool is best-in-class in isolation, but together they create data silos, manual processes, and context-switching overhead that erodes efficiency and profitability.</p>
-      </div>
-      <div class="diff-grid fade-up">
-        <div class="diff-card">
-          <h3>PSA / Ticketing</h3>
-          <p>ConnectWise Manage, Autotask, Halo — tickets, time tracking, and billing configuration. No AI triage, no cross-client problem intelligence, no predictive SLA management.</p>
-        </div>
-        <div class="diff-card">
-          <h3>RMM / Endpoints</h3>
-          <p>NinjaOne, Datto RMM, ConnectWise Automate — monitoring and remote access. Alerts create noise rather than intelligence. No ring-based patching.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Security / EDR</h3>
-          <p>SentinelOne, Huntress, CrowdStrike — each in separate consoles. 8–12 context switches per incident. No unified SOC command center.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Compliance / GRC</h3>
-          <p>Drata, Vanta, separate CMMC spreadsheets — evidence collected separately for each framework despite 60–80% control overlap.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Billing / Accounting</h3>
-          <p>QuickBooks, Xero, Partner Center, Pax8 — manual three-way reconciliation consuming 8–40 hours per month. Revenue leakage averaging 10%.</p>
-        </div>
-        <div class="diff-card">
-          <h3>Documentation / KM</h3>
-          <p>IT Glue, Hudu — static documentation that goes stale. No semantic search, no AI-assisted article creation, no contextual surfacing in tickets.</p>
-        </div>
+  <section class="section" aria-label="Architecture principles">
+    <div class="container container--narrow">
+      <div class="fade-up" style="line-height: 1.7; color: var(--text-secondary);">
+        <p>DevOps AI is an Azure Managed Application that provisions a complete, isolated infrastructure stack within each client's Azure tenant. The architecture is designed around three non-negotiable principles: full data sovereignty, zero-trust networking, and human-in-the-loop safety at every AI decision boundary.</p>
+        <p style="margin-top: var(--space-4);">Every component — from the AI orchestration layer to the database tier — runs within the client's own Azure subscription, governed by their own policies, and accessible only through private endpoints. No data transits RainTech's infrastructure. No public AI APIs are called. Every model runs on Azure OpenAI Service within the tenant's own API quota.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Comparison" style="background: var(--bg-secondary);">
+  <section class="section" aria-label="Architecture layers" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-label">The Comparison</span>
-        <h2>Traditional Tools vs. DevOps AI</h2>
+        <span class="section-label">Layers</span>
+        <h2>Architecture Layers</h2>
       </div>
-      <div class="fade-up" style="overflow-x: auto;">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Capability</th>
-              <th>Traditional MSP Stack</th>
-              <th>DevOps AI</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Ticket routing</strong></td>
-              <td class="cross">Manual classification by dispatcher</td>
-              <td class="check">AI auto-classifies and routes with 70–90% Tier-1 auto-resolution</td>
-            </tr>
-            <tr>
-              <td><strong>SLA management</strong></td>
-              <td class="cross">Alerts after breach occurs</td>
-              <td class="check">Predictive risk scores prevent breaches before they happen</td>
-            </tr>
-            <tr>
-              <td><strong>Security operations</strong></td>
-              <td class="cross">8–12 context switches per incident</td>
-              <td class="check">Unified SOC with pre-built context packages</td>
-            </tr>
-            <tr>
-              <td><strong>Compliance evidence</strong></td>
-              <td class="cross">Collected separately per framework</td>
-              <td class="check">Collected once, satisfies all frameworks simultaneously</td>
-            </tr>
-            <tr>
-              <td><strong>Billing reconciliation</strong></td>
-              <td class="cross">8–40 hours/month manual CSV correlation</td>
-              <td class="check">Automated three-way reconciliation with single approval screen</td>
-            </tr>
-            <tr>
-              <td><strong>QBR preparation</strong></td>
-              <td class="cross">4–8 hours/client manual data gathering</td>
-              <td class="check">AI-aggregated in 20–30 minutes of review time</td>
-            </tr>
-            <tr>
-              <td><strong>Cross-client intelligence</strong></td>
-              <td class="cross">Incidents managed in isolation</td>
-              <td class="check">Patterns detected across entire client portfolio automatically</td>
-            </tr>
-            <tr>
-              <td><strong>Knowledge management</strong></td>
-              <td class="cross">Static docs that go stale</td>
-              <td class="check">Semantic search with AI tutor, auto-populated client docs</td>
-            </tr>
-            <tr>
-              <td><strong>Data sovereignty</strong></td>
-              <td class="cross">Data scattered across vendor clouds</td>
-              <td class="check">All data stays in your Azure tenant. No exceptions.</td>
-            </tr>
-            <tr>
-              <td><strong>Deployment</strong></td>
-              <td class="cross">Weeks of integration work</td>
-              <td class="check">Azure Marketplace — deployed in under 35 minutes</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="process-grid">
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">Presentation Layer</h3></div>
+          <p class="process-card__body">React 18 SPA with Fluent UI components, zone-specific navigation, role-based views, and real-time WebSocket connections for live updates. Progressive Web App (PWA) capable.</p>
+        </div>
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">API Gateway</h3></div>
+          <p class="process-card__body">FastAPI on Azure App Service with JWT/OAuth2 authentication, rate limiting, request validation, and comprehensive audit logging. Every request is traced end-to-end.</p>
+        </div>
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">Intelligence Layer</h3></div>
+          <p class="process-card__body">Multi-model AI orchestration with Azure OpenAI Service. Chain-of-thought reasoning with explainable decisions. Model routing selects the optimal model per task type and cost constraints.</p>
+        </div>
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">Control Plane</h3></div>
+          <p class="process-card__body">15 operational zones with unified taxonomy, role-based access control, sensitivity labels, and event bus for cross-zone communication. Pydantic-based domain models throughout.</p>
+        </div>
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">Integration Layer</h3></div>
+          <p class="process-card__body">Connector framework for NinjaRMM, ConnectWise, ServiceNow, Microsoft Intune, Wazuh, QuickBooks, and more. OAuth2 credential management with Zero-Knowledge Vault for secrets.</p>
+        </div>
+        <div class="process-card fade-up">
+          <div class="process-card__header"><h3 class="process-card__title">Data Layer</h3></div>
+          <p class="process-card__body">Azure SQL with row-level security, Azure Blob Storage with encryption at rest, and Azure Key Vault for secrets management. All within the client's Azure tenant.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Differentiators">
+  <section class="section" aria-label="Security architecture">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-label">Key Differentiators</span>
-        <h2>What Makes DevOps AI Different</h2>
+        <span class="section-label">Security</span>
+        <h2>Defense in Depth</h2>
       </div>
       <div class="diff-grid">
         <div class="diff-card fade-up">
-          <h3>Cross-Zone Intelligence</h3>
-          <p>Data flows between all 15 zones automatically. A security vulnerability finding creates a change request, triggers a pre-patch backup, deploys the patch, verifies remediation, and updates GRC compliance status — all from one click. This is impossible with disconnected tools.</p>
+          <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3>Zero-Trust Network</h3>
+          <p>Private endpoints on every Azure resource. No public IP addresses. Network Security Groups enforce least-privilege communication between components. VNet-isolated deployment.</p>
         </div>
         <div class="diff-card fade-up">
-          <h3>AI That Gets Smarter Over Time</h3>
-          <p>Every human-in-the-loop decision feeds back into AI calibration. Ticket classification improves with every correction. Alert triage accuracy increases with analyst feedback. The platform accumulates organizational intelligence that survives staff turnover.</p>
+          <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>HITL Gate System</h3>
+          <p>Four-tier Human-in-the-Loop classification (L0-L3) on every process area. AI never executes sensitive operations without explicit human approval. Full audit trail on every decision.</p>
         </div>
         <div class="diff-card fade-up">
-          <h3>People First, PERIOD.&reg;</h3>
-          <p>AI handles information gathering, routing, and monitoring. Humans handle consequential decisions — approvals with legal weight, client communications requiring empathy, emergency declarations, and strategic recommendations. Technology amplifies people; it never replaces them.</p>
-        </div>
-        <div class="diff-card fade-up">
-          <h3>Full Data Sovereignty</h3>
-          <p>All data stays in the customer's Azure tenant. AI models route to Azure OpenAI within your subscription. No data leaves your boundary. Public AI APIs are blocked at the firewall. Private endpoints everywhere. This isn't a marketing claim — it's architecture.</p>
+          <div class="diff-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.78 7.78 5.5 5.5 0 0 1 7.78-7.78zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+          <h3>Encryption & Key Management</h3>
+          <p>AES-256 encryption at rest, TLS 1.3 in transit, Azure Key Vault for secrets, and Zero-Knowledge Vault for client credentials where even RainTech cannot access the plaintext.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Market context" style="background: var(--bg-secondary);">
-    <div class="container">
-      <div class="market-stats-grid">
-        <div class="market-stat-card fade-up">
-          <div class="stat-figure">$401B → $847B</div>
-          <div class="stat-desc">Global managed services market growth from 2025 to 2033, driven by AI adoption and security complexity.</div>
-          <div class="stat-cite">Source: <a href="https://www.grandviewresearch.com/industry-analysis/managed-services-market" target="_blank" rel="noopener noreferrer">Grand View Research</a></div>
-        </div>
-        <div class="market-stat-card fade-up">
-          <div class="stat-figure">76%</div>
-          <div class="stat-desc">Of AI solutions are now purchased rather than built — MSPs are buying complete platforms, not assembling components.</div>
-          <div class="stat-cite">Source: <a href="https://themspsummit.com/article/measuring-ais-impact-on-msps-in-2025/" target="_blank" rel="noopener noreferrer">Menlo Ventures via MSP Summit</a></div>
-        </div>
-        <div class="market-stat-card fade-up">
-          <div class="stat-figure">86%</div>
-          <div class="stat-desc">Reduction in ticket escalations achieved with AI-powered automation, allowing teams to focus on complex, high-value work.</div>
-          <div class="stat-cite">Source: <a href="https://www.attainmentlabs.com/roi-analysis/it-msp-ai-automation" target="_blank" rel="noopener noreferrer">Attainment Labs</a></div>
+  <section class="section" aria-label="HITL classification" style="background: var(--bg-secondary);">
+    <div class="container container--narrow">
+      <div class="hitl-legend fade-up">
+        <h3>HITL Gate Classification System</h3>
+        <p>Every process area across all 15 zones is classified with a Human-in-the-Loop gate level that defines the boundary between AI autonomy and human oversight.</p>
+        <div class="hitl-legend__grid">
+          <div class="hitl-legend__item">
+            <span class="hitl-badge hitl-badge--l0">L0 — Fully Automated</span>
+            <p>AI executes autonomously with full logging. No human approval needed. Examples: ticket classification, monitoring alerts, report generation.</p>
+          </div>
+          <div class="hitl-legend__item">
+            <span class="hitl-badge hitl-badge--l1">L1 — Notify</span>
+            <p>AI executes and notifies the assigned human. Human can review, override, or escalate after the fact. Examples: SLA predictions, patch scheduling.</p>
+          </div>
+          <div class="hitl-legend__item">
+            <span class="hitl-badge hitl-badge--l2">L2 — Approve to Proceed</span>
+            <p>AI prepares and recommends, but a human must explicitly approve before execution. Examples: change requests, contract modifications.</p>
+          </div>
+          <div class="hitl-legend__item">
+            <span class="hitl-badge hitl-badge--l3">L3 — Human Only</span>
+            <p>Humans perform the action with AI providing decision support only. Examples: legal review, privileged access approval.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="CTA">
+  <section class="section" aria-label="Call to action">
     <div class="container">
       <div class="cta-banner fade-up">
-        <h2>Ready to Replace Tool Sprawl?</h2>
-        <p>Deploy DevOps AI from the Azure Marketplace in under 35 minutes. Full data sovereignty. Human-in-the-loop safety. 15 operational zones. One platform.</p>
-        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-          <a href="marketplace.html" class="btn btn-dark btn-lg">Get Started on Azure Marketplace</a>
-          <a href="roi.html" class="btn btn-secondary btn-lg">Calculate Your ROI</a>
-        </div>
+        <h2>Explore the Architecture in Your Own Environment</h2>
+        <p>Deploy DevOps AI from the Azure Marketplace — see every layer provisioned within your own Azure tenant.</p>
+        <a href="marketplace.html" class="btn btn-dark btn-lg">Get Started</a>
       </div>
     </div>
   </section>
@@ -400,8 +310,6 @@
     </div>
   </div>
 </footer>
-
-<script src="app.js"></script>
 <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
   <div class="cookie-banner__text">
     We use cookies to personalize your experience and analyze site usage. By clicking "Accept All," you consent to our use of cookies. See our <a href="legal/privacy.html">Privacy Policy</a> for details.
@@ -411,5 +319,7 @@
     <button class="cookie-btn cookie-btn--accept">Accept All</button>
   </div>
 </div>
+
+<script src="app.js"></script>
 </body>
 </html>
