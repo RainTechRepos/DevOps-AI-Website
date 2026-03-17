@@ -2409,57 +2409,7 @@ a.zone-card:hover {
   line-height: 1.5;
 }
 
-/* ---- Cookie Consent Banner ---- */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border-default);
-  padding: var(--space-4) var(--space-6);
-  display: none;
-  backdrop-filter: blur(20px);
-}
-.cookie-banner.is-visible {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-}
-.cookie-banner__text {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  max-width: 720px;
-}
-.cookie-banner__text a { color: var(--accent); text-decoration: underline; }
-.cookie-banner__actions {
-  display: flex;
-  gap: var(--space-2);
-  flex-shrink: 0;
-}
-.cookie-btn {
-  font-size: 13px;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  border: 1px solid var(--border-default);
-  transition: all 0.2s;
-}
-.cookie-btn--accept {
-  background: var(--accent);
-  color: #001647;
-  border-color: var(--accent);
-}
-.cookie-btn--accept:hover { opacity: 0.9; }
-.cookie-btn--reject {
-  background: transparent;
-  color: var(--text-secondary);
-}
-.cookie-btn--reject:hover { background: var(--bg-card-hover); }
+/* Old cookie-banner CSS removed — replaced by personalization.css */
 
 /* ---- Zone Page Header ---- */
 .zone-page-header {
