@@ -2654,3 +2654,38 @@ a.zone-card:hover {
   font-size: 18px;
   flex-shrink: 0;
 }
+
+/* ── Breadcrumb Navigation ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+.breadcrumb-sep {
+  color: var(--text-muted, rgba(255,255,255,0.3));
+  font-size: 11px;
+}
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Process card as link (zone pages) ── */
+a.process-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.process-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
