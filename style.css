@@ -2689,3 +2689,65 @@ a.process-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
+
+/* ── Screenshot Showcase ── */
+.screenshot-showcase {
+  margin: var(--space-8) 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.screenshot-showcase img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+.screenshot-showcase figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.screenshot-showcase figcaption::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, #79C600);
+  flex-shrink: 0;
+}
+/* Two-up layout for paired screenshots */
+.screenshot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: var(--space-8) 0;
+}
+@media (max-width: 768px) {
+  .screenshot-pair {
+    grid-template-columns: 1fr;
+  }
+}
+.screenshot-pair .screenshot-showcase {
+  margin: 0;
+}
+/* Zone dashboard hero screenshot */
+.zone-screenshot-hero {
+  margin: var(--space-6) 0 var(--space-8);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.zone-screenshot-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
