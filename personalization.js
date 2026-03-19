@@ -6,10 +6,30 @@
    Layer 2: Role identification (post-consent)
    Layer 3: Journey tracking (zone/PA visits)
    Layer 4: Personalized content surfacing
+
+   Feature Flag: DEVOPS_AI_JOURNEY_ENTRY_POINT
+   Controlled via BD Zone → Customer Journey / CRM control plane (FR-001)
    ======================================== */
 
 (function() {
   'use strict';
+
+  // ─── Feature Flags ───
+  // Follows the DEVOPS_AI_* naming convention for platform-managed feature flags.
+  // In production, these values are served from the DevOps AI platform's
+  // BD Zone → Customer Journey / CRM control plane (FR-001).
+  // HITL approval required before activating on the public website.
+  //
+  // To toggle: set `enabled` to true/false. When disabled, the original
+  // bottom-sheet role picker is used. When enabled, the full-screen neural
+  // network Journey Entry Point replaces the role picker experience.
+  var DEVOPS_AI_JOURNEY_ENTRY_POINT = {
+    enabled: true,           // Master toggle — can be flipped from the BD Zone control plane
+    mode: 'auto',            // 'auto' = tier-detect (3D vs card-grid), '3d' = force 3D, 'cards' = force card grid
+    showOnPages: ['index'],  // Pages where the full entry point appears (empty = all pages)
+    maxShowCount: 1,         // Max times to show per session before falling back to welcome bar
+    debug: false             // Show tier indicator and console logging
+  };
 
   // ─── Cookie Helpers ───
   function getCookie(name) {
@@ -34,23 +54,36 @@
   var JOURNEY_COOKIE = 'devopsai_journey';
   var STAGE_COOKIE = 'devopsai_stage';
   var VISIT_COOKIE = 'devopsai_visits';
+  var ENTRY_SHOWN_COOKIE = 'devopsai_entry_shown';
   var COOKIE_DAYS = 365;
 
+  // ─── Roles (20 roles across 5 categories) ───
   var ROLES = [
-    { id: 'msp-owner',            label: 'MSP Owner / CEO',      icon: '🏢', page: 'roles/msp-owner.html' },
-    { id: 'it-director',          label: 'IT Director',           icon: '🖥️', page: 'roles/it-director.html' },
-    { id: 'security-analyst',     label: 'Security Analyst',      icon: '🛡️', page: 'roles/security-analyst.html' },
-    { id: 'vcio',                 label: 'vCIO',                  icon: '📊', page: 'roles/vcio.html' },
-    { id: 'vciso',                label: 'vCISO',                 icon: '🔒', page: 'roles/vciso.html' },
-    { id: 'vcco',                 label: 'vCCO',                  icon: '⚖️', page: 'roles/vcco.html' },
-    { id: 'compliance-officer',   label: 'Compliance Officer',    icon: '📋', page: 'roles/compliance-officer.html' },
-    { id: 'service-desk-manager', label: 'Service Desk Manager',  icon: '🎫', page: 'roles/service-desk-manager.html' },
-    { id: 'network-engineer',     label: 'Network Engineer',      icon: '🌐', page: 'roles/network-engineer.html' },
-    { id: 'project-manager',      label: 'Project Manager',       icon: '📁', page: 'roles/project-manager.html' },
-    { id: 'account-manager',      label: 'Account Manager',       icon: '🤝', page: 'roles/account-manager.html' },
-    { id: 'finance-coordinator',  label: 'Finance Coordinator',   icon: '💰', page: 'roles/finance-coordinator.html' },
-    { id: 'hr-director',          label: 'HR Director',           icon: '👥', page: 'roles/hr-director.html' },
-    { id: 'recruiter',            label: 'Recruiter',             icon: '🔍', page: 'roles/recruiter.html' }
+    // Executive Suite
+    { id: 'msp-owner',            label: 'MSP Owner / CEO',       icon: '🏢', page: 'roles/msp-owner.html',            group: 'executive' },
+    { id: 'vcio',                 label: 'vCIO',                  icon: '📊', page: 'roles/vcio.html',                 group: 'executive' },
+    { id: 'vciso',                label: 'vCISO',                 icon: '🔒', page: 'roles/vciso.html',                group: 'executive' },
+    { id: 'vcco',                 label: 'vCCO',                  icon: '⚖️', page: 'roles/vcco.html',                 group: 'executive' },
+    // Operations
+    { id: 'it-director',          label: 'IT Director',           icon: '🖥️', page: 'roles/it-director.html',          group: 'operations' },
+    { id: 'service-desk-manager', label: 'Service Desk Manager',  icon: '🎫', page: 'roles/service-desk-manager.html', group: 'operations' },
+    { id: 'network-engineer',     label: 'Network Engineer',      icon: '🌐', page: 'roles/network-engineer.html',     group: 'operations' },
+    { id: 'project-manager',      label: 'Project Manager',       icon: '📁', page: 'roles/project-manager.html',      group: 'operations' },
+    { id: 'devops-engineer',      label: 'DevOps Engineer',       icon: '⚙️', page: 'roles/devops-engineer.html',      group: 'operations' },
+    // Security & Compliance
+    { id: 'security-analyst',     label: 'Security Analyst',      icon: '🛡️', page: 'roles/security-analyst.html',     group: 'security' },
+    { id: 'compliance-officer',   label: 'Compliance Officer',    icon: '📋', page: 'roles/compliance-officer.html',   group: 'security' },
+    // Business & Relationships
+    { id: 'account-manager',      label: 'Account Manager',       icon: '🤝', page: 'roles/account-manager.html',      group: 'business' },
+    { id: 'finance-coordinator',  label: 'Finance Coordinator',   icon: '💰', page: 'roles/finance-coordinator.html',  group: 'business' },
+    { id: 'sales-director',       label: 'Sales Director',        icon: '📈', page: 'roles/sales-director.html',       group: 'business' },
+    { id: 'marketing-director',   label: 'Marketing Director',    icon: '📣', page: 'roles/marketing-director.html',   group: 'business' },
+    { id: 'client-success-mgr',   label: 'Client Success Manager',icon: '🌟', page: 'roles/client-success-manager.html', group: 'business' },
+    { id: 'data-analyst',         label: 'Data Analyst / BI Lead',icon: '📉', page: 'roles/data-analyst.html',         group: 'business' },
+    // People & Culture
+    { id: 'hr-director',          label: 'HR Director',           icon: '👥', page: 'roles/hr-director.html',          group: 'people' },
+    { id: 'recruiter',            label: 'Recruiter',             icon: '🔍', page: 'roles/recruiter.html',            group: 'people' },
+    { id: 'legal-counsel',        label: 'Legal Counsel',         icon: '⚖️', page: 'roles/legal-counsel.html',        group: 'people' }
   ];
 
   // Lifecycle stages: Awareness → Evaluation → Onboarding → Adoption → Expansion
@@ -71,7 +104,14 @@
     'account-manager':      ['relationships', 'analytics', 'vc-suite'],
     'finance-coordinator':  ['accounting', 'analytics', 'relationships'],
     'hr-director':          ['people', 'learning', 'organization'],
-    'recruiter':            ['people', 'learning', 'organization']
+    'recruiter':            ['people', 'learning', 'organization'],
+    // New roles (6 additions)
+    'devops-engineer':      ['devops', 'network-ops', 'security-operations'],
+    'sales-director':       ['relationships', 'analytics', 'vc-suite'],
+    'marketing-director':   ['relationships', 'analytics', 'learning'],
+    'client-success-mgr':   ['relationships', 'service-desk', 'analytics'],
+    'data-analyst':         ['analytics', 'vc-suite', 'accounting'],
+    'legal-counsel':        ['legal', 'grc-compliance', 'vc-suite']
   };
 
   // Role-specific hero subtext
@@ -89,7 +129,47 @@
     'account-manager':      'Client health scoring, churn prediction, and QBR preparation — all automated.',
     'finance-coordinator':  'Invoice ingestion, three-way reconciliation, and revenue recognition automation.',
     'hr-director':          'Workforce analytics, access lifecycle management, and automated onboarding workflows.',
-    'recruiter':            'Skill gap analysis, onboarding automation, and directory synchronization.'
+    'recruiter':            'Skill gap analysis, onboarding automation, and directory synchronization.',
+    // New roles (6 additions)
+    'devops-engineer':      'CI/CD pipelines, infrastructure automation, and platform operations — engineered for velocity.',
+    'sales-director':       'Lead generation, ICP scoring, sales pipeline management, and proposal workflow automation.',
+    'marketing-director':   'Campaign orchestration, content management, and brand communications — AI-assisted.',
+    'client-success-mgr':   'Client onboarding workflows, health scoring, churn prediction, and QBR delivery automation.',
+    'data-analyst':         'Cross-zone analytics, AI-generated report review, and data integrity assurance.',
+    'legal-counsel':        'Contract review, regulatory filings, and compliance documentation — managed and tracked.'
+  };
+
+  // Role group definitions (used by entry point)
+  var ROLE_GROUPS = {
+    executive:  { label: 'Executive Suite',           color: '#8BDB02' },
+    operations: { label: 'Operations',                color: '#20BAE7' },
+    security:   { label: 'Security & Compliance',     color: '#C616EA' },
+    business:   { label: 'Business & Relationships',  color: '#17E4ED' },
+    people:     { label: 'People & Culture',          color: '#2272E0' }
+  };
+
+  // Role descriptions (used by entry point detail panel)
+  var ROLE_DESCRIPTIONS = {
+    'msp-owner':            'Revenue growth and operational excellence across your MSP',
+    'vcio':                 'Technology roadmaps, budget forecasting, and strategic advisory',
+    'vciso':                'Security program management, risk scoring, and compliance automation',
+    'vcco':                 'Framework lifecycle, audit automation, and compliance governance',
+    'it-director':          'Unified service desk, endpoint management, and network operations',
+    'service-desk-manager': 'AI-powered triage, predictive SLA management, and intelligent dispatch',
+    'network-engineer':     'Topology visualization, capacity forecasting, and automated patching',
+    'project-manager':      'Phase-gated execution, migration workflows, and project intelligence',
+    'devops-engineer':      'CI/CD pipelines, infrastructure automation, and platform operations',
+    'security-analyst':     'Real-time threat detection, automated incident response, zero-trust',
+    'compliance-officer':   'CMMC, SOC 2, HIPAA — continuous monitoring with OSCAL-native evidence',
+    'account-manager':      'Client health scoring, churn prediction, and QBR preparation',
+    'finance-coordinator':  'Invoice ingestion, three-way reconciliation, and revenue recognition',
+    'sales-director':       'Lead generation, ICP scoring, sales pipeline, and proposal workflows',
+    'marketing-director':   'Campaign orchestration, content management, and brand communications',
+    'client-success-mgr':   'Client onboarding, health scoring, churn prediction, QBR delivery',
+    'data-analyst':         'Cross-zone analytics, AI report review, and data integrity assurance',
+    'hr-director':          'Workforce analytics, access lifecycle management, automated onboarding',
+    'recruiter':            'Skill gap analysis, onboarding automation, and directory synchronization',
+    'legal-counsel':        'Contract review, regulatory filings, and compliance documentation'
   };
 
   // ─── State ───
@@ -138,6 +218,40 @@
     if (path.indexOf('/zones/') >= 0 && path.indexOf('/process-areas/') >= 0) return '../../../';
     if (path.indexOf('/zones/') >= 0 || path.indexOf('/roles/') >= 0 || path.indexOf('/legal/') >= 0) return '../';
     return '';
+  }
+
+  // ─── Utility: detect current page slug ───
+  function getCurrentPageSlug() {
+    var path = window.location.pathname;
+    var page = path.split('/').pop() || '';
+    page = page.replace(/\.html$/, '');
+    return page || 'index';
+  }
+
+  // ─── Feature Flag: Should show entry point? ───
+  function shouldShowEntryPoint() {
+    if (!DEVOPS_AI_JOURNEY_ENTRY_POINT.enabled) return false;
+    if (state.role) return false; // Already identified
+
+    // Check page filter
+    var pages = DEVOPS_AI_JOURNEY_ENTRY_POINT.showOnPages;
+    if (pages && pages.length > 0) {
+      var currentPage = getCurrentPageSlug();
+      if (pages.indexOf(currentPage) === -1) return false;
+    }
+
+    // Check max show count
+    var maxCount = DEVOPS_AI_JOURNEY_ENTRY_POINT.maxShowCount || 1;
+    var shownCount = parseInt(getCookie(ENTRY_SHOWN_COOKIE) || '0', 10);
+    if (shownCount >= maxCount) return false;
+
+    return true;
+  }
+
+  // ─── Feature Flag: Track entry point shown ───
+  function trackEntryPointShown() {
+    var shownCount = parseInt(getCookie(ENTRY_SHOWN_COOKIE) || '0', 10);
+    setCookie(ENTRY_SHOWN_COOKIE, String(shownCount + 1), COOKIE_DAYS);
   }
 
   // ─────────────────────────────────────────
@@ -226,6 +340,7 @@
   // LAYER 2: Role Identification
   // ─────────────────────────────────────────
 
+  // Original bottom-sheet role picker (used when entry point flag is OFF)
   function showRolePicker() {
     if (state.role) return; // Already identified
 
@@ -275,6 +390,56 @@
   function hideRolePicker(picker) {
     picker.classList.remove('is-visible');
     setTimeout(function() { picker.remove(); }, 350);
+  }
+
+  // ─────────────────────────────────────────
+  // LAYER 2b: Journey Entry Point (Neural Network)
+  // Feature-flagged: DEVOPS_AI_JOURNEY_ENTRY_POINT
+  // ─────────────────────────────────────────
+
+  function showJourneyEntryPoint() {
+    if (state.role) return; // Already identified
+
+    trackEntryPointShown();
+
+    // Build entry point data payload for the module
+    var entryPointConfig = {
+      roles: ROLES.map(function(r) {
+        return {
+          id: r.id,
+          label: r.label,
+          desc: ROLE_DESCRIPTIONS[r.id] || '',
+          zones: (ROLE_ZONES[r.id] || []).slice(0, 3),
+          group: r.group
+        };
+      }),
+      groups: ROLE_GROUPS,
+      mode: DEVOPS_AI_JOURNEY_ENTRY_POINT.mode || 'auto',
+      debug: DEVOPS_AI_JOURNEY_ENTRY_POINT.debug || false,
+      onRoleSelected: function(roleId) {
+        state.role = roleId;
+        saveRole();
+        onRoleSelected();
+      },
+      resolveRoot: resolveRoot
+    };
+
+    // Expose config globally for the entry-point.js module to consume
+    window.__DEVOPS_AI_ENTRY_POINT__ = entryPointConfig;
+
+    // Dynamically load entry-point.js if not already loaded
+    if (!document.getElementById('devopsai-entry-point-script')) {
+      var script = document.createElement('script');
+      script.id = 'devopsai-entry-point-script';
+      script.type = 'module';
+      script.src = resolveRoot() + 'entry-point.js';
+      document.body.appendChild(script);
+    } else {
+      // If script already loaded, re-init
+      if (window.__devopsAIEntryPointInit) {
+        window.__devopsAIEntryPointInit(entryPointConfig);
+      }
+    }
   }
 
   // ─────────────────────────────────────────
@@ -345,7 +510,12 @@
 
   function onConsentGranted() {
     if (state.consent.personalization && !state.role) {
-      setTimeout(showRolePicker, 800);
+      // Feature-flagged: use entry point or fallback to bottom-sheet picker
+      if (shouldShowEntryPoint()) {
+        setTimeout(showJourneyEntryPoint, 800);
+      } else {
+        setTimeout(showRolePicker, 800);
+      }
     }
     if (state.consent.personalization) {
       trackPageVisit();
@@ -353,6 +523,13 @@
   }
 
   function onRoleSelected() {
+    // Dismiss the entry point overlay if present
+    var entryPoint = document.getElementById('devopsai-entry-point');
+    if (entryPoint) {
+      entryPoint.classList.add('is-hidden');
+      setTimeout(function() { entryPoint.remove(); }, 600);
+    }
+
     applyPersonalization();
   }
 
@@ -413,15 +590,18 @@
       deleteCookie(ROLE_COOKIE);
       state.role = null;
       bar.remove();
-      showRolePicker();
+      // Feature-flagged: use entry point or fallback
+      if (shouldShowEntryPoint()) {
+        showJourneyEntryPoint();
+      } else {
+        showRolePicker();
+      }
     });
   }
 
   function personalizeHero(roleData) {
     // Only on homepage
-    var path = window.location.pathname;
-    var page = path.split('/').pop() || '';
-    page = page.replace(/\.html$/, '');
+    var page = getCurrentPageSlug();
     if (page !== 'index' && page !== '') return;
 
     var heroText = ROLE_HERO_TEXT[state.role];
@@ -437,9 +617,7 @@
 
   function insertRecommendedZones(roleData, root) {
     // Only on homepage and platform page
-    var path = window.location.pathname;
-    var page = path.split('/').pop() || '';
-    page = page.replace(/\.html$/, '');
+    var page = getCurrentPageSlug();
     if (page !== 'index' && page !== '' && page !== 'platform') return;
 
     var zones = ROLE_ZONES[state.role];
@@ -536,14 +714,63 @@
         trackPageVisit();
         applyPersonalization();
 
-        // If they consented but never picked a role, prompt after 3 visits
+        // If they consented but never picked a role, prompt after 2 visits
         if (!state.role && state.visits >= 2) {
-          setTimeout(showRolePicker, 2000);
+          // Feature-flagged: use entry point or fallback
+          if (shouldShowEntryPoint()) {
+            setTimeout(showJourneyEntryPoint, 2000);
+          } else {
+            setTimeout(showRolePicker, 2000);
+          }
         }
       } else if (state.consent.analytics) {
         trackPageVisit();
       }
     }
   });
+
+  // ─── Public API (for DevOps AI platform control plane integration) ───
+  // These methods can be called from the BD Zone control plane to manage
+  // the journey entry point at runtime.
+  window.DevOpsAIPersonalization = {
+    // Get current feature flag state
+    getEntryPointConfig: function() {
+      return JSON.parse(JSON.stringify(DEVOPS_AI_JOURNEY_ENTRY_POINT));
+    },
+    // Enable/disable the entry point (runtime toggle)
+    setEntryPointEnabled: function(enabled) {
+      DEVOPS_AI_JOURNEY_ENTRY_POINT.enabled = !!enabled;
+      if (DEVOPS_AI_JOURNEY_ENTRY_POINT.debug) {
+        console.log('[DevOps AI] Journey Entry Point ' + (enabled ? 'ENABLED' : 'DISABLED'));
+      }
+    },
+    // Update entry point config (partial update)
+    updateEntryPointConfig: function(partial) {
+      if (partial.enabled !== undefined) DEVOPS_AI_JOURNEY_ENTRY_POINT.enabled = !!partial.enabled;
+      if (partial.mode) DEVOPS_AI_JOURNEY_ENTRY_POINT.mode = partial.mode;
+      if (partial.showOnPages) DEVOPS_AI_JOURNEY_ENTRY_POINT.showOnPages = partial.showOnPages;
+      if (partial.maxShowCount !== undefined) DEVOPS_AI_JOURNEY_ENTRY_POINT.maxShowCount = partial.maxShowCount;
+      if (partial.debug !== undefined) DEVOPS_AI_JOURNEY_ENTRY_POINT.debug = !!partial.debug;
+    },
+    // Reset user's role (trigger re-identification)
+    resetRole: function() {
+      deleteCookie(ROLE_COOKIE);
+      state.role = null;
+      var welcomeBar = document.querySelector('.welcome-bar');
+      if (welcomeBar) welcomeBar.remove();
+    },
+    // Get current personalization state
+    getState: function() {
+      return JSON.parse(JSON.stringify(state));
+    },
+    // Get all role definitions
+    getRoles: function() {
+      return JSON.parse(JSON.stringify(ROLES));
+    },
+    // Get role groups
+    getRoleGroups: function() {
+      return JSON.parse(JSON.stringify(ROLE_GROUPS));
+    }
+  };
 
 })();
