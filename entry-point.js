@@ -602,6 +602,11 @@
       console.warn('[DevOps AI Entry Point] 3D init failed, falling back to card grid:', err);
       epState.tier = 'card-grid';
       canvas.style.display = 'none';
+      // Remove mode-3d class so CSS doesn't hide the grid container
+      var container = document.getElementById('devopsai-entry-point');
+      if (container) container.classList.remove('mode-3d');
+      var gridEl = document.getElementById('ep-grid-container');
+      if (gridEl) gridEl.classList.remove('is-hidden');
       initCardGridMode();
     }
   }
@@ -678,6 +683,10 @@
 
   // ─── Mode Init ───
   function initCardGridMode() {
+    // Ensure mode-3d class is removed (in case we fell back from 3D)
+    var container = document.getElementById('devopsai-entry-point');
+    if (container) container.classList.remove('mode-3d');
+
     initNeuralBackground();
     var gridContainer = document.getElementById('ep-grid-container');
     if (gridContainer) gridContainer.classList.remove('is-hidden');
@@ -707,7 +716,22 @@
       var p = document.getElementById('ep-prompt'); if (p) p.classList.add('is-visible');
     }, 2500);
 
-    init3DGraph();
+    // Safety timeout: if 3D hasn't rendered after 8s, fall back to card grid
+    var fallbackTimer = setTimeout(function() {
+      if (!epState.threeScene) {
+        console.warn('[DevOps AI Entry Point] 3D init timeout, falling back to card grid');
+        epState.tier = 'card-grid';
+        var canvas = document.getElementById('ep-network-canvas');
+        if (canvas) canvas.style.display = 'none';
+        initCardGridMode();
+      }
+    }, 8000);
+
+    init3DGraph().then(function() {
+      clearTimeout(fallbackTimer);
+    }).catch(function() {
+      clearTimeout(fallbackTimer);
+    });
   }
 
   // ─── Main Init ───
