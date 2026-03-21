@@ -11,7 +11,6 @@
    .btn--ghost    — text-only, underline on hover
    .btn--lg / .btn--sm — size variants
    .btn--icon     — icon-only square button
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .btn {
   display: inline-flex;
@@ -33,7 +32,7 @@
               border-color     var(--duration-normal) var(--ease-out),
               color            var(--duration-normal) var(--ease-out),
               box-shadow       var(--duration-normal) var(--ease-out),
-              transform        var(--duration-fast)   var(--ease-out);
+              transform        var(--duration-fast) var(--ease-out);
   -webkit-user-select: none;
           user-select: none;
 }
@@ -117,7 +116,6 @@
    .card         — base card shell
    .card--glass  — glassmorphic variant
    .card--solid  — solid surface variant
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .card {
   position: relative;
@@ -209,7 +207,6 @@
    .badge--zone   — accent green bg
    .badge--role   — blue tint
    .badge--status — dynamic status colors
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .badge {
   display: inline-flex;
@@ -281,7 +278,6 @@
    .metric__value    — large stat number
    .metric__label    — supporting label
    .metric--counter  — animated counter variant
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .metric {
   display: flex;
@@ -323,7 +319,6 @@
    .screenshot         — base image wrapper
    .screenshot--framed — browser chrome mockup
    .screenshot--float  — rounded, shadow, slight rotation
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .screenshot {
   position: relative;
@@ -352,8 +347,7 @@
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border-default);
   /* Window traffic lights simulation via box-shadows */
-  background-image:
-    radial-gradient(circle 5px at 14px 50%, #FF5F57 0%, #FF5F57 100%),
+  background-image: radial-gradient(circle 5px at 14px 50%, #FF5F57 0%, #FF5F57 100%),
     radial-gradient(circle 5px at 34px 50%, #FEBC2E 0%, #FEBC2E 100%),
     radial-gradient(circle 5px at 54px 50%, #28C840 0%, #28C840 100%);
   background-repeat: no-repeat;
@@ -377,7 +371,6 @@
    .section--dark      — deeper dark bg
    .section--gradient  — gradient bg
    .section--alt       — alternating slightly lighter bg
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .section--dark {
   background-color: var(--bg-secondary);
@@ -395,7 +388,6 @@
    .grid--bento   — bento box layout (mixed sizes)
    .grid--cards   — auto-fill card grid
    .grid--zones   — 15-item zone grid
-   ─────────────────────────────────────────────────────────────────────────── */
 
 /* Bento grid */
 .grid--bento {
@@ -448,7 +440,6 @@
    .hero--home   — full viewport hero
    .hero--page   — shorter interior page hero
    .hero--zone   — zone page with accent
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .hero--home {
   position: relative;
@@ -517,7 +508,6 @@
    .testimonial        — quote card
    .testimonial__quote — the quote text
    .testimonial__author — photo + name + title + company
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .testimonial {
   display: flex;
@@ -597,7 +587,6 @@
 
 /* ─── Accordion (<details>/<summary>) ─────────────────────────────────────
    Uses native <details> with CSS height animation
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .accordion {
   border: 1px solid var(--border-default);
@@ -661,7 +650,6 @@
 /* ─── Tabs ─────────────────────────────────────────────────────────────────
    Accessible: role="tablist", role="tab", role="tabpanel"
    Keyboard navigation via JS (arrow keys)
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .tabs {
   display: flex;
@@ -715,7 +703,6 @@
 
 /* ─── Breadcrumb ──────────────────────────────────────────────────────────
    Semantic <nav aria-label="Breadcrumb"><ol class="breadcrumb">
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .breadcrumb {
   display: flex;
@@ -759,7 +746,6 @@
 
 /* ─── Toast ────────────────────────────────────────────────────────────────
    Fixed top-right corner, auto-dismiss positioning
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .toast-region {
   position: fixed;
@@ -844,7 +830,6 @@
 
 /* ─── Code Block ───────────────────────────────────────────────────────────
    .code-block — syntax highlighted code container with copy button
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .code-block {
   position: relative;
@@ -930,7 +915,6 @@
 
 /* ─── Reading Progress Bar ─────────────────────────────────────────────────
    (kept from enhancements.css for consolidated reference)
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .reading-progress {
   position: fixed;
@@ -948,8 +932,6 @@ body:has(.welcome-bar) .reading-progress {
   top: 33px;
 }
 
-/* ─── Stat number helpers ─────────────────────────────────────────────────── */
-
 .stat-number,
 .stats-grid .stat h3,
 .stats-grid .stat-value {
@@ -961,7 +943,6 @@ body:has(.welcome-bar) .reading-progress {
 /* ─── Generic card hover micro-interactions (from enhancements.css) ────────
    Kept here so pages referencing these classes still work without loading
    the old enhancements.css
-   ─────────────────────────────────────────────────────────────────────────── */
 
 .zone-card,
 .role-card,
@@ -1011,7 +992,6 @@ a[class*="cta"]:not(.cta-secondary):hover,
 
 /* ─── Reduced motion overrides ─────────────────────────────────────────────
    Must come last in this file
-   ─────────────────────────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   .card--glass,

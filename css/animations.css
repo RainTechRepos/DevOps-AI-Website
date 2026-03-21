@@ -11,8 +11,6 @@
    Keyframe Definitions
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── Entry Animations ───────────────────────────────────────────────────── */
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -62,8 +60,6 @@
   }
 }
 
-/* ─── Hero Background ────────────────────────────────────────────────────── */
-
 @keyframes meshDrift {
   0%   { transform: translate(0, 0)     rotate(0deg) scale(1); }
   25%  { transform: translate(3%, -2%)  rotate(2deg) scale(1.03); }
@@ -71,8 +67,6 @@
   75%  { transform: translate(2%, 2%)   rotate(1.5deg) scale(1.02); }
   100% { transform: translate(0, 0)     rotate(0deg) scale(1); }
 }
-
-/* ─── Pulsing Dot / Status Indicator ────────────────────────────────────── */
 
 @keyframes pulse {
   0%, 100% {
@@ -85,22 +79,16 @@
   }
 }
 
-/* ─── AI Gradient Shift ──────────────────────────────────────────────────── */
-
 @keyframes gradientShift {
   0%   { background-position: 0%   50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0%   50%; }
 }
 
-/* ─── Counter (JS-driven, CSS scaffolding) ───────────────────────────────── */
-
 @keyframes countUp {
   from { opacity: 0; transform: translateY(0.4em); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-/* ─── Glow Pulse (AI indicators) ─────────────────────────────────────────── */
 
 @keyframes glowPulse {
   0%, 100% {
@@ -113,20 +101,14 @@
   }
 }
 
-/* ─── Float (parallax-like decorative elements) ─────────────────────────── */
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-12px); }
 }
 
-/* ─── Spin (loading indicator) ───────────────────────────────────────────── */
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-
-/* ─── Card border shimmer ─────────────────────────────────────────────────── */
 
 @keyframes shimmer {
   0%   { opacity: 0.3; }
@@ -137,8 +119,6 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    Utility Animation Classes
    ═══════════════════════════════════════════════════════════════════════════ */
-
-/* ─── Direct animation utilities ─────────────────────────────────────────── */
 
 .animate-fade-up {
   animation: fadeUp var(--duration-slow) var(--ease-out) both;
@@ -164,8 +144,6 @@
 .animate-delay-5  { animation-delay: 500ms; }
 .animate-delay-6  { animation-delay: 600ms; }
 
-/* ─── Gradient Shift (applied to .gradient-ai text / bg) ─────────────────── */
-
 .gradient-ai-bg {
   background: linear-gradient(270deg, #8BDB02, #17E4ED, #C616EA, #2272E0, #8BDB02);
   background-size: 300% 300%;
@@ -181,8 +159,6 @@
   animation: gradientShift 8s var(--ease-in-out) infinite;
 }
 
-/* ─── Float decoration ───────────────────────────────────────────────────── */
-
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
@@ -194,8 +170,6 @@
 .animate-float--fast {
   animation: float 3s ease-in-out infinite;
 }
-
-/* ─── Glow pulse for AI dot indicators ───────────────────────────────────── */
 
 .animate-glow {
   animation: glowPulse 2.5s ease-in-out infinite;
@@ -211,14 +185,10 @@
   animation: pulse 1.8s ease-in-out infinite;
 }
 
-/* ─── Mesh background animation ──────────────────────────────────────────── */
-
 .mesh-bg {
   animation: meshDrift 18s ease-in-out infinite;
   will-change: transform;
 }
-
-/* ─── Loading spinner ─────────────────────────────────────────────────────── */
 
 .spinner {
   display: inline-block;
@@ -234,8 +204,6 @@
    Scroll-driven Entry Animations
    [data-animate] attribute triggers entry when .is-visible is added by JS
    ═══════════════════════════════════════════════════════════════════════════ */
-
-/* ─── Base hidden state ──────────────────────────────────────────────────── */
 
 [data-animate] {
   opacity: 0;
@@ -260,14 +228,10 @@
   transform: translateX(32px);
 }
 
-/* ─── Visible state ──────────────────────────────────────────────────────── */
-
 [data-animate].is-visible {
   opacity: 1;
   transform: translateY(0) scale(1) translateX(0);
 }
-
-/* ─── Stagger for child elements ─────────────────────────────────────────── */
 
 [data-animate-group] > * {
   opacity: 0;
@@ -291,8 +255,6 @@
 [data-animate-group].is-visible > *:nth-child(8)  { transition-delay: 560ms; }
 [data-animate-group].is-visible > *:nth-child(n+9) { transition-delay: 640ms; }
 
-/* ─── Card hover: scale + border glow + shadow lift ─────────────────────── */
-
 .card--animated {
   transition: transform        150ms var(--ease-out),
               box-shadow       150ms var(--ease-out),
@@ -304,8 +266,6 @@
   box-shadow: var(--shadow-lg), 0 0 24px var(--accent-glow);
   border-color: var(--border-glow);
 }
-
-/* ─── Section entry ──────────────────────────────────────────────────────── */
 
 .section-entry {
   opacity: 0;
