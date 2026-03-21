@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BCDR Planning &amp; Testing — Security Operations — DevOps AI | RainTech</title>
+
+<meta name="description" content="Business continuity and disaster recovery planning with automated testing">
+<link rel="canonical" href="https://devops.ai.rain.tech/zones/security-operations/process-areas/bcdr-planning-testing">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="BCDR Planning &amp; Testing — Security Operations — DevOps AI">
+<meta property="og:description" content="Business continuity and disaster recovery planning with automated testing">
+<meta property="og:url"         content="https://devops.ai.rain.tech/zones/security-operations/process-areas/bcdr-planning-testing">
+<meta property="og:site_name"   content="DevOps AI by RainTech">
+<meta property="og:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="BCDR Planning &amp; Testing — Security Operations — DevOps AI">
+<meta name="twitter:description" content="Business continuity and disaster recovery planning with automated testing">
+<meta name="twitter:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../../css/base.css">
+<link rel="stylesheet" href="../../../css/layout.css">
+<link rel="stylesheet" href="../../../css/components.css">
+<link rel="stylesheet" href="../../../css/animations.css">
+<link rel="stylesheet" href="../../../css/pages.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "RainTech",
+      "url": "https://devops.ai.rain.tech",
+      "logo": "https://devops.ai.rain.tech/assets/logo-powered-by.png"
+    },
+    {
+      "@type": "WebPage",
+      "name": "BCDR Planning & Testing \u2014 Security Operations \u2014 DevOps AI",
+      "url": "https://devops.ai.rain.tech/zones/security-operations/process-areas/bcdr-planning-testing",
+      "description": "Business continuity and disaster recovery planning with automated testing",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://devops.ai.rain.tech/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Platform",
+            "item": "https://devops.ai.rain.tech/platform"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Security Operations",
+            "item": "https://devops.ai.rain.tech/zones/security-operations"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "BCDR Planning & Testing"
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../../../index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">DevOps <span>AI</span></span>
+        </a>
+        <nav class="nav-primary" aria-label="Primary navigation" id="primary-nav">
+          <div class="nav-item" id="nav-platform">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-platform" id="nav-btn-platform">Platform <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg></button>
+            <div class="mega-menu mega-menu--platform" id="mega-platform" role="region" aria-label="Platform menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__heading">Platform Overview</p>
+                    <a class="mega-menu__link mega-menu__link--more" href="../../../platform.html">Explore the Platform →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item"><a class="nav-link" href="../../../pricing.html">Pricing</a></div>
+          <div class="nav-item"><a class="nav-link" href="../../../security.html">Security</a></div>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" aria-pressed="false">
+            <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a class="btn-login" href="../../../login.html">Log in</a>
+          <a class="nav-cta" href="../../../get-started.html">Get Started →</a>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span class="mobile-menu-toggle__bar" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+    <div class="mobile-nav__drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <div class="mobile-nav__header">
+        <a href="../../../index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:28px"><circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/><path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/><circle cx="20" cy="20" r="4" fill="#17E4ED"/></svg>
+          <span class="header-logo__wordmark" aria-hidden="true">DevOps <span>AI</span></span>
+        </a>
+        <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close navigation menu"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="mobile-nav__body">
+        <a class="mobile-nav__link--direct" href="../../../platform.html">Platform</a>
+        <a class="mobile-nav__link--direct" href="../../../pricing.html">Pricing</a>
+        <a class="mobile-nav__link--direct" href="../../../security.html">Security</a>
+      </div>
+      <div class="mobile-nav__footer">
+        <a class="btn-login" href="../../../login.html" style="justify-content:center">Log in</a>
+        <a class="nav-cta" href="../../../get-started.html" style="justify-content:center">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="container" style="padding-top: calc(80px + var(--space-4))">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list" style="display:contents">
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../../../index.html">Home</a><span class="breadcrumb__sep" aria-hidden="true">›</span></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../../../platform.html">Platform</a><span class="breadcrumb__sep" aria-hidden="true">›</span></li>
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../index.html">Security Operations</a><span class="breadcrumb__sep" aria-hidden="true">›</span></li>
+        <li class="breadcrumb__item"><span class="breadcrumb__current" aria-current="page">BCDR Planning &amp; Testing</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- Hero -->
+    <section class="pa-hero section--gradient" aria-label="BCDR Planning &amp; Testing hero" data-animate>
+      <div class="container">
+        <div class="pa-hero__inner">
+          <div class="pa-hero__badges" data-animate>
+            <span class="badge badge--zone">🔒 Security Operations</span>
+            <span class="badge badge--pa">Process Area</span>
+          </div>
+          <h1 class="pa-hero__title" data-animate>BCDR Planning &amp; Testing</h1>
+          <p class="pa-hero__tagline" data-animate>Business continuity and disaster recovery planning with automated testing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section pa-overview" aria-label="Overview" data-animate>
+      <div class="container">
+        <div class="pa-overview__content" data-animate>
+          <p>BCDR Planning &amp; Testing ensures your clients can recover from disasters, outages, and major incidents. The platform manages continuity plans, recovery procedures, and automated testing schedules for each client environment.</p>
+          <p>AI assists in building and maintaining BCDR plans by analyzing infrastructure dependencies, identifying single points of failure, and suggesting recovery strategies. Automated DR testing validates that backups are restorable and recovery time objectives (RTOs) are achievable.</p>
+          <p>Post-test analysis compares actual recovery metrics against targets, identifying gaps that need attention before a real disaster strikes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section--dark pa-how-it-works" aria-label="How it works" data-animate>
+      <div class="container">
+        <div class="pa-section-header" data-animate>
+          <span class="pa-section-label">Workflow</span>
+          <h2>How It Works</h2>
+        </div>
+        <div class="pa-steps" data-animate>
+            <div class="pa-step" data-animate>
+              <div class="pa-step__number">1</div>
+              <div class="pa-step__content">
+                <h3 class="pa-step__title">Plan</h3>
+                <p class="pa-step__desc">AI analyzes infrastructure to build comprehensive BCDR plans with dependency mapping.</p>
+              </div>
+            </div>
+            <div class="pa-step" data-animate>
+              <div class="pa-step__number">2</div>
+              <div class="pa-step__content">
+                <h3 class="pa-step__title">Document</h3>
+                <p class="pa-step__desc">Recovery procedures documented with step-by-step runbooks for each scenario.</p>
+              </div>
+            </div>
+            <div class="pa-step" data-animate>
+              <div class="pa-step__number">3</div>
+              <div class="pa-step__content">
+                <h3 class="pa-step__title">Test</h3>
+                <p class="pa-step__desc">Automated DR testing validates backup integrity and recovery procedures.</p>
+              </div>
+            </div>
+            <div class="pa-step" data-animate>
+              <div class="pa-step__number">4</div>
+              <div class="pa-step__content">
+                <h3 class="pa-step__title">Analyze</h3>
+                <p class="pa-step__desc">Post-test analysis compares actual RTO/RPO against targets.</p>
+              </div>
+            </div>
+            <div class="pa-step" data-animate>
+              <div class="pa-step__number">5</div>
+              <div class="pa-step__content">
+                <h3 class="pa-step__title">Improve</h3>
+                <p class="pa-step__desc">Gap analysis feeds plan updates and infrastructure improvement recommendations.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Capabilities -->
+    <section class="section pa-ai-capabilities" aria-label="AI capabilities" data-animate>
+      <div class="container">
+        <div class="pa-section-header" data-animate>
+          <span class="pa-section-label">Intelligence</span>
+          <h2>AI Capabilities</h2>
+        </div>
+        <div class="pa-ai-grid" data-animate>
+            <div class="pa-ai-card card card--glass" data-animate>
+              <p class="pa-ai-card__title">Dependency mapping</p>
+            </div>
+            <div class="pa-ai-card card card--glass" data-animate>
+              <p class="pa-ai-card__title">Recovery strategy optimization</p>
+            </div>
+            <div class="pa-ai-card card card--glass" data-animate>
+              <p class="pa-ai-card__title">Automated DR testing</p>
+            </div>
+            <div class="pa-ai-card card card--glass" data-animate>
+              <p class="pa-ai-card__title">RTO/RPO gap analysis</p>
+            </div>
+        </div>
+        <div class="pa-hitl" data-animate>
+          <h3 class="pa-hitl__title">Human-in-the-Loop Checkpoints</h3>
+          <ul class="pa-hitl__list">
+              <li>Approve BCDR plans</li>
+              <li>Schedule and oversee DR tests</li>
+              <li>Review test results and gap analysis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="section section--dark pa-metrics" aria-label="Key metrics" data-animate>
+      <div class="container">
+        <div class="pa-section-header" data-animate>
+          <span class="pa-section-label">Performance</span>
+          <h2>Key Metrics</h2>
+        </div>
+        <div class="pa-metrics-grid" data-animate>
+            <div class="pa-metric-card card card--glass" data-animate>
+              <span class="pa-metric-card__value">DR test pass rate &gt;95%</span>
+            </div>
+            <div class="pa-metric-card card card--glass" data-animate>
+              <span class="pa-metric-card__value">RTO achievement &gt;99%</span>
+            </div>
+            <div class="pa-metric-card card card--glass" data-animate>
+              <span class="pa-metric-card__value">Plan currency &lt;90 days since last update</span>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connected Process Areas -->
+    <section class="section pa-connected" aria-label="Connected process areas" data-animate>
+      <div class="container">
+        <div class="pa-section-header" data-animate>
+          <span class="pa-section-label">Cross-Zone</span>
+          <h2>Connected Process Areas</h2>
+          <p>This process area integrates with related capabilities across the platform.</p>
+        </div>
+        <div class="pa-connected__grid" data-animate>
+          <a href="security-observability.html" class="pa-connected__card card card--glass" data-animate>
+            <span class="pa-connected__name">Security Observability</span>
+          </a>
+          <a href="../../zones/endpoint-management/process-areas/infrastructure-monitoring.html" class="pa-connected__card card card--glass" data-animate>
+            <span class="pa-connected__name">Infrastructure Monitoring</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Roles -->
+    <section class="section section--dark pa-related-roles" aria-label="Related roles" data-animate>
+      <div class="container">
+        <div class="pa-section-header" data-animate>
+          <span class="pa-section-label">People</span>
+          <h2>Related Roles</h2>
+          <p>Key roles that interact with this process area.</p>
+        </div>
+        <div class="pa-roles-grid" data-animate>
+          <a href="../../../roles/it-director.html" class="pa-role-card card card--glass" data-animate>
+            <div class="pa-role-card__icon">👤</div>
+            <span class="pa-role-card__name">IT Director</span>
+          </a>
+          <a href="../../../roles/vciso.html" class="pa-role-card card card--glass" data-animate>
+            <div class="pa-role-card__icon">🛡️</div>
+            <span class="pa-role-card__name">vCISO</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section pa-cta" aria-label="Call to action" data-animate>
+      <div class="container">
+        <h2 data-animate>See BCDR Planning &amp; Testing in Action</h2>
+        <p data-animate>Experience AI-powered security operations automation — from insight to action in a single platform.</p>
+        <div class="pa-cta__actions" data-animate>
+          <a href="../../../get-started.html" class="btn btn--primary btn--lg">Request a Demo</a>
+          <a href="../index.html" class="btn btn--secondary btn--lg">← Back to Security Operations</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo" id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../../index.html" class="footer-logo" aria-label="DevOps AI — Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:32px;width:auto"><circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/><path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/><circle cx="20" cy="20" r="4" fill="#17E4ED"/></svg>
+            <span class="footer-logo__wordmark">DevOps <span>AI</span></span>
+          </a>
+          <p class="footer-tagline">AI-as-a-Service for MSPs</p>
+          <p class="footer-brand__desc">The AI-orchestrated MSP control plane. 15 operational zones. 157 process areas. Full data sovereignty.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><a href="../../../platform.html">Platform Overview</a><a href="../../../architecture.html">Architecture</a></div>
+        <div class="footer-col"><h4>Solutions</h4><a href="../../../pricing.html">Pricing</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="../../../docs.html">Documentation</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="../../../about.html">About RainTech</a><a href="../../../contact.html">Contact</a></div>
+      </div>
+      <div class="footer-trust" role="navigation" aria-label="Trust and legal links">
+        <span class="footer-trust__label">Trust &amp; Legal</span>
+        <a href="../../../security.html">Security Center</a><span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="../../../privacy.html">Privacy Policy</a><span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="../../../terms.html">Terms of Service</a>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 RainTech, Inc. All rights reserved.</span>
+        <div class="footer-bottom__badges">
+          <a class="badge-azure" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank" aria-label="Available on Azure Marketplace"><svg viewBox="0 0 16 16" aria-hidden="true" fill="#0078d4"><path d="M7.073 1.8L1.6 11.3h4.2l1.3-2.4h2.4l-1.8-3.1L9.6 3l-2.527-1.2zm1.6 4.5l2.327 4H4.8l3.873-4zM6.927 11.3L5.6 13.5H14.4l-1.327-2.2H6.927z"/></svg> Azure Marketplace</a>
+          <a class="footer-perplexity" href="https://www.perplexity.ai/computer" rel="noopener" target="_blank">Created with Perplexity Computer ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  (function(){'use strict';var t=document.getElementById('theme-toggle'),h=document.documentElement;function a(m){h.setAttribute('data-theme',m);localStorage.setItem('devops-ai-theme',m);if(t){t.setAttribute('aria-pressed',m==='light'?'true':'false');t.setAttribute('aria-label',m==='light'?'Switch to dark mode':'Switch to light mode')}}var s=localStorage.getItem('devops-ai-theme');if(s)a(s);if(t)t.addEventListener('click',function(){a((h.getAttribute('data-theme')||'dark')==='dark'?'light':'dark')});var hd=document.getElementById('site-header');if(hd){var tk=false;function os(){if(!tk){window.requestAnimationFrame(function(){hd.classList.toggle('is-scrolled',window.scrollY>50);tk=false});tk=true}}window.addEventListener('scroll',os,{passive:true});os()}var ni=document.querySelectorAll('.nav-item');ni.forEach(function(i){var tr=i.querySelector('.nav-link--dropdown'),me=i.querySelector('.mega-menu');if(!tr||!me)return;tr.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();var ex=tr.getAttribute('aria-expanded')==='true';ca();if(!ex)tr.setAttribute('aria-expanded','true')}if(e.key==='Escape'){ca();tr.focus()}});me.addEventListener('keydown',function(e){if(e.key==='Escape'){ca();tr.focus()}})});document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))ca()});function ca(){ni.forEach(function(i){var tr=i.querySelector('.nav-link--dropdown');if(tr)tr.setAttribute('aria-expanded','false')})}var mn=document.getElementById('mobile-nav'),mt=document.getElementById('mobile-menu-toggle'),mc=document.getElementById('mobile-nav-close'),mo=document.getElementById('mobile-nav-overlay'),bd=document.body;function gf(c){return Array.from(c.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(e){return!e.closest('[hidden]')&&getComputedStyle(e).display!=='none'})}function om(){if(!mn||!mt)return;mn.classList.add('is-open');mn.setAttribute('aria-hidden','false');mt.setAttribute('aria-expanded','true');bd.style.overflow='hidden';setTimeout(function(){var f=gf(mn)[0];if(f)f.focus()},50)}function cm(){if(!mn||!mt)return;mn.classList.remove('is-open');mn.setAttribute('aria-hidden','true');mt.setAttribute('aria-expanded','false');bd.style.overflow='';mt.focus()}if(mt)mt.addEventListener('click',om);if(mc)mc.addEventListener('click',cm);if(mo)mo.addEventListener('click',cm);if(mn)mn.addEventListener('keydown',function(e){if(!mn.classList.contains('is-open'))return;if(e.key==='Escape'){cm();return}if(e.key==='Tab'){var f=gf(mn);if(!f.length)return;var fi=f[0],la=f[f.length-1];if(e.shiftKey&&document.activeElement===fi){e.preventDefault();la.focus()}else if(!e.shiftKey&&document.activeElement===la){e.preventDefault();fi.focus()}}});if('IntersectionObserver'in window){var ob=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');ob.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('[data-animate]').forEach(function(el){el.classList.add('fade-up');ob.observe(el)})}})();
+  </script>
+
+</body>
+</html>
