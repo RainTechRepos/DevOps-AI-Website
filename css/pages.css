@@ -1,0 +1,189 @@
+/* ========================================
+   css/pages.css — Page-Specific Styles
+   DevOps AI by RainTech
+   Depends on: base.css, components.css
+   ======================================== */
+
+/* ═══ FR-W07: Security ═══ */
+
+/* Security Hero */
+.security-hero {
+  background: var(--gradient-depth);
+  position: relative;
+}
+
+.security-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(139, 219, 2, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(23, 228, 237, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Compliance Badge Cards Grid */
+.security-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+.security-badge-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.security-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+}
+
+/* Split Layout */
+.security-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.security-split__content h2 {
+  margin-bottom: var(--space-4);
+}
+
+.security-split__content > p {
+  margin-bottom: var(--space-6);
+}
+
+/* Checklist */
+.security-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+}
+
+.security-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.security-checklist li svg {
+  flex-shrink: 0;
+  margin-top: 0.15em;
+}
+
+/* Region Visual */
+.security-region-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.security-region-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+/* Security Contact Form */
+.security-contact-card {
+  padding: var(--space-8) !important;
+}
+
+.security-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.security-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.security-form-group label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.security-form-group input,
+.security-form-group select,
+.security-form-group textarea {
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.security-form-group input:focus,
+.security-form-group select:focus,
+.security-form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.security-form-group input::placeholder,
+.security-form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.security-form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2397999B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  background-size: 1rem;
+  padding-right: var(--space-10);
+}
+
+.security-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.security-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .security-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .security-badges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-contact-card {
+    padding: var(--space-5) !important;
+  }
+}
