@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Security &amp; Trust Center — DevOps AI | RainTech</title>
+
+<meta name="description" content="Security is built into every layer of DevOps AI. Zero-trust architecture, SOC 2 Type II, HIPAA, CMMC compliance, HITL controls, and full data sovereignty on Azure.">
+<link rel="canonical" href="https://devops.ai.rain.tech/security">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Security &amp; Trust Center — DevOps AI">
+<meta property="og:description" content="Zero-trust architecture, compliance certifications, HITL controls, and full data sovereignty — security built into every layer.">
+<meta property="og:url"         content="https://devops.ai.rain.tech/security">
+<meta property="og:site_name"   content="DevOps AI by RainTech">
+<meta property="og:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Security &amp; Trust Center — DevOps AI">
+<meta name="twitter:description" content="Zero-trust architecture, compliance certifications, HITL controls, and full data sovereignty.">
+<meta name="twitter:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon"   type="image/png"     href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon"                      href="assets/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "RainTech",
+      "url": "https://devops.ai.rain.tech",
+      "logo": "https://devops.ai.rain.tech/assets/logo-powered-by.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 S Tejon St., Suite 400",
+        "addressLocality": "Colorado Springs",
+        "addressRegion": "CO",
+        "postalCode": "80903",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-844-835-7246"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Security & Trust Center — DevOps AI",
+      "url": "https://devops.ai.rain.tech/security",
+      "description": "Security is built into every layer of DevOps AI. Zero-trust architecture, compliance certifications, and full data sovereignty.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.ai.rain.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "Security & Trust Center", "item": "https://devops.ai.rain.tech/security" }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+  <!-- Accessibility: Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">
+            DevOps <span>AI</span>
+          </span>
+        </a>
+
+        <nav class="nav-primary" aria-label="Primary navigation" id="primary-nav">
+
+          <!-- Platform -->
+          <div class="nav-item" id="nav-platform">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-platform" id="nav-btn-platform">
+              Platform
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--platform" id="mega-platform" role="region" aria-label="Platform menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__heading">Platform Overview</p>
+                    <p class="mega-menu__description">The AI-orchestrated MSP control plane with 15 operational zones, 157 process areas, and full data sovereignty.</p>
+                    <a class="mega-menu__link mega-menu__link--more" href="platform.html">Explore the Platform →</a>
+                  </div>
+                  <div class="mega-menu__divider" role="separator"></div>
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">By Zone</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="zones/service-desk.html">Service Desk &amp; ITSM</a></li>
+                      <li><a class="mega-menu__link" href="zones/security-operations.html">Security Operations</a></li>
+                      <li><a class="mega-menu__link" href="zones/endpoint-management.html">Endpoint Management</a></li>
+                      <li><a class="mega-menu__link" href="zones/network-operations.html">Network Operations</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">Technical</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="architecture.html">Architecture &amp; Design</a></li>
+                      <li><a class="mega-menu__link" href="security.html">Security Center</a></li>
+                      <li><a class="mega-menu__link" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank">Azure Marketplace ↗</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions -->
+          <div class="nav-item" id="nav-solutions">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-solutions" id="nav-btn-solutions">
+              Solutions
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--solutions mega-menu--wide" id="mega-solutions" role="region" aria-label="Solutions menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Challenge</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="solutions/reduce-ticket-volume.html">Reduce Ticket Volume</a></li>
+                    <li><a class="mega-menu__link" href="solutions/scale-without-headcount.html">Scale Without Headcount</a></li>
+                    <li><a class="mega-menu__link" href="solutions/improve-sla.html">Improve SLA Performance</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Industry</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="solutions/healthcare.html">Healthcare MSPs</a></li>
+                    <li><a class="mega-menu__link" href="solutions/finance.html">Financial Services</a></li>
+                    <li><a class="mega-menu__link" href="solutions/government.html">Government &amp; SLED</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </div>
+
+          <!-- Security (current) -->
+          <div class="nav-item">
+            <a class="nav-link" href="security.html" aria-current="page">Security</a>
+          </div>
+
+          <!-- Resources -->
+          <div class="nav-item" id="nav-resources">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-resources" id="nav-btn-resources">
+              Resources
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--resources" id="mega-resources" role="region" aria-label="Resources menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Learn</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="docs.html">Documentation</a></li>
+                    <li><a class="mega-menu__link" href="blog.html">Blog &amp; Insights</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Company</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="about.html">About RainTech</a></li>
+                    <li><a class="mega-menu__link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" aria-pressed="false">
+            <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a class="btn-login" href="login.html" aria-label="Log in to DevOps AI">Log in</a>
+          <a class="nav-cta" href="get-started.html" aria-label="Get started with DevOps AI">Get Started →</a>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+    <div class="mobile-nav__drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <div class="mobile-nav__header">
+        <a href="index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:28px">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">DevOps <span>AI</span></span>
+        </a>
+        <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav__body">
+        <a class="mobile-nav__link--direct" href="platform.html">Platform</a>
+        <a class="mobile-nav__link--direct" href="pricing.html">Pricing</a>
+        <a class="mobile-nav__link--direct" href="security.html" aria-current="page">Security</a>
+        <a class="mobile-nav__link--direct" href="architecture.html">Architecture</a>
+        <a class="mobile-nav__link--direct" href="about.html">About</a>
+      </div>
+      <div class="mobile-nav__footer">
+        <a class="btn-login" href="login.html" style="justify-content:center">Log in</a>
+        <a class="nav-cta" href="get-started.html" style="justify-content:center">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="container" style="padding-top: calc(80px + var(--space-4))">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list" style="display:contents">
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href="index.html">Home</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        </li>
+        <li class="breadcrumb__item" aria-current="page">
+          <span class="breadcrumb__current">Security &amp; Trust Center</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- ─── Hero ─── -->
+    <section class="hero--page section--gradient security-hero" aria-label="Security hero" data-animate>
+      <div class="container">
+        <div class="hero__eyebrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 1L3 3.5v4C3 10.5 5.5 13.5 8 14.5c2.5-1 5-4 5-7v-4L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M6 8l1.5 1.5L10.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Trust Center
+        </div>
+        <h1 class="hero__title">Security is Not a Feature — It's the Architecture</h1>
+        <p class="hero__desc">
+          Every layer of DevOps AI is built with security-first principles. From zero-trust networking to human-in-the-loop AI controls, your data and operations are protected by design.
+        </p>
+        <div class="hero__cta">
+          <a href="#compliance" class="btn btn--primary btn--lg">View Compliance</a>
+          <a href="#security-contact" class="btn btn--secondary btn--lg">Report a Vulnerability</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Compliance Badges ─── -->
+    <section class="section" aria-label="Compliance certifications" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Compliance &amp; Certifications</h2>
+          <p style="margin-inline: auto;">Industry-recognized certifications that validate our commitment to protecting your data.</p>
+        </div>
+        <div class="security-badges-grid">
+
+          <div class="card card--glass security-badge-card">
+            <div class="security-badge-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="20" stroke="var(--accent)" stroke-width="2"/>
+                <path d="M24 14v20M18 18l6-4 6 4M18 30l6 4 6-4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">SOC 2 Type II</h3>
+            <p class="card__body">Annual audit covering security, availability, processing integrity, confidentiality, and privacy trust service criteria. Verified by independent third-party auditors.</p>
+            <span class="badge badge--status" data-status="success"><span class="badge__dot"></span> Certified</span>
+          </div>
+
+          <div class="card card--glass security-badge-card">
+            <div class="security-badge-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="10" y="14" width="28" height="20" rx="3" stroke="var(--blue-sky)" stroke-width="2"/>
+                <path d="M10 22h28M20 14v20M28 14v20" stroke="var(--blue-sky)" stroke-width="2"/>
+                <path d="M24 8v6M24 34v6" stroke="var(--blue-sky)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">HIPAA</h3>
+            <p class="card__body">Full HIPAA compliance for healthcare MSPs. Business Associate Agreements (BAAs) available. PHI safeguards at every data layer.</p>
+            <span class="badge badge--status" data-status="success"><span class="badge__dot"></span> Compliant</span>
+          </div>
+
+          <div class="card card--glass security-badge-card">
+            <div class="security-badge-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M24 8L12 14v10c0 10 6 16 12 18 6-2 12-8 12-18V14L24 8z" stroke="var(--cyan)" stroke-width="2"/>
+                <path d="M20 24l3 3 6-6" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">CMMC</h3>
+            <p class="card__body">Cybersecurity Maturity Model Certification alignment for defense and government MSPs. Controls mapped to NIST SP 800-171.</p>
+            <span class="badge badge--status" data-status="success"><span class="badge__dot"></span> Aligned</span>
+          </div>
+
+          <div class="card card--glass security-badge-card">
+            <div class="security-badge-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="10" y="10" width="28" height="28" rx="4" stroke="var(--violet-bright)" stroke-width="2"/>
+                <path d="M18 24h12M24 18v12" stroke="var(--violet-bright)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="6" stroke="var(--violet-bright)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="card__title">FedRAMP</h3>
+            <p class="card__body">Federal Risk and Authorization Management Program compliance in progress. Targeting authorization for government cloud deployments.</p>
+            <span class="badge badge--status" data-status="info"><span class="badge__dot"></span> In Progress</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Architecture Security ─── -->
+    <section class="section section--dark" aria-label="Architecture security" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Zero-Trust Architecture</h2>
+          <p style="margin-inline: auto;">Every request is verified. Every connection is encrypted. Every access is logged.</p>
+        </div>
+        <div class="grid--cards">
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 2L4 5v5c0 5 3 8 6 9 3-1 6-4 6-9V5L10 2z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Zero-Trust Networking</h3>
+            </div>
+            <p class="card__body">No implicit trust. Every request — internal or external — is authenticated, authorized, and encrypted before access is granted. Microsegmentation isolates every service boundary.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="3" y="8" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="10" cy="13" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Encryption Everywhere</h3>
+            </div>
+            <p class="card__body">AES-256 encryption at rest. TLS 1.3 in transit. All secrets managed through Azure Key Vault with hardware security modules (HSMs). Zero plaintext storage.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Network Isolation</h3>
+            </div>
+            <p class="card__body">Each tenant operates in its own Azure Virtual Network with private endpoints. No shared network paths between MSP environments. Full VNET peering controls.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <rect x="5" y="5" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Identity &amp; Access</h3>
+            </div>
+            <p class="card__body">Azure Entra ID and Google OIDC integration. Role-based access control (RBAC) at every layer. Conditional access policies. MFA enforced by default for all operator roles.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Threat Detection</h3>
+            </div>
+            <p class="card__body">Real-time anomaly detection. Azure Sentinel integration for SIEM. Automated incident response playbooks. Continuous vulnerability scanning across all platform components.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M2 15l4-4 3 3 5-5 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Audit Logging</h3>
+            </div>
+            <p class="card__body">Immutable audit trails for every action. Centralized log aggregation with tamper-proof storage. Configurable retention policies meeting compliance requirements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Data Residency ─── -->
+    <section class="section" aria-label="Data residency and sovereignty" data-animate>
+      <div class="container">
+        <div class="security-split">
+          <div class="security-split__content">
+            <div class="hero__eyebrow">Data Sovereignty</div>
+            <h2>Your Data. Your Region. Your Rules.</h2>
+            <p>DevOps AI runs entirely within your chosen Azure region. No data leaves your geography without explicit configuration. Full sovereignty by default.</p>
+            <ul class="security-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Azure region selection during deployment
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Data residency guarantees — stays in your Azure tenant
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                GDPR, CCPA, and regional privacy law compliance
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Customer-managed encryption keys (BYOK)
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Full data export and portability on request
+              </li>
+            </ul>
+          </div>
+          <div class="security-split__visual">
+            <div class="card card--glass" style="padding: var(--space-8);">
+              <div class="security-region-visual">
+                <div class="security-region-item">
+                  <span class="badge badge--zone">US East</span>
+                  <span class="badge badge--zone">US West</span>
+                  <span class="badge badge--zone">US Central</span>
+                </div>
+                <div class="security-region-item">
+                  <span class="badge badge--role">EU West</span>
+                  <span class="badge badge--role">EU North</span>
+                  <span class="badge badge--role">UK South</span>
+                </div>
+                <div class="security-region-item">
+                  <span class="badge badge--zone">Canada Central</span>
+                  <span class="badge badge--zone">Australia East</span>
+                </div>
+              </div>
+              <p style="font-size: var(--text-sm); color: var(--text-tertiary); margin-top: var(--space-4); text-align: center;">Available Azure Regions — Deploy where your data must reside</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HITL Controls ─── -->
+    <section class="section section--alt" aria-label="Human-in-the-loop controls" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Human-in-the-Loop Controls</h2>
+          <p style="margin-inline: auto;">AI recommends. Humans decide. Every AI action has a human override, an audit trail, and configurable approval workflows.</p>
+        </div>
+        <div class="grid--cards">
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 18c0-3 3-6 7-6s7 3 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Human Override</h3>
+            </div>
+            <p class="card__body">Every AI-generated action can be overridden by an authorized operator. No autonomous execution without explicit human approval for high-impact operations.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 7h16M6 3v4M14 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Approval Workflows</h3>
+            </div>
+            <p class="card__body">Configurable multi-stage approval chains. Route critical AI recommendations through manager approval, change advisory boards, or client authorization before execution.</p>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Audit Trail</h3>
+            </div>
+            <p class="card__body">Complete chain of custody for every AI decision. See what the AI recommended, who approved it, when it executed, and what the outcome was — all in one immutable log.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Responsible AI ─── -->
+    <section class="section section--dark" aria-label="Responsible AI" data-animate>
+      <div class="container">
+        <div class="security-split">
+          <div class="security-split__content">
+            <div class="hero__eyebrow">Responsible AI</div>
+            <h2>AI You Can Trust and Explain</h2>
+            <p>Our AI governance framework ensures that every model, every inference, and every recommendation is transparent, explainable, and aligned with your organizational policies.</p>
+            <ul class="security-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Bias monitoring across all AI models
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Model governance with version control and rollback
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Explainability — see why AI made each recommendation
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Configurable confidence thresholds per zone
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--status-success)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--status-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Regular third-party AI ethics audits
+              </li>
+            </ul>
+          </div>
+          <div class="security-split__visual">
+            <div class="card card--glass" style="padding: var(--space-8);">
+              <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-glow); display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M6 6l4-4 4 4M6 14l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-weight: var(--font-weight-bold); color: var(--text-primary); font-size: var(--text-sm);">Model Input</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary);">Ticket data, context, history</p>
+                  </div>
+                </div>
+                <div style="width: 2px; height: 24px; background: var(--border-default); margin-left: 19px;"></div>
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(32,186,231,0.12); display: flex; align-items: center; justify-content: center; color: var(--blue-sky);">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-weight: var(--font-weight-bold); color: var(--text-primary); font-size: var(--text-sm);">AI Inference</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary);">Recommendation generated with explanation</p>
+                  </div>
+                </div>
+                <div style="width: 2px; height: 24px; background: var(--border-default); margin-left: 19px;"></div>
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(198,22,234,0.12); display: flex; align-items: center; justify-content: center; color: var(--violet-bright);">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3 3-6 7-6s7 3 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-weight: var(--font-weight-bold); color: var(--text-primary); font-size: var(--text-sm);">Human Review</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary);">Approve, modify, or reject</p>
+                  </div>
+                </div>
+                <div style="width: 2px; height: 24px; background: var(--border-default); margin-left: 19px;"></div>
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(74,222,128,0.12); display: flex; align-items: center; justify-content: center; color: var(--status-success);">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-weight: var(--font-weight-bold); color: var(--text-primary); font-size: var(--text-sm);">Execution + Audit</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary);">Action logged with full chain of custody</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Trust Center (Accordion) ─── -->
+    <section class="section" id="compliance" aria-label="Trust center details" data-animate>
+      <div class="container container--narrow">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Trust Center</h2>
+          <p style="margin-inline: auto;">Detailed compliance documentation for each framework we support.</p>
+        </div>
+
+        <details class="accordion">
+          <summary>SOC 2 Type II — Security, Availability &amp; Confidentiality</summary>
+          <div class="accordion__body">
+            <p>Our SOC 2 Type II report covers a 12-month observation period and is audited annually by an independent CPA firm. The report evaluates our controls across five trust service criteria:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Security:</strong> System protected against unauthorized access (physical and logical).</li>
+              <li><strong>Availability:</strong> System available for operation and use as committed.</li>
+              <li><strong>Processing Integrity:</strong> System processing is complete, valid, accurate, and authorized.</li>
+              <li><strong>Confidentiality:</strong> Information designated as confidential is protected as committed.</li>
+              <li><strong>Privacy:</strong> Personal information collected, used, retained, and disclosed in conformity with commitments.</li>
+            </ul>
+            <p style="margin-top: var(--space-4);">Request our latest SOC 2 report under NDA by contacting <a href="mailto:security@rain.tech" style="color: var(--accent);">security@rain.tech</a>.</p>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>HIPAA — Healthcare Data Protection</summary>
+          <div class="accordion__body">
+            <p>DevOps AI maintains full HIPAA compliance for MSPs serving healthcare organizations. Our controls include:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Administrative Safeguards:</strong> Security management processes, workforce training, and contingency planning.</li>
+              <li><strong>Physical Safeguards:</strong> Azure data center controls, facility access restrictions, and device media controls.</li>
+              <li><strong>Technical Safeguards:</strong> Access controls, audit logging, integrity controls, and transmission security.</li>
+              <li><strong>BAA Available:</strong> We execute Business Associate Agreements with all healthcare MSP customers.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>CMMC — Cybersecurity Maturity Model Certification</summary>
+          <div class="accordion__body">
+            <p>DevOps AI is aligned with CMMC Level 2 requirements, mapping to the 110 security controls in NIST SP 800-171. Key areas include:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Access Control:</strong> Role-based access with MFA, session management, and least privilege enforcement.</li>
+              <li><strong>Incident Response:</strong> Automated detection, containment, and reporting capabilities.</li>
+              <li><strong>System &amp; Communications Protection:</strong> Boundary protection, encrypted communications, and network segmentation.</li>
+              <li><strong>Audit &amp; Accountability:</strong> Comprehensive logging, tamper-proof audit trails, and alerting.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>FedRAMP — Federal Authorization (In Progress)</summary>
+          <div class="accordion__body">
+            <p>We are actively pursuing FedRAMP Moderate authorization for our Azure Government Cloud deployment. Current progress:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>System Security Plan (SSP):</strong> Completed and under review.</li>
+              <li><strong>Security Assessment:</strong> Third-party assessment organization (3PAO) engaged.</li>
+              <li><strong>Continuous Monitoring:</strong> ConMon program implemented with monthly vulnerability scanning.</li>
+              <li><strong>POA&amp;M:</strong> Plan of action and milestones tracking all remediation items.</li>
+            </ul>
+            <p style="margin-top: var(--space-4);">Expected authorization timeline available upon request.</p>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>GDPR &amp; International Privacy</summary>
+          <div class="accordion__body">
+            <p>DevOps AI supports international privacy regulations through comprehensive data protection measures:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Data Processing Agreements:</strong> Standard contractual clauses for cross-border data transfers.</li>
+              <li><strong>Right to Erasure:</strong> Automated tooling for GDPR Article 17 deletion requests.</li>
+              <li><strong>Data Portability:</strong> Full export of tenant data in standard formats.</li>
+              <li><strong>Privacy by Design:</strong> Data minimization, purpose limitation, and storage limitation built into the platform.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion">
+          <summary>Penetration Testing &amp; Vulnerability Management</summary>
+          <div class="accordion__body">
+            <p>Continuous security testing ensures vulnerabilities are identified and remediated before they can be exploited:</p>
+            <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Annual Penetration Testing:</strong> Conducted by independent third-party security firms.</li>
+              <li><strong>Continuous Scanning:</strong> Automated vulnerability scanning of infrastructure, dependencies, and application code.</li>
+              <li><strong>Bug Bounty:</strong> Responsible disclosure program for security researchers.</li>
+              <li><strong>Patch Management:</strong> Critical vulnerabilities patched within 24 hours. High within 72 hours.</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ─── Security Contact ─── -->
+    <section class="section section--dark" id="security-contact" aria-label="Security contact and reporting" data-animate>
+      <div class="container container--narrow">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Report a Security Concern</h2>
+          <p style="margin-inline: auto;">We take every security report seriously. Use the form below or email us directly.</p>
+        </div>
+
+        <div class="card card--glass security-contact-card">
+          <form class="security-contact-form" action="#" method="POST" aria-label="Security reporting form">
+            <div class="security-form-group">
+              <label for="sec-name">Your Name</label>
+              <input type="text" id="sec-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+            </div>
+            <div class="security-form-group">
+              <label for="sec-email">Email Address</label>
+              <input type="email" id="sec-email" name="email" required autocomplete="email" placeholder="jane@example.com">
+            </div>
+            <div class="security-form-group">
+              <label for="sec-type">Report Type</label>
+              <select id="sec-type" name="type" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="vulnerability">Vulnerability Report</option>
+                <option value="data-concern">Data Privacy Concern</option>
+                <option value="compliance">Compliance Question</option>
+                <option value="incident">Security Incident</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="security-form-group">
+              <label for="sec-details">Details</label>
+              <textarea id="sec-details" name="details" rows="5" required placeholder="Describe the issue, including steps to reproduce if applicable..."></textarea>
+            </div>
+            <div class="security-form-actions">
+              <button type="submit" class="btn btn--primary btn--lg">Submit Report</button>
+            </div>
+          </form>
+          <div style="margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--border-default); text-align: center;">
+            <p style="font-size: var(--text-sm); color: var(--text-tertiary);">
+              Prefer email? Reach us at <a href="mailto:security@rain.tech" style="color: var(--accent); font-weight: var(--font-weight-semibold);">security@rain.tech</a><br>
+              For encrypted communication, use our <a href="#" style="color: var(--accent);">PGP key</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="section section--gradient" aria-label="Call to action" data-animate>
+      <div class="container text-center">
+        <h2>Ready to See Security in Action?</h2>
+        <p style="margin-inline: auto; margin-bottom: var(--space-8);">Schedule a security-focused demo to walk through our architecture, compliance controls, and trust center.</p>
+        <div class="hero__cta" style="justify-content: center;">
+          <a href="get-started.html" class="btn btn--primary btn--lg">Request Security Demo</a>
+          <a href="architecture.html" class="btn btn--secondary btn--lg">View Architecture →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo" id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="DevOps AI — Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:32px;width:auto">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+              <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+              <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+            </svg>
+            <span class="footer-logo__wordmark">DevOps <span>AI</span></span>
+          </a>
+          <p class="footer-tagline">AI-as-a-Service for MSPs</p>
+          <p class="footer-brand__desc">The AI-orchestrated MSP control plane. 15 operational zones. 157 process areas. Full data sovereignty.</p>
+          <address class="footer-brand__address">
+            3 S Tejon St., Suite 400<br>
+            Colorado Springs, CO 80903<br>
+            <a href="tel:+18448357246">+1-844-835-7246</a>
+          </address>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="platform.html">Platform Overview</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="solutions/healthcare.html">Healthcare MSPs</a>
+          <a href="solutions/finance.html">Financial Services</a>
+          <a href="solutions/government.html">Government &amp; SLED</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="blog.html">Blog</a>
+          <a href="docs.html">Documentation</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About RainTech</a>
+          <a href="careers.html">Careers</a>
+          <a href="press.html">Press</a>
+        </div>
+      </div>
+
+      <div class="footer-trust" role="navigation" aria-label="Trust and legal links">
+        <span class="footer-trust__label">Trust &amp; Legal</span>
+        <a href="security.html">Security Center</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="terms.html">Terms of Service</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="compliance.html">Compliance</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 RainTech, Inc. All rights reserved.</span>
+        <div class="footer-bottom__badges">
+          <a class="badge-azure" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank" aria-label="Available on Azure Marketplace">
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="#0078d4"><path d="M7.073 1.8L1.6 11.3h4.2l1.3-2.4h2.4l-1.8-3.1L9.6 3l-2.527-1.2zm1.6 4.5l2.327 4H4.8l3.873-4zM6.927 11.3L5.6 13.5H14.4l-1.327-2.2H6.927z"/></svg>
+            Azure Marketplace
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* Theme Toggle */
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('devops-ai-theme', theme);
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      }
+    }
+    const savedTheme = localStorage.getItem('devops-ai-theme');
+    if (savedTheme) applyTheme(savedTheme);
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        const current = html.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    /* Header scroll */
+    const header = document.getElementById('site-header');
+    if (header) {
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* Mega Menu */
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-link--dropdown');
+      const menu = item.querySelector('.mega-menu');
+      if (!trigger || !menu) return;
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          closeAllMegaMenus();
+          if (!expanded) openMegaMenu(trigger, menu);
+        }
+        if (e.key === 'Escape') { closeAllMegaMenus(); trigger.focus(); }
+      });
+      menu.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeAllMegaMenus(); trigger.focus(); }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-item')) closeAllMegaMenus();
+    });
+    function openMegaMenu(trigger, menu) { trigger.setAttribute('aria-expanded', 'true'); }
+    function closeAllMegaMenus() {
+      navItems.forEach(function (item) {
+        const trigger = item.querySelector('.nav-link--dropdown');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    /* Mobile Nav */
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileClose = document.getElementById('mobile-nav-close');
+    const mobileOverlay = document.getElementById('mobile-nav-overlay');
+    const body = document.body;
+
+    function getFocusable(container) {
+      return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(function (el) {
+        return !el.closest('[hidden]') && getComputedStyle(el).display !== 'none';
+      });
+    }
+    function openMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      body.style.overflow = 'hidden';
+      setTimeout(function () { var first = getFocusable(mobileNav)[0]; if (first) first.focus(); }, 50);
+    }
+    function closeMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      body.style.overflow = '';
+      mobileToggle.focus();
+    }
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobileNav);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
+    if (mobileNav) {
+      mobileNav.addEventListener('keydown', function (e) {
+        if (!mobileNav.classList.contains('is-open')) return;
+        if (e.key === 'Escape') { closeMobileNav(); return; }
+        if (e.key === 'Tab') {
+          var focusable = getFocusable(mobileNav);
+          if (!focusable.length) return;
+          var first = focusable[0], last = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    }
+
+    /* Scroll animations */
+    var animatedEls = document.querySelectorAll('[data-animate]');
+    if ('IntersectionObserver' in window && animatedEls.length) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      animatedEls.forEach(function (el) { el.classList.add('fade-up'); observer.observe(el); });
+    }
+  }());
+  </script>
+
+</body>
+</html>
