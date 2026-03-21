@@ -405,3 +405,218 @@ a.platform-zone-card:focus-visible .card__title {
     padding: var(--space-5) !important;
   }
 }
+
+/* ═══ FR-W06: Pricing ═══ */
+
+/* Pricing Tiers Grid */
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  align-items: stretch;
+  margin-bottom: var(--space-12);
+}
+
+@media (max-width: 1024px) {
+  .pricing-tiers {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
+/* Pricing Card */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  position: relative;
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: calc(-1 * var(--space-3));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.pricing-card--featured {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow), var(--glass-shadow);
+}
+
+.pricing-card__header {
+  margin-bottom: var(--space-6);
+}
+
+.pricing-card__name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.pricing-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: none;
+}
+
+/* Price Display */
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.pricing-card__amount {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+
+.pricing-card__amount--custom {
+  font-size: var(--text-2xl);
+}
+
+.pricing-card__period {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Feature List */
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-8);
+  flex: 1;
+}
+
+.pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pricing-card__features li svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  margin-top: 0.15em;
+}
+
+/* CTA Button */
+.pricing-card__cta {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Azure Marketplace Banner */
+.pricing-marketplace {
+  margin-top: var(--space-8);
+}
+
+.pricing-marketplace__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-8);
+}
+
+.pricing-marketplace__icon {
+  flex-shrink: 0;
+}
+
+.pricing-marketplace__text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .pricing-marketplace__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6);
+  }
+}
+
+/* Comparison Table */
+.pricing-comparison-group + .pricing-comparison-group {
+  margin-top: var(--space-2);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.pricing-table th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  background: var(--bg-card);
+}
+
+.pricing-table td {
+  color: var(--text-secondary);
+}
+
+.pricing-table td:not(:first-child) {
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  min-width: 100px;
+}
+
+.pricing-table th:not(:first-child) {
+  text-align: center;
+  min-width: 100px;
+}
+
+.pricing-table tbody tr:hover {
+  background: var(--bg-card);
+}
+
+@media (max-width: 640px) {
+  .pricing-table {
+    font-size: var(--text-xs);
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+  .pricing-table td:not(:first-child),
+  .pricing-table th:not(:first-child) {
+    min-width: 70px;
+  }
+}
+
+/* FAQ Section */
+.pricing-faq .accordion + .accordion {
+  margin-top: var(--space-2);
+}
