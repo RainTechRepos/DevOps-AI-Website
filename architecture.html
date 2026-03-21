@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Architecture — DevOps AI | RainTech</title>
+
+<meta name="description" content="DevOps AI architecture: multi-tier Azure PaaS foundation, multi-tenant design, AI/ML inference pipeline with Azure OpenAI, and Azure Marketplace deployment in under 35 minutes.">
+<link rel="canonical" href="https://devops.ai.rain.tech/architecture">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Architecture — DevOps AI">
+<meta property="og:description" content="Multi-tier Azure PaaS architecture, multi-tenant design, AI inference pipeline, and Marketplace deployment in under 35 minutes.">
+<meta property="og:url"         content="https://devops.ai.rain.tech/architecture">
+<meta property="og:site_name"   content="DevOps AI by RainTech">
+<meta property="og:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Architecture — DevOps AI">
+<meta name="twitter:description" content="Multi-tier Azure PaaS architecture with AI inference, multi-tenancy, and rapid deployment.">
+<meta name="twitter:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon"   type="image/png"     href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon"                      href="assets/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "RainTech",
+      "url": "https://devops.ai.rain.tech",
+      "logo": "https://devops.ai.rain.tech/assets/logo-powered-by.png"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Architecture — DevOps AI",
+      "url": "https://devops.ai.rain.tech/architecture",
+      "description": "DevOps AI multi-tier architecture, multi-tenant design, AI/ML pipeline, and Azure Marketplace deployment.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.ai.rain.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "Architecture", "item": "https://devops.ai.rain.tech/architecture" }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+  <!-- Accessibility: Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">
+            DevOps <span>AI</span>
+          </span>
+        </a>
+
+        <nav class="nav-primary" aria-label="Primary navigation" id="primary-nav">
+
+          <!-- Platform -->
+          <div class="nav-item" id="nav-platform">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-platform" id="nav-btn-platform">
+              Platform
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--platform" id="mega-platform" role="region" aria-label="Platform menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__heading">Platform Overview</p>
+                    <p class="mega-menu__description">The AI-orchestrated MSP control plane with 15 operational zones, 157 process areas, and full data sovereignty.</p>
+                    <a class="mega-menu__link mega-menu__link--more" href="platform.html">Explore the Platform →</a>
+                  </div>
+                  <div class="mega-menu__divider" role="separator"></div>
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">By Zone</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="zones/service-desk.html">Service Desk &amp; ITSM</a></li>
+                      <li><a class="mega-menu__link" href="zones/security-operations.html">Security Operations</a></li>
+                      <li><a class="mega-menu__link" href="zones/endpoint-management.html">Endpoint Management</a></li>
+                      <li><a class="mega-menu__link" href="zones/network-operations.html">Network Operations</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">Technical</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="architecture.html" aria-current="page">Architecture &amp; Design</a></li>
+                      <li><a class="mega-menu__link" href="security.html">Security Center</a></li>
+                      <li><a class="mega-menu__link" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank">Azure Marketplace ↗</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions -->
+          <div class="nav-item" id="nav-solutions">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-solutions" id="nav-btn-solutions">
+              Solutions
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--solutions mega-menu--wide" id="mega-solutions" role="region" aria-label="Solutions menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Challenge</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="solutions/reduce-ticket-volume.html">Reduce Ticket Volume</a></li>
+                    <li><a class="mega-menu__link" href="solutions/scale-without-headcount.html">Scale Without Headcount</a></li>
+                    <li><a class="mega-menu__link" href="solutions/improve-sla.html">Improve SLA Performance</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Industry</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="solutions/healthcare.html">Healthcare MSPs</a></li>
+                    <li><a class="mega-menu__link" href="solutions/finance.html">Financial Services</a></li>
+                    <li><a class="mega-menu__link" href="solutions/government.html">Government &amp; SLED</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </div>
+
+          <!-- Security -->
+          <div class="nav-item">
+            <a class="nav-link" href="security.html">Security</a>
+          </div>
+
+          <!-- Resources -->
+          <div class="nav-item" id="nav-resources">
+            <button class="nav-link--dropdown" aria-expanded="false" aria-haspopup="true" aria-controls="mega-resources" id="nav-btn-resources">
+              Resources
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16"><polyline points="3,6 8,11 13,6"/></svg>
+            </button>
+            <div class="mega-menu mega-menu--resources" id="mega-resources" role="region" aria-label="Resources menu">
+              <div class="mega-menu__inner">
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Learn</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="docs.html">Documentation</a></li>
+                    <li><a class="mega-menu__link" href="blog.html">Blog &amp; Insights</a></li>
+                  </ul>
+                </div>
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Company</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="about.html">About RainTech</a></li>
+                    <li><a class="mega-menu__link" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" aria-pressed="false">
+            <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <a class="btn-login" href="login.html" aria-label="Log in to DevOps AI">Log in</a>
+          <a class="nav-cta" href="get-started.html" aria-label="Get started with DevOps AI">Get Started →</a>
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+    <div class="mobile-nav__drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <div class="mobile-nav__header">
+        <a href="index.html" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:28px">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">DevOps <span>AI</span></span>
+        </a>
+        <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav__body">
+        <a class="mobile-nav__link--direct" href="platform.html">Platform</a>
+        <a class="mobile-nav__link--direct" href="pricing.html">Pricing</a>
+        <a class="mobile-nav__link--direct" href="security.html">Security</a>
+        <a class="mobile-nav__link--direct" href="architecture.html" aria-current="page">Architecture</a>
+        <a class="mobile-nav__link--direct" href="about.html">About</a>
+      </div>
+      <div class="mobile-nav__footer">
+        <a class="btn-login" href="login.html" style="justify-content:center">Log in</a>
+        <a class="nav-cta" href="get-started.html" style="justify-content:center">Get Started →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="container" style="padding-top: calc(80px + var(--space-4))">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list" style="display:contents">
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href="index.html">Home</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        </li>
+        <li class="breadcrumb__item" aria-current="page">
+          <span class="breadcrumb__current">Architecture</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- ─── Hero ─── -->
+    <section class="hero--page section--gradient arch-hero" aria-label="Architecture hero" data-animate>
+      <div class="container">
+        <div class="hero__eyebrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 6h12M6 2v12" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Technical Architecture
+        </div>
+        <h1 class="hero__title">Built for Enterprise. Deployed in Minutes.</h1>
+        <p class="hero__desc">
+          A multi-tier Azure PaaS architecture with AI-native inference, multi-tenant data isolation, and Azure Marketplace deployment — from zero to operational in under 35 minutes.
+        </p>
+        <div class="hero__cta">
+          <a href="get-started.html" class="btn btn--primary btn--lg">Deploy from Marketplace</a>
+          <a href="security.html" class="btn btn--secondary btn--lg">Security Center →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── System Overview ─── -->
+    <section class="section" aria-label="System overview" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>System Overview</h2>
+          <p style="margin-inline: auto;">A clean four-tier architecture on Azure PaaS. Every layer is independently scalable, observable, and secured.</p>
+        </div>
+
+        <div class="arch-tiers">
+          <div class="arch-tier card card--glass">
+            <div class="arch-tier__header">
+              <span class="arch-tier__number">01</span>
+              <h3 class="card__title">Presentation Layer</h3>
+            </div>
+            <p class="card__body">
+              Responsive SPA delivered via Azure CDN. Role-adaptive dashboards, real-time WebSocket updates, and WCAG 2.1 AA accessibility. Server-side rendering for SEO-critical pages.
+            </p>
+            <div class="arch-tier__tags">
+              <span class="badge badge--zone">Azure CDN</span>
+              <span class="badge badge--zone">React SPA</span>
+              <span class="badge badge--zone">WebSockets</span>
+            </div>
+          </div>
+
+          <div class="arch-tier-connector" aria-hidden="true">
+            <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="var(--border-default)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+          </div>
+
+          <div class="arch-tier card card--glass">
+            <div class="arch-tier__header">
+              <span class="arch-tier__number">02</span>
+              <h3 class="card__title">API Gateway Layer</h3>
+            </div>
+            <p class="card__body">
+              Azure API Management with rate limiting, OAuth 2.0/OIDC authentication, request validation, and tenant-aware routing. API versioning with backward compatibility guarantees.
+            </p>
+            <div class="arch-tier__tags">
+              <span class="badge badge--zone">Azure APIM</span>
+              <span class="badge badge--zone">OAuth 2.0</span>
+              <span class="badge badge--zone">Rate Limiting</span>
+            </div>
+          </div>
+
+          <div class="arch-tier-connector" aria-hidden="true">
+            <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="var(--border-default)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+          </div>
+
+          <div class="arch-tier card card--glass">
+            <div class="arch-tier__header">
+              <span class="arch-tier__number">03</span>
+              <h3 class="card__title">Service Layer</h3>
+            </div>
+            <p class="card__body">
+              Microservices running on Azure Container Apps. Each zone has dedicated service boundaries. Event-driven communication via Azure Service Bus. CQRS patterns for high-throughput operations.
+            </p>
+            <div class="arch-tier__tags">
+              <span class="badge badge--zone">Container Apps</span>
+              <span class="badge badge--zone">Service Bus</span>
+              <span class="badge badge--zone">CQRS</span>
+            </div>
+          </div>
+
+          <div class="arch-tier-connector" aria-hidden="true">
+            <svg width="2" height="40" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="var(--border-default)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+          </div>
+
+          <div class="arch-tier card card--glass">
+            <div class="arch-tier__header">
+              <span class="arch-tier__number">04</span>
+              <h3 class="card__title">Data Layer</h3>
+            </div>
+            <p class="card__body">
+              Azure SQL with row-level security for tenant isolation. Azure Cosmos DB for document store. Azure Blob Storage for artifacts. Redis Cache for session and query caching. All encrypted at rest with customer-managed keys.
+            </p>
+            <div class="arch-tier__tags">
+              <span class="badge badge--zone">Azure SQL</span>
+              <span class="badge badge--zone">Cosmos DB</span>
+              <span class="badge badge--zone">Redis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Multi-Tenant Architecture ─── -->
+    <section class="section section--dark" aria-label="Multi-tenant architecture" data-animate>
+      <div class="container">
+        <div class="arch-split">
+          <div class="arch-split__content">
+            <div class="hero__eyebrow">Multi-Tenancy</div>
+            <h2>3-Tier Branding. Complete Data Isolation.</h2>
+            <p>Every deployment supports three distinct branding layers — Platform, MSP, and Client — each with its own visual identity, data scope, and access controls.</p>
+            <div class="arch-tenancy-layers">
+              <div class="arch-tenancy-layer">
+                <div class="arch-tenancy-layer__icon" style="background: var(--accent-glow); color: var(--accent);">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">Platform Layer</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">RainTech's core platform. Global configuration, model management, and infrastructure controls.</p>
+                </div>
+              </div>
+              <div class="arch-tenancy-layer">
+                <div class="arch-tenancy-layer__icon" style="background: rgba(32,186,231,0.12); color: var(--blue-sky);">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M4 17c0-3 3-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">MSP Layer</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">Custom branding, role configuration, zone activation, and cross-client analytics for each MSP.</p>
+                </div>
+              </div>
+              <div class="arch-tenancy-layer">
+                <div class="arch-tenancy-layer__icon" style="background: rgba(198,22,234,0.12); color: var(--violet-bright);">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 8h12M8 4v12" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">Client Layer</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">Per-client data isolation, white-labeled portals, and scoped access — your clients see only their environment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arch-split__visual">
+            <div class="card card--glass" style="padding: var(--space-8);">
+              <div class="arch-isolation-diagram">
+                <div class="arch-isolation-box arch-isolation-box--platform">
+                  <span class="arch-isolation-label">Platform</span>
+                  <div class="arch-isolation-box arch-isolation-box--msp">
+                    <span class="arch-isolation-label">MSP Alpha</span>
+                    <div class="arch-isolation-clients">
+                      <span class="arch-isolation-client">Client A</span>
+                      <span class="arch-isolation-client">Client B</span>
+                      <span class="arch-isolation-client">Client C</span>
+                    </div>
+                  </div>
+                  <div class="arch-isolation-box arch-isolation-box--msp">
+                    <span class="arch-isolation-label">MSP Beta</span>
+                    <div class="arch-isolation-clients">
+                      <span class="arch-isolation-client">Client D</span>
+                      <span class="arch-isolation-client">Client E</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size: var(--text-xs); color: var(--text-tertiary); text-align: center; margin-top: var(--space-4);">Tenant routing &amp; data isolation at every layer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── AI/ML Pipeline ─── -->
+    <section class="section" aria-label="AI and ML pipeline" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>AI/ML Inference Pipeline</h2>
+          <p style="margin-inline: auto;">Azure AI first for inference — Azure OpenAI is the default. Admins, security engineers, and DevOps have granular controls to configure third-party providers as fallback.</p>
+        </div>
+
+        <div class="arch-pipeline">
+
+          <div class="arch-pipeline-step card card--glass">
+            <div class="card__header">
+              <div class="card__icon" style="background: var(--accent-glow); color: var(--accent);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M6 6l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="card__title">Request Ingestion</h3>
+            </div>
+            <p class="card__body">AI requests enter the pipeline through zone-specific service endpoints. Each request carries tenant context, role permissions, and confidence requirements.</p>
+          </div>
+
+          <div class="arch-pipeline-arrow" aria-hidden="true">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10h32M26 4l8 6-8 6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+
+          <div class="arch-pipeline-step card card--glass">
+            <div class="card__header">
+              <div class="card__icon" style="background: rgba(32,186,231,0.12); color: var(--blue-sky);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="card__title">InferenceRouter</h3>
+            </div>
+            <p class="card__body">The admin control plane routes requests to the optimal model. Azure OpenAI is the default. Admins can configure fallback providers, set rate limits, and enforce cost caps.</p>
+          </div>
+
+          <div class="arch-pipeline-arrow" aria-hidden="true">
+            <svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10h32M26 4l8 6-8 6" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+
+          <div class="arch-pipeline-step card card--glass">
+            <div class="card__header">
+              <div class="card__icon" style="background: rgba(198,22,234,0.12); color: var(--violet-bright);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="card__title">Response &amp; HITL</h3>
+            </div>
+            <p class="card__body">Results are validated, confidence-scored, and routed through human-in-the-loop workflows when required. Full audit trail for every inference action.</p>
+          </div>
+
+        </div>
+
+        <!-- Inference Controls Detail -->
+        <div class="arch-inference-controls" style="margin-top: var(--space-12);">
+          <div class="card card--glass" style="padding: var(--space-8);">
+            <h3 style="font-size: var(--text-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-6);">Admin Control Plane</h3>
+            <div class="grid--cards">
+              <div>
+                <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary); margin-bottom: var(--space-2);">Model Selection</h4>
+                <p style="font-size: var(--text-sm); color: var(--text-secondary);">Choose which Azure OpenAI models power each zone. GPT-4o for complex reasoning, GPT-4o-mini for high-throughput classification.</p>
+              </div>
+              <div>
+                <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary); margin-bottom: var(--space-2);">Rate Limiting</h4>
+                <p style="font-size: var(--text-sm); color: var(--text-secondary);">Per-tenant, per-zone, and per-model rate limits. Prevent noisy-neighbor issues and ensure fair resource allocation across MSP clients.</p>
+              </div>
+              <div>
+                <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary); margin-bottom: var(--space-2);">Cost Caps</h4>
+                <p style="font-size: var(--text-sm); color: var(--text-secondary);">Set monthly inference spend limits per tenant and per zone. Alerts at 80% threshold. Hard caps prevent runaway costs.</p>
+              </div>
+              <div>
+                <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary); margin-bottom: var(--space-2);">Fallback Providers</h4>
+                <p style="font-size: var(--text-sm); color: var(--text-secondary);">Admins can configure third-party LLM providers as fallback. Full control over when and how fallback is triggered.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Integration Layer ─── -->
+    <section class="section section--alt" aria-label="Integration layer" data-animate>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-12);">
+          <h2>Integration Ecosystem</h2>
+          <p style="margin-inline: auto;">Pre-built connectors for the tools MSPs already use. Bi-directional sync keeps everything in lockstep.</p>
+        </div>
+        <div class="grid--cards">
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="card__title">PSA Integrations</h3>
+            </div>
+            <p class="card__body">ConnectWise Manage, Datto Autotask, HaloPSA, and more. Bi-directional ticket, client, and configuration sync.</p>
+            <div class="card__footer">
+              <span class="badge badge--zone">ConnectWise</span>
+              <span class="badge badge--zone">Autotask</span>
+              <span class="badge badge--zone">HaloPSA</span>
+            </div>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="card__title">RMM Platforms</h3>
+            </div>
+            <p class="card__body">ConnectWise Automate, Datto RMM, NinjaOne, and more. Endpoint data, alerts, and automation script execution.</p>
+            <div class="card__footer">
+              <span class="badge badge--zone">CW Automate</span>
+              <span class="badge badge--zone">Datto RMM</span>
+              <span class="badge badge--zone">NinjaOne</span>
+            </div>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 2L4 5v5c0 5 3 8 6 9 3-1 6-4 6-9V5L10 2z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Identity Providers</h3>
+            </div>
+            <p class="card__body">Azure Entra ID (Azure AD) and Google OIDC. SSO, MFA enforcement, conditional access, and group-based role mapping.</p>
+            <div class="card__footer">
+              <span class="badge badge--role">Entra ID</span>
+              <span class="badge badge--role">Google OIDC</span>
+            </div>
+          </div>
+
+          <div class="card card--glass">
+            <div class="card__header">
+              <div class="card__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M2 15l4-4 3 3 5-5 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Monitoring &amp; Observability</h3>
+            </div>
+            <p class="card__body">Azure Monitor, Log Analytics, and Application Insights. Centralized dashboards, alerting, and custom metric collection across all zones.</p>
+            <div class="card__footer">
+              <span class="badge badge--zone">Azure Monitor</span>
+              <span class="badge badge--zone">Log Analytics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Deployment Model ─── -->
+    <section class="section section--dark" aria-label="Deployment model" data-animate>
+      <div class="container">
+        <div class="arch-split">
+          <div class="arch-split__content">
+            <div class="hero__eyebrow">Deployment</div>
+            <h2>Zero to Operational in &lt;35 Minutes</h2>
+            <p>Deploy directly from Azure Marketplace. ARM templates provision the entire infrastructure stack — compute, networking, storage, identity, and AI services — in a single automated pipeline.</p>
+            <div class="arch-deploy-steps">
+              <div class="arch-deploy-step">
+                <span class="arch-deploy-step__num">1</span>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">Azure Marketplace</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">Find DevOps AI on the Azure Marketplace. Select your plan and click Deploy.</p>
+                </div>
+              </div>
+              <div class="arch-deploy-step">
+                <span class="arch-deploy-step__num">2</span>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">Configure &amp; Provision</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">Select your Azure region, configure tenant settings, and connect your identity provider. ARM templates handle the rest.</p>
+                </div>
+              </div>
+              <div class="arch-deploy-step">
+                <span class="arch-deploy-step__num">3</span>
+                <div>
+                  <h4 style="font-size: var(--text-base); font-weight: var(--font-weight-bold); color: var(--text-primary);">Go Live</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-secondary);">Platform is operational. Activate zones, onboard your team, and start processing tickets with AI-assisted workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arch-split__visual">
+            <div class="card card--glass" style="padding: var(--space-8);">
+              <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+                <div class="metric">
+                  <span class="metric__value" style="color: var(--accent);">&lt;35</span>
+                  <span class="metric__label">Minutes to Deploy</span>
+                </div>
+                <div style="border-top: 1px solid var(--border-default); padding-top: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+                  <div class="metric">
+                    <span class="metric__value" style="font-size: var(--text-2xl);">100%</span>
+                    <span class="metric__label">Azure PaaS — No VMs to Manage</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value" style="font-size: var(--text-2xl);">15</span>
+                    <span class="metric__label">Zones Available at Launch</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric__value" style="font-size: var(--text-2xl);">157+</span>
+                    <span class="metric__label">Process Areas Pre-Configured</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="section section--gradient" aria-label="Call to action" data-animate>
+      <div class="container text-center">
+        <h2>See the Architecture in Action</h2>
+        <p style="margin-inline: auto; margin-bottom: var(--space-8);">Schedule a technical deep-dive to explore the multi-tier architecture, AI pipeline, and deployment experience.</p>
+        <div class="hero__cta" style="justify-content: center;">
+          <a href="get-started.html" class="btn btn--primary btn--lg">Request a Demo</a>
+          <a href="security.html" class="btn btn--secondary btn--lg">Security Center →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SITE FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo" id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="DevOps AI — Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:32px;width:auto">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+              <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+              <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+            </svg>
+            <span class="footer-logo__wordmark">DevOps <span>AI</span></span>
+          </a>
+          <p class="footer-tagline">AI-as-a-Service for MSPs</p>
+          <p class="footer-brand__desc">The AI-orchestrated MSP control plane. 15 operational zones. 157 process areas. Full data sovereignty.</p>
+          <address class="footer-brand__address">
+            3 S Tejon St., Suite 400<br>
+            Colorado Springs, CO 80903<br>
+            <a href="tel:+18448357246">+1-844-835-7246</a>
+          </address>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="platform.html">Platform Overview</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="solutions/healthcare.html">Healthcare MSPs</a>
+          <a href="solutions/finance.html">Financial Services</a>
+          <a href="solutions/government.html">Government &amp; SLED</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="blog.html">Blog</a>
+          <a href="docs.html">Documentation</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About RainTech</a>
+          <a href="careers.html">Careers</a>
+          <a href="press.html">Press</a>
+        </div>
+      </div>
+
+      <div class="footer-trust" role="navigation" aria-label="Trust and legal links">
+        <span class="footer-trust__label">Trust &amp; Legal</span>
+        <a href="security.html">Security Center</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="terms.html">Terms of Service</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="compliance.html">Compliance</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 RainTech, Inc. All rights reserved.</span>
+        <div class="footer-bottom__badges">
+          <a class="badge-azure" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank" aria-label="Available on Azure Marketplace">
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="#0078d4"><path d="M7.073 1.8L1.6 11.3h4.2l1.3-2.4h2.4l-1.8-3.1L9.6 3l-2.527-1.2zm1.6 4.5l2.327 4H4.8l3.873-4zM6.927 11.3L5.6 13.5H14.4l-1.327-2.2H6.927z"/></svg>
+            Azure Marketplace
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* Theme Toggle */
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('devops-ai-theme', theme);
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      }
+    }
+    const savedTheme = localStorage.getItem('devops-ai-theme');
+    if (savedTheme) applyTheme(savedTheme);
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        const current = html.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    /* Header scroll */
+    const header = document.getElementById('site-header');
+    if (header) {
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* Mega Menu */
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-link--dropdown');
+      const menu = item.querySelector('.mega-menu');
+      if (!trigger || !menu) return;
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          closeAllMegaMenus();
+          if (!expanded) openMegaMenu(trigger, menu);
+        }
+        if (e.key === 'Escape') { closeAllMegaMenus(); trigger.focus(); }
+      });
+      menu.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeAllMegaMenus(); trigger.focus(); }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-item')) closeAllMegaMenus();
+    });
+    function openMegaMenu(trigger, menu) { trigger.setAttribute('aria-expanded', 'true'); }
+    function closeAllMegaMenus() {
+      navItems.forEach(function (item) {
+        const trigger = item.querySelector('.nav-link--dropdown');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    /* Mobile Nav */
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileClose = document.getElementById('mobile-nav-close');
+    const mobileOverlay = document.getElementById('mobile-nav-overlay');
+    const body = document.body;
+
+    function getFocusable(container) {
+      return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(function (el) {
+        return !el.closest('[hidden]') && getComputedStyle(el).display !== 'none';
+      });
+    }
+    function openMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      body.style.overflow = 'hidden';
+      setTimeout(function () { var first = getFocusable(mobileNav)[0]; if (first) first.focus(); }, 50);
+    }
+    function closeMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      body.style.overflow = '';
+      mobileToggle.focus();
+    }
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobileNav);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
+    if (mobileNav) {
+      mobileNav.addEventListener('keydown', function (e) {
+        if (!mobileNav.classList.contains('is-open')) return;
+        if (e.key === 'Escape') { closeMobileNav(); return; }
+        if (e.key === 'Tab') {
+          var focusable = getFocusable(mobileNav);
+          if (!focusable.length) return;
+          var first = focusable[0], last = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    }
+
+    /* Scroll animations */
+    var animatedEls = document.querySelectorAll('[data-animate]');
+    if ('IntersectionObserver' in window && animatedEls.length) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      animatedEls.forEach(function (el) { el.classList.add('fade-up'); observer.observe(el); });
+    }
+  }());
+  </script>
+
+</body>
+</html>
