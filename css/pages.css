@@ -1455,3 +1455,406 @@ a.role-index-card:focus-visible .card__title {
 .role-section-header p {
   color: var(--text-secondary);
 }
+
+/* ═══ FR-W14: Zone Pages ═══ */
+
+/* Zone Hero */
+.zone-hero {
+  position: relative;
+  padding-block: var(--space-20) var(--space-16);
+  overflow: hidden;
+}
+
+.zone-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, var(--zone-glow, rgba(139, 219, 2, 0.08)) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(23, 228, 237, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.zone-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.zone-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.zone-hero__badge .badge {
+  font-size: var(--text-xs);
+}
+
+.zone-hero__title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  line-height: 1.1;
+}
+
+.zone-hero__tagline {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 54ch;
+  margin-bottom: var(--space-6);
+}
+
+.zone-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.zone-hero__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.zone-hero__stat-icon {
+  color: var(--accent);
+}
+
+/* Zone Overview */
+.zone-overview {
+  padding-block: var(--section-padding-sm);
+}
+
+.zone-overview__content {
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
+.zone-overview__content p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+}
+
+.zone-overview__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Zone Section Headers */
+.zone-section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.zone-section-header h2 {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-2xl);
+}
+
+.zone-section-header p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.zone-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Process Area Grid */
+.zone-pa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: var(--space-5);
+}
+
+.zone-pa-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  padding: var(--space-6);
+}
+
+.zone-pa-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.zone-pa-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: var(--space-4);
+}
+
+.zone-pa-card__metric {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-default);
+}
+
+.zone-pa-card__link {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-default);
+}
+
+.zone-pa-card:hover .zone-pa-card__name {
+  color: var(--accent);
+}
+
+/* Zone Screenshots */
+.zone-screenshots {
+  padding-block: var(--section-padding-sm);
+  background: var(--bg-secondary);
+}
+
+.zone-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+.zone-screenshot-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+}
+
+.zone-screenshot-item__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.zone-screenshot-item__caption {
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-default);
+}
+
+/* Zone Use Cases */
+.zone-use-cases {
+  padding-block: var(--section-padding-sm);
+}
+
+.zone-use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+.zone-use-case {
+  padding: var(--space-8);
+}
+
+.zone-use-case__scenario {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.zone-use-case__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.zone-use-case__body {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Connected Roles */
+.zone-connected-roles {
+  padding-block: var(--section-padding-sm);
+  background: var(--bg-secondary);
+}
+
+.zone-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+.zone-role-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  text-decoration: none;
+  color: inherit;
+}
+
+.zone-role-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.zone-role-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.zone-role-card__name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.zone-role-card__desc {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.zone-role-card:hover .zone-role-card__name {
+  color: var(--accent);
+}
+
+/* Connected Zones */
+.zone-connected-zones {
+  padding-block: var(--section-padding-sm);
+}
+
+.zone-connected-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-5);
+}
+
+.zone-connected-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  text-decoration: none;
+  color: inherit;
+}
+
+.zone-connected-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.zone-connected-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.zone-connected-card__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.zone-connected-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.zone-connected-card:hover .zone-connected-card__name {
+  color: var(--accent);
+}
+
+/* Zone CTA */
+.zone-cta {
+  padding-block: var(--section-padding-sm);
+  text-align: center;
+  background: var(--gradient-depth);
+}
+
+.zone-cta h2 {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-2xl);
+}
+
+.zone-cta p {
+  color: var(--text-secondary);
+  max-width: 48ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+
+.zone-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .zone-hero__title {
+    font-size: var(--text-3xl);
+  }
+  .zone-pa-grid {
+    grid-template-columns: 1fr;
+  }
+  .zone-use-case-grid {
+    grid-template-columns: 1fr;
+  }
+  .zone-role-grid {
+    grid-template-columns: 1fr;
+  }
+  .zone-connected-grid {
+    grid-template-columns: 1fr;
+  }
+}
