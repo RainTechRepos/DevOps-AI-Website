@@ -1,0 +1,71 @@
+# DevOps AI by RainTech
+
+> AI-as-a-Service operating system for Managed Service Providers (MSPs)
+
+DevOps AI is an AI-orchestrated MSP control plane deployed via Azure Marketplace. It provides 15 operational zones, 157+ process areas, and 21 role-based views — all with full data sovereignty in your Azure tenant.
+
+## Key Facts
+
+- Company: RainTech, Inc.
+- Location: 3 S Tejon St., Suite 400, Colorado Springs, CO 80903
+- Phone: +1-844-835-7246
+- Website: https://devops.ai.rain.tech
+- Deployment: Azure Marketplace, under 35 minutes
+- Architecture: Multi-tenant, Azure-native, data sovereign
+
+## Platform Overview
+
+DevOps AI organizes MSP operations into 15 zones, each containing multiple AI-powered process areas:
+
+### Operational Zones
+
+1. **Service Desk & ITSM** — AI triage, ticket ingestion, NLP classification, SLA prediction, playbook automation, dispatch optimization (12 process areas)
+2. **Security Operations** — Incident response, threat intelligence, EDR/XDR integration, detection engineering, vulnerability management, zero-knowledge vault (13 process areas)
+3. **GRC & Compliance** — CMMC SSP builder, OSCAL evidence, framework lifecycle, gap analysis, risk management, audit management (11 process areas)
+4. **Endpoint Management** — Automated patching, fleet intelligence, Intune compliance, device lifecycle, infrastructure monitoring (10 process areas)
+5. **Network Operations** — Network discovery, configuration management, SLO management, capacity forecasting, topology visualization (9 process areas)
+6. **vC-Suite** — Executive KPI dashboards, strategic recommendations, technology roadmap, vCIO/vCISO/vCTO/vCCO advisory engines (13 process areas)
+7. **Analytics & BI** — Natural language queries, automated reporting, churn prediction, benchmark intelligence, security risk scoring (9 process areas)
+8. **Relationships & CRM** — Client health scoring, churn risk detection, QBR preparation, sales pipeline, marketing orchestration (11 process areas)
+9. **People & HR** — Employee onboarding, offboarding, directory sync, engagement tracking, burnout detection, workforce analytics (8 process areas)
+10. **Learning & Development** — LMS engine, AI tutoring, certification tracking, SOP/runbook management, skill gap analysis (10 process areas)
+11. **Organization Management** — Department hierarchy, role accountability, EOS rocks tracking, organizational health scoring (11 process areas)
+12. **Legal & Compliance** — Contract analysis, NDA management, data privacy, regulatory change monitoring, IP tracking (7 process areas)
+13. **DevOps & Integration** — CI/CD pipeline management, deployment orchestration, feature flags, SRE golden signals (11 process areas)
+14. **Accounting & Finance** — Invoice processing, payment processing, revenue recognition, procurement automation, subscription management (11 process areas)
+15. **Projects & PMO** — Phase-gated execution, CAB submissions with AI risk scoring, portfolio management, playbook designer (11 process areas)
+
+### Supported Roles (21)
+
+**Executive Suite:** MSP Owner, vCIO, vCISO, vCTO, vCCO
+**Operations:** IT Director, Service Desk Manager, Network Engineer, DevOps Engineer, Service Delivery Manager, Data Analyst
+**Security & Compliance:** Security Analyst, Compliance Officer
+**Business & Relationships:** Sales Director, Marketing Director, Client Success Manager, Finance Coordinator, Legal Counsel
+**People & Culture:** HR Director, Recruiter, Project Manager
+
+## Key Capabilities
+
+- **AI Automation Engine** — Intelligent process automation across all 15 zones
+- **Human-in-the-Loop Checkpoints** — AI recommends, humans approve for critical decisions
+- **Multi-Tenant Architecture** — Complete data isolation between MSP clients
+- **Role-Based Control Plane** — Personalized dashboards and workflows per role
+- **Full Data Sovereignty** — All data stays in your Azure tenant
+
+## Pages
+
+- Homepage: https://devops.ai.rain.tech/
+- Platform Overview: https://devops.ai.rain.tech/platform
+- Architecture: https://devops.ai.rain.tech/architecture
+- Pricing: https://devops.ai.rain.tech/pricing
+- Security: https://devops.ai.rain.tech/security
+- ROI Calculator: https://devops.ai.rain.tech/roi
+- All Roles: https://devops.ai.rain.tech/roles/
+- All Zones: Browse zone pages at https://devops.ai.rain.tech/zones/{zone-slug}/
+- Process Areas: Browse PA pages at https://devops.ai.rain.tech/zones/{zone-slug}/process-areas/{pa-slug}
+
+## Contact
+
+For partnership, demo requests, or sales inquiries:
+- Website: https://devops.ai.rain.tech/get-started/
+- Phone: +1-844-835-7246
+- LinkedIn: https://www.linkedin.com/company/raintech
