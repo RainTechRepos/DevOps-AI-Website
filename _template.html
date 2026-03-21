@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+
+  _template.html — Reference Page Template
+  Copy this file when creating a new page.
+  NOT deployed — used as a copy-paste source by other FRs.
+  ======================================================== -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--
+  ╔══════════════════════════════════════════════════╗
+  ║  PAGE TITLE — Update per page                    ║
+  ╚══════════════════════════════════════════════════╝
+  Format:  [Page Name] — DevOps AI | RainTech
+  Home:    DevOps AI — The Future of Managed Services | Powered by RainTech
+-->
+<title>PAGE TITLE — DevOps AI | RainTech</title>
+
+<!--
+  ╔══════════════════════════════════════════════════╗
+  ║  SEO META TAGS — Update per page                 ║
+  ╚══════════════════════════════════════════════════╝
+-->
+<meta name="description" content="PAGE DESCRIPTION — max 160 characters.">
+<link rel="canonical" href="https://devops.ai.rain.tech/PAGE-SLUG">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="PAGE TITLE — DevOps AI">
+<meta property="og:description" content="PAGE DESCRIPTION — shorter version.">
+<meta property="og:url"         content="https://devops.ai.rain.tech/PAGE-SLUG">
+<meta property="og:site_name"   content="DevOps AI by RainTech">
+<meta property="og:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="PAGE TITLE — DevOps AI">
+<meta name="twitter:description" content="PAGE DESCRIPTION — shorter version.">
+<meta name="twitter:image"       content="https://devops.ai.rain.tech/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon"   type="image/png"     href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon"                      href="assets/apple-touch-icon.png">
+
+<!--
+  ╔══════════════════════════════════════════════════╗
+  ║  FONTS — Preconnect + Google Fonts               ║
+  ╚══════════════════════════════════════════════════╝
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rock+Salt&display=swap" rel="stylesheet">
+
+<!--
+  ╔══════════════════════════════════════════════════╗
+  ║  CSS LOADING ORDER — Do NOT change sequence      ║
+  ║                                                  ║
+  ║  1. base.css      → reset + design tokens        ║
+  ║  2. layout.css    → header, footer, nav, grids   ║
+  ║  3. components.css → buttons, cards, forms, etc  ║
+  ║  4. animations.css → keyframes + motion          ║
+  ║  5. pages.css     → page-specific overrides      ║
+  ╚══════════════════════════════════════════════════╝
+-->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+
+<!--
+  ╔══════════════════════════════════════════════════╗
+  ║  STRUCTURED DATA — Update per page               ║
+  ║  Reference: https://schema.org                   ║
+  ╚══════════════════════════════════════════════════╝
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "RainTech",
+      "url": "https://devops.ai.rain.tech",
+      "logo": "https://devops.ai.rain.tech/assets/logo-powered-by.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 S Tejon St., Suite 400",
+        "addressLocality": "Colorado Springs",
+        "addressRegion": "CO",
+        "postalCode": "80903",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-844-835-7246",
+      "sameAs": [
+        "https://www.linkedin.com/company/raintech",
+        "https://twitter.com/RainTechHQ"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "DevOps AI",
+      "url": "https://devops.ai.rain.tech",
+      "publisher": { "@type": "Organization", "name": "RainTech" }
+    },
+    {
+      "@type": "WebPage",
+      "name": "PAGE TITLE — DevOps AI",
+      "url": "https://devops.ai.rain.tech/PAGE-SLUG",
+      "description": "PAGE DESCRIPTION",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://devops.ai.rain.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "SECTION", "item": "https://devops.ai.rain.tech/section" },
+          { "@type": "ListItem", "position": 3, "name": "PAGE",    "item": "https://devops.ai.rain.tech/PAGE-SLUG" }
+        ]
+      },
+      "creator": {
+        "@type": "SoftwareApplication",
+        "name": "Perplexity Computer",
+        "url": "https://www.perplexity.ai/computer"
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+  <!-- =====================================================
+       ACCESSIBILITY: Skip Navigation Link
+       ===================================================== -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =====================================================
+       SITE HEADER
+       ===================================================== -->
+  <header class="site-header" role="banner" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="/" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <!-- SVG logo placeholder — replace with actual logo asset -->
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">
+            DevOps <span>AI</span>
+          </span>
+        </a>
+
+        <!-- Primary Navigation -->
+        <nav class="nav-primary" aria-label="Primary navigation" id="primary-nav">
+
+          <!-- Platform (mega-menu) -->
+          <div class="nav-item" id="nav-platform">
+            <button
+              class="nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="mega-platform"
+              id="nav-btn-platform"
+            >
+              Platform
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16">
+                <polyline points="3,6 8,11 13,6"/>
+              </svg>
+            </button>
+
+            <!-- Platform Mega Menu -->
+            <div
+              class="mega-menu mega-menu--platform"
+              id="mega-platform"
+              role="region"
+              aria-label="Platform menu"
+            >
+              <div class="mega-menu__inner">
+
+                <!-- Left Column: Overview + By Zone + By Role -->
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__heading">Platform Overview</p>
+                    <p class="mega-menu__description">
+                      The AI-orchestrated MSP control plane with 15 operational zones, 157 process areas, and full data sovereignty — deployed via Azure Marketplace in under 35 minutes.
+                    </p>
+                    <a class="mega-menu__link mega-menu__link--more" href="/platform/">
+                      Explore the Platform →
+                    </a>
+                  </div>
+
+                  <div class="mega-menu__divider" role="separator"></div>
+
+                  <!-- By Zone -->
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">By Zone</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="/platform/zones/service-desk/">
+                        <svg class="mega-menu__link-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        Service Desk &amp; ITSM
+                      </a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/infrastructure/">
+                        <svg class="mega-menu__link-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        Infrastructure &amp; Cloud
+                      </a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/security/">
+                        <svg class="mega-menu__link-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2L3 4.5v4C3 11.5 5.5 14 8 14s5-2.5 5-5.5v-4L8 2z" stroke-width="1.5"/></svg>
+                        Security &amp; Compliance
+                      </a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/monitoring/">Monitoring &amp; Observability</a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/automation/">AI Automation &amp; Orchestration</a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/financial/">Financial Operations</a></li>
+                      <li><a class="mega-menu__link" href="/platform/zones/service-catalog/">Service Catalog &amp; CMDB</a></li>
+                      <li><a class="mega-menu__link mega-menu__link--more" href="/platform/zones/">8 more zones →</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-menu__divider" role="separator"></div>
+
+                  <!-- By Role -->
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">By Role</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="/platform/roles/msp-owner/">MSP Owner &amp; Executive</a></li>
+                      <li><a class="mega-menu__link" href="/platform/roles/operations-lead/">Operations Lead</a></li>
+                      <li><a class="mega-menu__link" href="/platform/roles/security-engineer/">Security Engineer</a></li>
+                      <li><a class="mega-menu__link mega-menu__link--more" href="/platform/roles/">See all 21 roles →</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Right Column: Capabilities + Technical -->
+                <div class="mega-menu__col">
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">Capabilities</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="/platform/capabilities/ai-automation/">AI &amp; Automation Engine</a></li>
+                      <li><a class="mega-menu__link" href="/platform/capabilities/multi-tenant/">Multi-Tenant Architecture</a></li>
+                      <li><a class="mega-menu__link" href="/platform/capabilities/inference/">AI Inference &amp; LLM Ops</a></li>
+                      <li><a class="mega-menu__link" href="/platform/capabilities/role-based/">Role-Based Control Plane</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="mega-menu__divider" role="separator"></div>
+
+                  <div class="mega-menu__group">
+                    <p class="mega-menu__section-label">Technical</p>
+                    <ul class="mega-menu__list" role="list">
+                      <li><a class="mega-menu__link" href="/platform/architecture/">Architecture &amp; Design</a></li>
+                      <li><a class="mega-menu__link" href="/platform/api/">API Reference</a></li>
+                      <li><a class="mega-menu__link" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank">Azure Marketplace ↗</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div><!-- /.mega-menu__inner -->
+            </div><!-- /#mega-platform -->
+          </div><!-- /#nav-platform -->
+
+          <!-- Solutions (mega-menu) -->
+          <div class="nav-item" id="nav-solutions">
+            <button
+              class="nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="mega-solutions"
+              id="nav-btn-solutions"
+            >
+              Solutions
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16">
+                <polyline points="3,6 8,11 13,6"/>
+              </svg>
+            </button>
+
+            <!-- Solutions Mega Menu -->
+            <div
+              class="mega-menu mega-menu--solutions mega-menu--wide"
+              id="mega-solutions"
+              role="region"
+              aria-label="Solutions menu"
+            >
+              <div class="mega-menu__inner">
+
+                <!-- By Challenge -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Challenge</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/solutions/reduce-ticket-volume/">Reduce Ticket Volume</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/scale-without-headcount/">Scale Without Headcount</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/improve-sla/">Improve SLA Performance</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/consolidate-tooling/">Consolidate Tooling</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/data-sovereignty/">Data Sovereignty &amp; Control</a></li>
+                  </ul>
+                </div>
+
+                <!-- By Industry -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Industry</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/solutions/healthcare/">Healthcare MSPs</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/finance/">Financial Services</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/government/">Government &amp; SLED</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/manufacturing/">Manufacturing</a></li>
+                  </ul>
+                </div>
+
+                <!-- By Journey -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By Journey</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/solutions/getting-started/">Getting Started</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/migration/">Migration Path</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/enterprise/">Enterprise Expansion</a></li>
+                  </ul>
+                </div>
+
+                <!-- By Size -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">By MSP Size</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/solutions/smb-msp/">Small MSP (&lt;50 staff)</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/mid-market-msp/">Mid-Market (50–500)</a></li>
+                    <li><a class="mega-menu__link" href="/solutions/enterprise-msp/">Enterprise MSP (500+)</a></li>
+                  </ul>
+                </div>
+
+              </div><!-- /.mega-menu__inner -->
+            </div><!-- /#mega-solutions -->
+          </div><!-- /#nav-solutions -->
+
+          <!-- Pricing (direct link) -->
+          <div class="nav-item">
+            <a class="nav-link" href="/pricing/">Pricing</a>
+          </div>
+
+          <!-- Security (direct link) -->
+          <div class="nav-item">
+            <a class="nav-link" href="/security/">Security</a>
+          </div>
+
+          <!-- Resources (mega-menu) -->
+          <div class="nav-item" id="nav-resources">
+            <button
+              class="nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="mega-resources"
+              id="nav-btn-resources"
+            >
+              Resources
+              <svg class="nav-chevron" aria-hidden="true" viewBox="0 0 16 16">
+                <polyline points="3,6 8,11 13,6"/>
+              </svg>
+            </button>
+
+            <!-- Resources Mega Menu -->
+            <div
+              class="mega-menu mega-menu--resources"
+              id="mega-resources"
+              role="region"
+              aria-label="Resources menu"
+            >
+              <div class="mega-menu__inner">
+
+                <!-- Learn -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Learn</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/docs/">Documentation</a></li>
+                    <li><a class="mega-menu__link" href="/blog/">Blog &amp; Insights</a></li>
+                    <li><a class="mega-menu__link" href="/webinars/">Webinars</a></li>
+                    <li><a class="mega-menu__link" href="/roi-calculator/">ROI Calculator</a></li>
+                  </ul>
+                </div>
+
+                <!-- Community -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Community</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/community/">Community Forum</a></li>
+                    <li><a class="mega-menu__link" href="/case-studies/">Case Studies</a></li>
+                    <li><a class="mega-menu__link" href="/partners/">Partner Network</a></li>
+                  </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Company</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/about/">About RainTech</a></li>
+                    <li><a class="mega-menu__link" href="/careers/">Careers</a></li>
+                    <li><a class="mega-menu__link" href="/press/">Press &amp; Media</a></li>
+                  </ul>
+                </div>
+
+                <!-- Trust -->
+                <div class="mega-menu__group">
+                  <p class="mega-menu__section-label">Trust</p>
+                  <ul class="mega-menu__list" role="list">
+                    <li><a class="mega-menu__link" href="/security/">Security Center</a></li>
+                    <li><a class="mega-menu__link" href="/compliance/">Compliance</a></li>
+                    <li><a class="mega-menu__link" href="/privacy/">Privacy Policy</a></li>
+                  </ul>
+                </div>
+
+              </div><!-- /.mega-menu__inner -->
+            </div><!-- /#mega-resources -->
+          </div><!-- /#nav-resources -->
+
+        </nav><!-- /.nav-primary -->
+
+        <!-- Header Right Actions -->
+        <div class="header-actions">
+
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle dark/light mode"
+            aria-pressed="false"
+          >
+            <!-- Moon icon (shown in dark mode) -->
+            <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <!-- Sun icon (shown in light mode) -->
+            <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1"  x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1"  y1="12" x2="3"  y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>
+              <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+
+          <!-- Login -->
+          <a class="btn-login" href="/login/" aria-label="Log in to DevOps AI">
+            Log in
+          </a>
+
+          <!-- Get Started CTA -->
+          <a class="nav-cta" href="/get-started/" aria-label="Get started with DevOps AI">
+            Get Started →
+          </a>
+
+          <!-- Mobile hamburger (visible ≤1024px) -->
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+          </button>
+
+        </div><!-- /.header-actions -->
+      </div><!-- /.header-inner -->
+    </div><!-- /.container -->
+  </header><!-- /.site-header -->
+
+  <!-- =====================================================
+       MOBILE NAVIGATION DRAWER
+       ===================================================== -->
+  <nav
+    class="mobile-nav"
+    id="mobile-nav"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+  >
+    <!-- Click-outside overlay -->
+    <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+    <!-- Drawer panel -->
+    <div class="mobile-nav__drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+      <!-- Drawer header -->
+      <div class="mobile-nav__header">
+        <a href="/" class="header-logo" aria-label="DevOps AI — Home">
+          <svg class="header-logo__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:28px">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+            <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+          </svg>
+          <span class="header-logo__wordmark" aria-hidden="true">DevOps <span>AI</span></span>
+        </a>
+        <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="18" y1="6"  x2="6"  y2="18" stroke-linecap="round"/>
+            <line x1="6"  y1="6"  x2="18" y2="18" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Drawer body -->
+      <div class="mobile-nav__body">
+
+        <!-- Platform accordion -->
+        <div class="mobile-accordion__item" id="mob-platform">
+          <button
+            class="mobile-accordion__trigger"
+            aria-expanded="false"
+            aria-controls="mob-platform-body"
+          >
+            Platform
+            <svg class="mobile-accordion__chevron" aria-hidden="true" viewBox="0 0 16 16">
+              <polyline points="3,6 8,11 13,6"/>
+            </svg>
+          </button>
+          <div class="mobile-accordion__body" id="mob-platform-body" hidden>
+            <div class="mobile-accordion__content">
+              <p class="mobile-accordion__section-label">By Zone</p>
+              <a class="mobile-nav__link" href="/platform/zones/service-desk/">Service Desk &amp; ITSM</a>
+              <a class="mobile-nav__link" href="/platform/zones/infrastructure/">Infrastructure &amp; Cloud</a>
+              <a class="mobile-nav__link" href="/platform/zones/security/">Security &amp; Compliance</a>
+              <a class="mobile-nav__link" href="/platform/zones/monitoring/">Monitoring &amp; Observability</a>
+              <a class="mobile-nav__link" href="/platform/zones/automation/">AI Automation</a>
+              <a class="mobile-nav__link" href="/platform/zones/financial/">Financial Operations</a>
+              <a class="mobile-nav__link" href="/platform/zones/service-catalog/">Service Catalog &amp; CMDB</a>
+              <a class="mobile-nav__link" href="/platform/zones/" style="color:var(--accent);font-weight:600">All 15 Zones →</a>
+
+              <p class="mobile-accordion__section-label">By Role</p>
+              <a class="mobile-nav__link" href="/platform/roles/msp-owner/">MSP Owner &amp; Executive</a>
+              <a class="mobile-nav__link" href="/platform/roles/operations-lead/">Operations Lead</a>
+              <a class="mobile-nav__link" href="/platform/roles/security-engineer/">Security Engineer</a>
+              <a class="mobile-nav__link" href="/platform/roles/" style="color:var(--accent);font-weight:600">See all 21 roles →</a>
+
+              <p class="mobile-accordion__section-label">Capabilities</p>
+              <a class="mobile-nav__link" href="/platform/capabilities/ai-automation/">AI &amp; Automation Engine</a>
+              <a class="mobile-nav__link" href="/platform/capabilities/multi-tenant/">Multi-Tenant Architecture</a>
+              <a class="mobile-nav__link" href="/platform/capabilities/inference/">AI Inference &amp; LLM Ops</a>
+              <a class="mobile-nav__link" href="/platform/capabilities/role-based/">Role-Based Control Plane</a>
+
+              <p class="mobile-accordion__section-label">Technical</p>
+              <a class="mobile-nav__link" href="/platform/architecture/">Architecture &amp; Design</a>
+              <a class="mobile-nav__link" href="/platform/api/">API Reference</a>
+              <a class="mobile-nav__link" href="https://azuremarketplace.microsoft.com/" rel="noopener" target="_blank">Azure Marketplace ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solutions accordion -->
+        <div class="mobile-accordion__item" id="mob-solutions">
+          <button
+            class="mobile-accordion__trigger"
+            aria-expanded="false"
+            aria-controls="mob-solutions-body"
+          >
+            Solutions
+            <svg class="mobile-accordion__chevron" aria-hidden="true" viewBox="0 0 16 16">
+              <polyline points="3,6 8,11 13,6"/>
+            </svg>
+          </button>
+          <div class="mobile-accordion__body" id="mob-solutions-body" hidden>
+            <div class="mobile-accordion__content">
+              <p class="mobile-accordion__section-label">By Challenge</p>
+              <a class="mobile-nav__link" href="/solutions/reduce-ticket-volume/">Reduce Ticket Volume</a>
+              <a class="mobile-nav__link" href="/solutions/scale-without-headcount/">Scale Without Headcount</a>
+              <a class="mobile-nav__link" href="/solutions/improve-sla/">Improve SLA Performance</a>
+              <a class="mobile-nav__link" href="/solutions/consolidate-tooling/">Consolidate Tooling</a>
+              <a class="mobile-nav__link" href="/solutions/data-sovereignty/">Data Sovereignty &amp; Control</a>
+
+              <p class="mobile-accordion__section-label">By Industry</p>
+              <a class="mobile-nav__link" href="/solutions/healthcare/">Healthcare MSPs</a>
+              <a class="mobile-nav__link" href="/solutions/finance/">Financial Services</a>
+              <a class="mobile-nav__link" href="/solutions/government/">Government &amp; SLED</a>
+              <a class="mobile-nav__link" href="/solutions/manufacturing/">Manufacturing</a>
+
+              <p class="mobile-accordion__section-label">By MSP Size</p>
+              <a class="mobile-nav__link" href="/solutions/smb-msp/">Small MSP (&lt;50 staff)</a>
+              <a class="mobile-nav__link" href="/solutions/mid-market-msp/">Mid-Market (50–500)</a>
+              <a class="mobile-nav__link" href="/solutions/enterprise-msp/">Enterprise MSP (500+)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing (direct) -->
+        <a class="mobile-nav__link--direct" href="/pricing/">Pricing</a>
+
+        <!-- Security (direct) -->
+        <a class="mobile-nav__link--direct" href="/security/">Security</a>
+
+        <!-- Resources accordion -->
+        <div class="mobile-accordion__item" id="mob-resources">
+          <button
+            class="mobile-accordion__trigger"
+            aria-expanded="false"
+            aria-controls="mob-resources-body"
+          >
+            Resources
+            <svg class="mobile-accordion__chevron" aria-hidden="true" viewBox="0 0 16 16">
+              <polyline points="3,6 8,11 13,6"/>
+            </svg>
+          </button>
+          <div class="mobile-accordion__body" id="mob-resources-body" hidden>
+            <div class="mobile-accordion__content">
+              <p class="mobile-accordion__section-label">Learn</p>
+              <a class="mobile-nav__link" href="/docs/">Documentation</a>
+              <a class="mobile-nav__link" href="/blog/">Blog &amp; Insights</a>
+              <a class="mobile-nav__link" href="/webinars/">Webinars</a>
+              <a class="mobile-nav__link" href="/roi-calculator/">ROI Calculator</a>
+
+              <p class="mobile-accordion__section-label">Community</p>
+              <a class="mobile-nav__link" href="/community/">Community Forum</a>
+              <a class="mobile-nav__link" href="/case-studies/">Case Studies</a>
+              <a class="mobile-nav__link" href="/partners/">Partner Network</a>
+
+              <p class="mobile-accordion__section-label">Company</p>
+              <a class="mobile-nav__link" href="/about/">About RainTech</a>
+              <a class="mobile-nav__link" href="/careers/">Careers</a>
+              <a class="mobile-nav__link" href="/press/">Press &amp; Media</a>
+
+              <p class="mobile-accordion__section-label">Trust</p>
+              <a class="mobile-nav__link" href="/security/">Security Center</a>
+              <a class="mobile-nav__link" href="/compliance/">Compliance</a>
+              <a class="mobile-nav__link" href="/privacy/">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.mobile-nav__body -->
+
+      <!-- Drawer footer: CTA buttons -->
+      <div class="mobile-nav__footer">
+        <a class="btn-login" href="/login/" style="justify-content:center">Log in</a>
+        <a class="nav-cta" href="/get-started/" style="justify-content:center">Get Started →</a>
+      </div>
+
+    </div><!-- /.mobile-nav__drawer -->
+  </nav><!-- /.mobile-nav -->
+
+  <!-- =====================================================
+       BREADCRUMB NAVIGATION — Update per page
+       Remove this block on the homepage (position 1 only)
+       ===================================================== -->
+  <div class="container" style="padding-top: calc(80px + var(--space-4))">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list" style="display:contents">
+        <!-- BreadcrumbList: positions populated inline, see structured data in <head> -->
+        <li class="breadcrumb__item" itemscope itemtype="https://schema.org/ListItem">
+          <a class="breadcrumb__link" href="/" itemprop="item">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1">
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        </li>
+        <li class="breadcrumb__item" itemscope itemtype="https://schema.org/ListItem">
+          <a class="breadcrumb__link" href="/section/" itemprop="item">
+            <span itemprop="name">SECTION</span>
+          </a>
+          <meta itemprop="position" content="2">
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        </li>
+        <li class="breadcrumb__item" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb__current" itemprop="name" aria-current="page">PAGE TITLE</span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- =====================================================
+       MAIN CONTENT AREA
+       ===================================================== -->
+  <main id="main-content" tabindex="-1">
+
+    <!--
+      ╔══════════════════════════════════════════════════╗
+      ║  PAGE CONTENT GOES HERE                          ║
+      ║                                                  ║
+      ║  Typical section structure:                      ║
+      ║                                                  ║
+      ║  <section class="section" aria-label="...">      ║
+      ║    <div class="container">                       ║
+      ║      ...                                         ║
+      ║    </div>                                        ║
+      ║  </section>                                      ║
+      ╚══════════════════════════════════════════════════╝
+    -->
+
+    <section class="section" aria-label="Page content placeholder">
+      <div class="container">
+        <p style="color: var(--text-tertiary); font-style: italic;">
+          Page content goes here — replace with actual page sections.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       SITE FOOTER
+       ===================================================== -->
+  <footer class="site-footer" role="contentinfo" id="site-footer">
+    <div class="container">
+
+      <!-- 5-Column Footer Grid -->
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="DevOps AI — Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true" focusable="false" style="height:32px;width:auto">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#8BDB02" stroke-width="2.5"/>
+              <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="#8BDB02" opacity="0.9"/>
+              <circle cx="20" cy="20" r="4" fill="#17E4ED"/>
+            </svg>
+            <span class="footer-logo__wordmark">DevOps <span>AI</span></span>
+          </a>
+
+          <p class="footer-tagline">AI-as-a-Service for MSPs</p>
+
+          <p class="footer-brand__desc">
+            The AI-orchestrated MSP control plane. 15 operational zones. 157 process areas. Full data sovereignty. Deploy via Azure Marketplace in under 35 minutes.
+          </p>
+
+          <address class="footer-brand__address">
+            3 S Tejon St., Suite 400<br>
+            Colorado Springs, CO 80903<br>
+            <a href="tel:+18448357246">+1-844-835-7246</a>
+          </address>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="/platform/">Platform Overview</a>
+          <a href="/platform/zones/">All 15 Zones</a>
+          <a href="/platform/roles/">All 21 Roles</a>
+          <a href="/platform/architecture/">Architecture</a>
+          <a href="/platform/integrations/">Integrations</a>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="/solutions/#by-challenge">By Challenge</a>
+          <a href="/solutions/#by-industry">By Industry</a>
+          <a href="/solutions/#by-size">By MSP Size</a>
+          <a href="/case-studies/">Case Studies</a>
+        </div>
+
+        <!-- Column 4: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/blog/">Blog</a>
+          <a href="/roi-calculator/">ROI Calculator</a>
+          <a href="/demo/">Request Demo</a>
+          <a href="/docs/">Documentation</a>
+          <a href="/webinars/">Webinars</a>
+        </div>
+
+        <!-- Column 5: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about/">About RainTech</a>
+          <a href="/contact/">Contact</a>
+          <a href="/careers/">Careers</a>
+          <a href="/press/">Press</a>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <!-- Trust & Legal Row -->
+      <div class="footer-trust" role="navigation" aria-label="Trust and legal links">
+        <span class="footer-trust__label">Trust &amp; Legal</span>
+        <a href="/security/">Security Center</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="/privacy/">Privacy Policy</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="/terms/">Terms of Service</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="/compliance/">Compliance (SOC 2, ISO 27001)</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="/data-processing/">Data Processing Agreement</a>
+        <span class="footer-trust__sep" aria-hidden="true">·</span>
+        <a href="/cookies/">Cookie Preferences</a>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <span>© 2026 RainTech, Inc. All rights reserved.</span>
+
+        <div class="footer-bottom__badges">
+          <!-- Azure Marketplace badge -->
+          <a
+            class="badge-azure"
+            href="https://azuremarketplace.microsoft.com/"
+            rel="noopener"
+            target="_blank"
+            aria-label="Available on Azure Marketplace (opens in new tab)"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="#0078d4">
+              <path d="M7.073 1.8L1.6 11.3h4.2l1.3-2.4h2.4l-1.8-3.1L9.6 3l-2.527-1.2zm1.6 4.5l2.327 4H4.8l3.873-4zM6.927 11.3L5.6 13.5H14.4l-1.327-2.2H6.927z"/>
+            </svg>
+            Azure Marketplace
+          </a>
+
+          <!-- Perplexity Computer attribution -->
+          <a
+            class="footer-perplexity"
+            href="https://www.perplexity.ai/computer"
+            rel="noopener"
+            target="_blank"
+            aria-label="Created with Perplexity Computer (opens in new tab)"
+          >
+            Created with Perplexity Computer ↗
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </footer><!-- /.site-footer -->
+
+  <!-- =====================================================
+       JAVASCRIPT — Load order matters
+       ===================================================== -->
+
+  <!--
+    Script loading order:
+    1. theme.js     → Inline/first — prevents FOUC (flash of unstyled content)
+                      Must be synchronous in <head> or first <script> in body
+    2. nav.js       → Header scroll, mega-menu hover/keyboard, mobile drawer,
+                      accordion, focus trap
+    3. animations.js → Intersection Observer, scroll triggers, counters
+    4. [page].js    → Page-specific scripts (optional, per FR)
+  -->
+
+  <!-- Nav / Header controller -->
+  <script>
+  /* ======================================================
+     nav.js — Header scroll, mega-menu, mobile drawer, accordion
+     Inline here for template clarity — extract to js/nav.js
+     ====================================================== */
+  (function () {
+    'use strict';
+
+    /* ---- Theme Toggle ---- */
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('devops-ai-theme', theme);
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      }
+    }
+
+    // On load: restore saved preference
+    const savedTheme = localStorage.getItem('devops-ai-theme');
+    if (savedTheme) applyTheme(savedTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        const current = html.getAttribute('data-theme') || 'dark';
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    /* ---- Header scroll ---- */
+    const header = document.getElementById('site-header');
+    if (header) {
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // run once on load
+    }
+
+    /* ---- Mega Menu keyboard / click ---- */
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(function (item) {
+      const trigger = item.querySelector('.nav-link--dropdown');
+      const menu    = item.querySelector('.mega-menu');
+      if (!trigger || !menu) return;
+
+      // Keyboard: Enter / Space open; Escape closes
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          closeAllMegaMenus();
+          if (!expanded) openMegaMenu(trigger, menu);
+        }
+        if (e.key === 'Escape') {
+          closeAllMegaMenus();
+          trigger.focus();
+        }
+      });
+
+      // Close on Escape from within menu
+      menu.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeAllMegaMenus();
+          trigger.focus();
+        }
+      });
+    });
+
+    // Close menus on outside click
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-item')) closeAllMegaMenus();
+    });
+
+    function openMegaMenu(trigger, menu) {
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeAllMegaMenus() {
+      navItems.forEach(function (item) {
+        const trigger = item.querySelector('.nav-link--dropdown');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    /* ---- Mobile Nav ---- */
+    const mobileNav      = document.getElementById('mobile-nav');
+    const mobileToggle   = document.getElementById('mobile-menu-toggle');
+    const mobileClose    = document.getElementById('mobile-nav-close');
+    const mobileOverlay  = document.getElementById('mobile-nav-overlay');
+    const body           = document.body;
+
+    // Focusable elements for trap
+    function getFocusable(container) {
+      return Array.from(container.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter(function (el) {
+        return !el.closest('[hidden]') && getComputedStyle(el).display !== 'none';
+      });
+    }
+
+    function openMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      mobileToggle.setAttribute('aria-label', 'Close navigation menu');
+      body.style.overflow = 'hidden';
+
+      // Move focus into drawer
+      setTimeout(function () {
+        const first = getFocusable(mobileNav)[0];
+        if (first) first.focus();
+      }, 50);
+    }
+
+    function closeMobileNav() {
+      if (!mobileNav || !mobileToggle) return;
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.setAttribute('aria-label', 'Open navigation menu');
+      body.style.overflow = '';
+      mobileToggle.focus();
+    }
+
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobileNav);
+    if (mobileClose)  mobileClose.addEventListener('click', closeMobileNav);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
+
+    // Focus trap
+    if (mobileNav) {
+      mobileNav.addEventListener('keydown', function (e) {
+        if (!mobileNav.classList.contains('is-open')) return;
+
+        if (e.key === 'Escape') {
+          closeMobileNav();
+          return;
+        }
+
+        if (e.key === 'Tab') {
+          const focusable = getFocusable(mobileNav);
+          if (!focusable.length) return;
+          const first = focusable[0];
+          const last  = focusable[focusable.length - 1];
+
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    }
+
+    /* ---- Mobile Accordion ---- */
+    const accordionTriggers = document.querySelectorAll('.mobile-accordion__trigger');
+    accordionTriggers.forEach(function (trigger) {
+      const item   = trigger.closest('.mobile-accordion__item');
+      const bodyId = trigger.getAttribute('aria-controls');
+      const panel  = document.getElementById(bodyId);
+      if (!item || !panel) return;
+
+      trigger.addEventListener('click', function () {
+        const isOpen = item.classList.contains('is-open');
+
+        // Close all
+        accordionTriggers.forEach(function (t) {
+          const i = t.closest('.mobile-accordion__item');
+          const b = document.getElementById(t.getAttribute('aria-controls'));
+          if (i && b) {
+            i.classList.remove('is-open');
+            t.setAttribute('aria-expanded', 'false');
+            b.style.maxHeight = null;
+            b.hidden = true;
+          }
+        });
+
+        // Open clicked
+        if (!isOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+          // Set max-height to scrollHeight for smooth animation
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+
+  }());
+  </script>
+
+</body>
+</html>
