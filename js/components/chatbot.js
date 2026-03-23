@@ -33,16 +33,21 @@
     ai: 'AI is embedded in every process area — from NLP ticket classification and predictive SLA management to automated compliance evidence collection and executive KPI dashboards. Our AI operates with transparent human-in-the-loop checkpoints so you stay in control.',
     demo: 'Great question! You can [request a demo](get-started.html) to see DevOps AI in action. Our team will walk you through the zones most relevant to your MSP operations.',
     endpoint: 'The Endpoint Management zone covers 10 process areas including automated patching, fleet intelligence, vulnerability management, and Intune integration. AI monitors device health in real-time and triggers remediation workflows automatically.',
-    compliance: 'Our GRC & Compliance zone includes 11 process areas: Policy Management, Risk Management, Gap Analysis, CMMC SSP Builder, OSCAL Evidence, Audit Management, C3PAO Readiness, and more. AI automates evidence collection and maintains continuous compliance posture.'
+    compliance: 'Our GRC & Compliance zone includes 11 process areas: Policy Management, Risk Management, Gap Analysis, CMMC SSP Builder, OSCAL Evidence, Audit Management, C3PAO Readiness, and more. AI automates evidence collection and maintains continuous compliance posture.',
+    forge: 'DevOps AI is built on **FORGE** (Fixpoint Output Repair for Generative Engines) — a deterministic normalization engine that repairs structural defects in AI-generated content. FORGE makes no LLM calls, uses no randomness, and fails closed on ambiguity. Every AI output in DevOps AI passes through FORGE before reaching production. Learn more at [The FORGE Principle](/forge).',
+    trust: 'DevOps AI provides **structural guarantees** that no other AI platform offers. FORGE normalizes every AI output across 23 content types — code, YAML, SQL, documents, and more — ensuring structural correctness is verified, not hoped for. Our convergence loop scans 6 dimensions in under 9 seconds on every change. Details: [fixpointforge.ai](https://fixpointforge.ai)',
+    deterministic: 'FORGE is fully deterministic — same input always produces same output. It makes zero LLM calls, accesses no internet, and uses no randomness. Every repair is logged in an immutable audit trail. This is what makes DevOps AI the first platform that can **guarantee** the structural integrity of its AI outputs. Technical docs: [fixpointforge.dev](https://fixpointforge.dev)',
+    convergence: 'DevOps AI uses a **fixpoint convergence loop** that scans 6 dimensions — code structure, AI governance, documentation, frontend/UI, conventions, and the public website — in a single pass under 9 seconds. Every PR is gated by this loop. The platform literally improves itself. [Learn more](/forge)',
+    safe: 'Safety is built into every layer. **FORGE** guarantees structural correctness of AI output. **G1-G10 governance primitives** enforce action classification, confidence scoring, HITL approval, DLP scanning, audit trails, and tenant isolation on every AI action. Every consequential operation requires human approval. [Security details](/security)'
   };
 
-  var DEFAULT_RESPONSE = "I can help you learn about DevOps AI's **15 operational zones** and **157 process areas**. Ask me about:\n\n- How AI ticket triage works\n- Security certifications\n- Pricing tiers\n- What makes us different\n\nOr [request a demo](get-started.html) to see the platform in action!";
+  var DEFAULT_RESPONSE = "I can help you learn about DevOps AI — the world's first AI-first business automation platform, built on **FORGE** for deterministic trust. Ask me about:\n\n- What is FORGE and how does it work?\n- How AI ticket triage works\n- Security and trust guarantees\n- Pricing tiers\n- What makes us different\n\nOr [request a demo](get-started.html) to see the platform in action!";
 
   var SUGGESTED_PROMPTS = [
-    'How does AI ticket triage work?',
+    'What is FORGE?',
+    'How does DevOps AI use AI safely?',
     'What security certifications do you have?',
-    'Show me pricing for my team size',
-    'How is DevOps AI different from ConnectWise?'
+    'How is DevOps AI different?'
   ];
 
   var FAQ_ITEMS = [
@@ -50,7 +55,9 @@
     { q: 'How many zones are there?', a: '15 zones: Service Desk, Security Operations, GRC & Compliance, Endpoint Management, Network Ops, vC-Suite, Analytics, Relationships, People, Learning, Organization, Legal, DevOps, Accounting, and Projects.' },
     { q: 'What compliance frameworks?', a: 'SOC 2 Type II, CMMC 2.0, HIPAA, GDPR, NIST 800-171, and more — with automated evidence collection and continuous monitoring.' },
     { q: 'Is there a free trial?', a: 'Contact our team to request a demo and discuss trial options tailored to your MSP size and needs.' },
-    { q: 'What about data sovereignty?', a: 'Your data stays in your own Azure tenant. DevOps AI supports GCC High deployment for government contractors requiring ITAR/EAR compliance.' }
+    { q: 'What about data sovereignty?', a: 'Your data stays in your own Azure tenant. DevOps AI supports GCC High deployment for government contractors requiring ITAR/EAR compliance.' },
+    { q: 'What is FORGE?', a: 'FORGE (Fixpoint Output Repair for Generative Engines) is the deterministic trust layer that DevOps AI is built on. It normalizes every AI output to guarantee structural correctness — no LLM calls, no randomness, fail-closed on ambiguity.' },
+    { q: 'How does AI safety work?', a: 'Every AI action passes through 10 governance primitives (G1-G10): action classification, confidence scoring, chain-of-thought logging, HITL approval, DLP scanning, routing enforcement, rollback planning, audit trails, blast radius estimation, and tenant isolation.' }
   ];
 
   // ── State ───────────────────────────────────────────────────────────────
