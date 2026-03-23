@@ -275,10 +275,11 @@
 
     // Try API, fall back to mock
     var endpoint = container.getAttribute('data-chatbot-endpoint');
-    var apiKey = container.getAttribute('data-chatbot-api-key');
+    // API key removed from client-side (W4 chatbot isolation).
+    // If a live endpoint is configured, it must handle auth server-side.
 
     if (endpoint && !isFallbackMode) {
-      callAPI(endpoint, apiKey, text)
+      callAPI(endpoint, null, text)
         .then(function (response) {
           hideTyping();
           addMessage('assistant', response);
@@ -306,7 +307,9 @@
     });
 
     var headers = { 'Content-Type': 'application/json' };
-    if (apiKey) headers['Authorization'] = 'Bearer ' + apiKey;
+    // NOTE: API key is never sent from the client. Authentication is handled
+    // server-side by the proxy endpoint. This prevents key exposure in
+    // client-side JavaScript. See WEBSITE_CONVERGENCE_PLAN.md W4.
 
     var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timeoutId = setTimeout(function () {

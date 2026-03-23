@@ -63,6 +63,15 @@ DevOps AI organizes MSP operations into 15 zones, each containing multiple AI-po
 - All Zones: Browse zone pages at https://devops.ai.rain.tech/zones/{zone-slug}/
 - Process Areas: Browse PA pages at https://devops.ai.rain.tech/zones/{zone-slug}/process-areas/{pa-slug}
 
+## Trust Layer: FORGE
+
+DevOps AI is built on FORGE (Fixpoint Output Repair for Generative Engines), a deterministic normalization engine that repairs structural defects in AI-generated content. FORGE makes no LLM calls, uses no randomness, and fails closed on ambiguity.
+
+- Marketing: https://fixpointforge.ai
+- Documentation: https://fixpointforge.dev
+- Telemetry: https://fixpointforge.report
+- The FORGE Principle: https://devops.ai.rain.tech/forge
+
 ## Contact
 
 For partnership, demo requests, or sales inquiries:
